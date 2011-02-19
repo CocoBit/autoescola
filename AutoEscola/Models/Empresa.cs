@@ -12,6 +12,7 @@ namespace AutoEscola.Models
     {
         public int Id { get; set; }
         
+
         [Required(ErrorMessage="O CNPJ é obrigatório")]
         public string CNPJ { get; set; }
 
