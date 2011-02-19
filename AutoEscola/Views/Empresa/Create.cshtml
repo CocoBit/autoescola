@@ -1,0 +1,74 @@
+﻿@model AutoEscola.Models.Empresa
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Empresa</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CNPJ)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CNPJ)
+            @Html.ValidationMessageFor(model => model.CNPJ)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RazaoSocial)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RazaoSocial)
+            @Html.ValidationMessageFor(model => model.RazaoSocial)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NomeFantasia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NomeFantasia)
+            @Html.ValidationMessageFor(model => model.NomeFantasia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Telefone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Telefone)
+            @Html.ValidationMessageFor(model => model.Telefone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Site)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Site)
+            @Html.ValidationMessageFor(model => model.Site)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
