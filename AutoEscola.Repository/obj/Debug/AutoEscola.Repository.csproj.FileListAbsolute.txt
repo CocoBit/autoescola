@@ -1,0 +1,8 @@
+D:\Projetos\AutoEscola\AutoEscola.Repository\obj\Debug\ResolveAssemblyReference.cache
+D:\Projetos\AutoEscola\AutoEscola.Repository\bin\Debug\AutoEscola.Repository.dll
+D:\Projetos\AutoEscola\AutoEscola.Repository\bin\Debug\AutoEscola.Repository.pdb
+D:\Projetos\AutoEscola\AutoEscola.Repository\bin\Debug\AutoEscola.Models.dll
+D:\Projetos\AutoEscola\AutoEscola.Repository\bin\Debug\EntityFramework.dll
+D:\Projetos\AutoEscola\AutoEscola.Repository\bin\Debug\AutoEscola.Models.pdb
+D:\Projetos\AutoEscola\AutoEscola.Repository\obj\Debug\AutoEscola.Repository.dll
+D:\Projetos\AutoEscola\AutoEscola.Repository\obj\Debug\AutoEscola.Repository.pdb

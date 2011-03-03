@@ -1,0 +1,6 @@
+D:\Projetos\AutoEscola\AutoEscola.Models\bin\Debug\AutoEscola.Models.dll
+D:\Projetos\AutoEscola\AutoEscola.Models\bin\Debug\AutoEscola.Models.pdb
+D:\Projetos\AutoEscola\AutoEscola.Models\bin\Debug\EntityFramework.dll
+D:\Projetos\AutoEscola\AutoEscola.Models\obj\Debug\ResolveAssemblyReference.cache
+D:\Projetos\AutoEscola\AutoEscola.Models\obj\Debug\AutoEscola.Models.dll
+D:\Projetos\AutoEscola\AutoEscola.Models\obj\Debug\AutoEscola.Models.pdb

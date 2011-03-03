@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AutoEscola.Models;
+using AutoEscola.Repository;
+using AutoEscola.Repository.Interfaces;
+using AutoEscola.Repository.Factory;
 
 namespace AutoEscola.Controllers
 {
@@ -12,12 +15,12 @@ namespace AutoEscola.Controllers
         //
         // GET: /Empresa/
 
-        DaoEmpresa Dao = new DaoEmpresa();
-
+        IEmpresaRepository repository;
 
         public ActionResult Index()
         {
-            return View();
+            repository = RepositoryFactory.CreateEmpresaRepository();
+            return View(repository.All());
         }
 
         public ActionResult Create()
@@ -29,8 +32,8 @@ namespace AutoEscola.Controllers
         [HttpPost]
         public ActionResult Create(Empresa model)
         {
-            Dao.Empresas.Add(model);
-            Dao.SaveChanges();
+            repository = RepositoryFactory.CreateEmpresaRepository();
+            repository.Create(model);
 
             return RedirectToAction("Index");
         }
