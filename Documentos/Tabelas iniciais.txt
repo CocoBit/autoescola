@@ -1,0 +1,61 @@
+-----------TABELA DE EMPRESA---------------
+
+   QryCadEmpresas.Close;
+   QryCadEmpresas.SQL.Text :='Update T_Empresas set  Nome_Fantasia=:parNome_Fantasia,  Razao_Social=:parRazao_Social, Fax=:parFax, Email=:parEmail, '+
+                             '                       Endereco=:parEndereco, Cidade=:parCidade, Bairro=:parBairro, local=:parLocal, ' +
+                             '                       Cep=:parCep, uf=:parUf, Telefone=:parTelefone, CNPJCPF=:parCNPJCPF, ' +
+                             '                       DiretorDetran=:parDiretorDetran, Diretor=:parDiretor, NomeDiretor=:parNomeDiretor ';
+
+   QryCadEmpresas.ParamByName('parNome_Fantasia').AsString := edtNome_Fantasia.Text;
+   QryCadEmpresas.ParamByName('parRazao_Social').AsString  := edtRazao_Social.Text;
+   QryCadEmpresas.ParamByName('parCidade').AsString        := edtCidade.Text;
+   QryCadEmpresas.ParamByName('parBairro').AsString        := edtBairro.Text;
+   QryCadEmpresas.ParamByName('parUF').AsString            := edtUf.Text;
+   QryCadEmpresas.ParamByName('parEndereco').AsString      := edtEndereco.Text;
+   QryCadEmpresas.ParamByName('parCep').AsString           := edtCep.Text;
+   QryCadEmpresas.ParamByName('parCNPJCPF').AsString       := edtCnpj.Text;
+   QryCadEmpresas.ParamByName('parTelefone').AsString      := edtTelefone.Text;
+   QryCadEmpresas.ParamByName('parFax').AsString           := edtFax.Text;
+   QryCadEmpresas.ParamByName('parEmail').AsString         := edtEmail.Text;
+   QryCadEmpresas.ParamByName('parDiretorDetran').AsString := edtDiretorDetran.Text;
+   QryCadEmpresas.ParamByName('parDiretor').AsString       := edtDiretorEnsino.Text;
+   QryCadEmpresas.ParamByName('parNomeDiretor').AsString   := edtDiretorGeral.Text;
+   QryCadEmpresas.ParamByName('parLocal').AsString         := edtLocal.Text;
+   QryCadEmpresas.ExecSQL;
+
+
+----------------------------tABELA DE ALUNOS----------------------------
+
+         lQrySalvaDados.SQL.Text      := 'Insert Into T_Alunos '+
+                                         '       (Nome,Cod_Emp,Data_Cad,Data_Mov,Operador,Data_Matricula,Data_Aceite,ID_Servico,CPF, '+
+                                         '        LiberaMoto,LiberaCarro,LiberaFinanceiro, Endereco, RG ) Values ' +
+                                         '       (:parNome,:parCod_Emp,:parData_Cad,:parData_Mov,:parOperador,' +
+                                         '        :parData_Matricula,:parData_Aceite,:parID_Servico,:parCPF, '+
+                                         '        :parLiberaMoto,:parLiberaCarro,:parLiberaFinanceiro, :parEndereco, :parRG )';
+         lQrySalvaDados.ParamByName('parCod_Emp').AsString        := gsCod_Emp;
+         lQrySalvaDados.ParamByName('parData_Cad').AsSQLTimeStamp := DateTimeToSQLTimeStamp(now);
+         lQrySalvaDados.ParamByName('parData_Mov').AsSQLTimeStamp := DateTimeToSQLTimeStamp(gsData_Mov);
+         lQrySalvaDados.ParamByName('parOperador').AsString       := gsOperador;
+         lQrySalvaDados.ParamByName('parNome').AsString           := proAluno.Nome;
+         lQrySalvaDados.ParamByName('parData_Matricula').AsSQLTimeStamp := DateTimeToSQLTimeStamp( proAluno.Data_Matricula );
+         lQrySalvaDados.ParamByName('parData_Aceite').AsSQLTimeStamp    := DateTimeToSQLTimeStamp( proAluno.Data_Aceite );
+
+
+--------------------------------TABELA DE OCORRENCIAS -------------------
+
+   qryOcorrencias.Sql.Text := ' insert into T_ocorrencias (Data_Cad,Data_Mov,Operador,Ocorrencia,Cod_Emp,Id_Aluno) Values ' +
+                              '                           (:parData_Cad,:parData_Mov,:parOperador,:parOcorrencia,:parCod_Emp,:parId_Aluno) ';
+
+
+
+         lQrySalvaDados.ParamByName('parID_Servico').AsInteger          := proAluno.ID_Servico;
+         lQrySalvaDados.ParamByName('parCPF').AsString                  := proAluno.cpf;
+         lQrySalvaDados.ParamByName('parLiberaMoto').AsBoolean          := True;
+         lQrySalvaDados.ParamByName('parLiberaCarro').AsBoolean         := True;
+         if ( Trim(proAluno.Categoria) = 'B' ) or ( Trim(proAluno.Categoria) = 'AB' ) then
+            lQrySalvaDados.ParamByName('parLiberaCarro').AsBoolean         := False;
+         if ( Trim(proAluno.Categoria) = 'A' ) or ( Trim(proAluno.Categoria) = 'AB' ) then
+            lQrySalvaDados.ParamByName('parLiberaMoto').AsBoolean          := False;
+         lQrySalvaDados.ParamByName('parLiberaFinanceiro').AsBoolean    := False;
+         lQrySalvaDados.ParamByName('parEndereco').AsString             := proAluno.Endereco;
+         lQrySalvaDados.ParamByName('parRG').AsString                   := proAluno.Rg;

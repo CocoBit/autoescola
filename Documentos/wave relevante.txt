@@ -1,0 +1,150 @@
+
+Sobre o mercado se auto-escola
+http://www.sebrae.com.br/setor/servicos/segmentos-apoiados/empreendimentos-educacionais/integra_bia?ident_unico=120000596
+
+Banco de idéias Sebrae
+http://www.sebrae-sc.com.br/ideais/default.asp?vcdtexto=4055&^^ 
+
+---------------------------------------------------------------------------------------
+
+http://sigae.codigolivre.org.br/sigae/
+usuário: demo
+senha: demo
+
+Não cheguei a fuçar muito.
+
+---------------------------------------------------------------------------------------
+
+Pessoal aqui segue cópia do contato que fiz com a act
+
+Cléo, tudo bom?!
+
+Gostaria de saber algumas informações sobre os serviços da ACT. Bem, é o seguinte, eu 
+tenho dois amigos que querem montar uma sociedade comigo para criamos um projeto 
+nos moldes da cloud computer. Tal projeto irá embarcar uma estrutura um pouco
+complexa: precisaremos de um servidor windows dedicado, que possua banco  de
+dados SQL Server (se possível a versão expression). Antes de entrar de cabeça nesse projeto, estamos analisando os custos desse projeto. Gostaríamos de saber se ACT presta esse tipo de serviço. Qual o seu custo. Se existe algum tipo de incentivo para projetos que divulgam a ACT como base host da aplicação. Desde já agradeço pela atenção e pelas informações que serão enviadas.
+
+Grato,
+Yan Justino
+
+Resposta
+
+Caro Yan, 
+Não está claro o que desejas, mas estamos preparados para atendê-lo. Favor  agendar com a Cléo uma visita às nossas instalações para esclarecermos o negócio e seus requisitos.
+
+Cordialmente,
+
+Vicente Limeira
+ACT Soluções em Tecnologia
+MACH4 Telecomunicações
+ 
+DIRETORIA DE NEGÓCIOS
++55 84 4006-4600 | 8883-0037 
+
+www.act.psi.br 
+
+---------------------------------------------------------------------------------------
+Análise: Bruno fez a demonstração do sistema que já está desenvolvido e implantado em 2 clientes. 
+Nota 1: Sentimos falta do agendamento dos veículos.
+Nota 2: Custos do veículo (gasolina, borracharia, etc.)
+Nota 3: Melhor controle do financeiro (contas receber, contas a pagar e caixa) 
+
+Módulos: Alunos, professores, veículos, produtos/serviços, ocorrências, pagamentos, caixa, matrículas, agendamento*, ofícios, conta corrente funcionários, senha, contas a pagar*, contas a receber*, estoque* e fornecedores*;
+* Esses módulos não serão desenvolvidos com prioridade. 
+---------------------------------------------------------------------------------------
+Olha que proposta del layoute legal desta aplicação web.
+http://blog.dclick.com.br/wp-content/uploads/screen1.png 
+---------------------------------------------------------------------------------------
+
+
+Padrões 
+de Projeto – Nomenclatura
+ 
+Igor Quirino     
+ASP.NET, C#, VB.NET      
+Design 
+Patterns, Naming Guidelines, Padrão, Padrões de Nomenclatura
+
+Um importante tópico a ser debatido neste post.
+Vou apresentar neste 
+artigo algumas boas maneiras e metodologias que ao meu ponto de vista são ótimas 
+não só quando em equipe, mas a facilidade de manutenção e qualidade do 
+código.
+
+Primeiro, vou falar sobre o padrão de nomenclatura que são os seguintes:
+
+Pascal case
+A primeira letra de cada palavra é maiuscula e as 
+restantes minusculas: BackColor
+
+Camel case
+Primeira palavra minuscula e as próximas são em Pascal 
+case: backColor
+
+Uppercase
+Maiuscula são as letras de palavras que foram abrevidas: 
+System.IO, System.Web.UI, IDisposable
+
+Lembrando que o .Net é Case Sensitivity, ou seja, sabe diferenciar maiúsculo 
+de menusculo: calcula(); Calcula();
+
+Naming Guidelines
+
+Abreviações
+Não utilizer abreviações como: OpenWin() ao invés de 
+usar OpenWindow(), são apenas poucas letras e isso faz muita diferença quando 
+outro desenvolvedor ou até você mesmo for ler o código para alterações ou 
+correção de bugs.
+
+Namespace
+Deve ser sempre em Pascal case, pois também dará final a 
+uma DLL 
+(DiarioFonte.Blog.Core.dll).
+NomeEmpresa.NomeTecnologia[.Feature][.Design]
+DiarioFonte.Blog.Core
+DiarioFonte.Blog.Core.Posts
+DiarioFonte.Blog.Data
+Mar 4, 2010
+
+Vitório:
+http://www.gamersapiens.com.br/index.php?option=com_content&view=article&id=49:convencao-de-codificacao-c&catid=46:linguagens-de-programacao (São 7 páginas, mas não são grandes)
+
+--------------------------------------------------------------------------------------
+
+Assunto : 1) Avaliação da estrutura de banco de dados desenvolvida por ramon
+               2) avaliação dos proximos passos
+               3) Fixar datas para o proximo encontro sempre no encontro corrente.
+
+Pontos discutidos.
+
+O codigo da empresa foiretirado das tabelas ficando apenas o codigo do estabelecimento
+Os campos Motivomoto Motivocarro liberamotos liberacarro operadormoto operadorcarro liberafinaceiro esses campos foram retirado da tabela de alunos e o controle vai ser feito traves de identificação de um historico padrão dentro das ocorrencia
+vai ser desenvolvida as clases de percistencia no modelo tradicinal junto com os objetos (Tudo manual )
+Foi verificada a possibilidade da criação das view para simplificar as pesquisas.
+Ramon vai priorizar os cadastros para comerçamrmos a construção das classes dos objetos
+Ramon vai preparar o team fundation server para o prejeto oficial o nome do projeto 3DevCFC.
+
+-------------------------------------------------------------------------------------
+
+Proximo Encontro - Na Casa de Ramon - 19:00 
+
+Definir partner de nomeclatura para oprojeto.
+Dividir a criação das classes 
+ Fixar datas para o proximo encontro sempre no encontro corrente.
+
+-------------------------------------------------------------------------------------
+Assuntos tratados
+
+Definir Partner de Desenvolvimento de Projeto 
+     - Foi definido sistema de 3 Camadas com - Interface Cliente - Regra de Negocio - Persistência - Por enquanto não temos um documento formal para orientar a o desenvolvimento.
+Definir partner de nomeclatura para oprojeto.
+Dividir a criação das classes 
+Fixar datas para o proximo encontro sempre no encontro corrente.
+
+Os itens em amarelo foram realmente discutidos neste encontro.
+
+Decidimos adotar os padrões de nomenclatura PascalCase e CamelCase. Usaremos os documentos propostos por Bruno e aqui já postados. Estes documentos serão colocados no repositório do Team Foudation Server para futuras consultas.
+
+Ficou decidido que para dar início ao desenvolvimento da aplicação, dividiremos as o projeto em partes. Inicialmente desenvolveremos as classes de objeto e de persistência deste objeto. Yan criará as classes Pessoa, Fisica e juridica; Bruno as classes de Aluno e Funcionario; e Ramon Empresa, Estabelecimento, Endereço. 
+--------------------------------------------------------------------------------------
