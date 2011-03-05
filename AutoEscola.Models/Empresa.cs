@@ -21,13 +21,7 @@ namespace AutoEscola.Models
         [Display(Name = "Nome Fantasia")]
         public string NomeFantasia { get; set; }
 
-        public string Telefone { get; set; }
-
-        [Required(ErrorMessage = "O Email é obrigatório")]
-        public string Email { get; set; }
-
-        public string Site { get; set; }
-
+        public virtual Endereco EnderecoEmpresa { get; set; }
         public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }
