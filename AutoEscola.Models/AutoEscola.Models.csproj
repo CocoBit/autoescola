@@ -45,8 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bairro.cs" />
     <Compile Include="Contexts\AutoEscolaContext.cs" />
     <Compile Include="Empresa.cs" />
+    <Compile Include="Endereco.cs" />
     <Compile Include="Interfaces\IModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
