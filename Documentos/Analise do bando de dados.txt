@@ -18,24 +18,25 @@ Data: 11/03/2010 12:48hs
  ID_UsuarioAlteracao
  ID_Empresa
  ID_UnidadeNegocio
+ <CamposPadroes>
  
-- Pessoas
-  ID_Pessoa
-  Nome
+- Contato
+  Telefone
   EMail
-  <CamposPadroes>
+  Twitter
   
-- Fisicas
-  CPF
-  RG
-
 - Juridicas  
   CNPJ
   InscricaoEstadual
 
 - Alunos 
-  ID_Aluno
-  Foto
+  ID
+  Nome
+  CaminhoFoto
+  CPF
+  RegistroGeral
+ 
+  
   ID_Matricula
   DataFimTeorico D
   DataFimPratico D
