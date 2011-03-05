@@ -12,11 +12,15 @@ namespace AutoEscola.Contexts.Models
     {
         public DbSet<Empresa> Empresas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Bairro> Bairros { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Empresa>().ToTable("empresa");
-            modelBuilder.Entity<Usuario>().ToTable("usuario");
+            modelBuilder.Entity<Empresa>().ToTable("empresas");
+            modelBuilder.Entity<Usuario>().ToTable("usuarios");
+            modelBuilder.Entity<Endereco>().ToTable("enderecos");
+            modelBuilder.Entity<Bairro>().ToTable("bairros");
         }
     }
 }
