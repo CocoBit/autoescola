@@ -1,0 +1,252 @@
+3o. Encontro (Detalhamento das entidades)
+Local: Midway
+Data: 04/03/2010 12:45hs.
+
+4o. Encontro (continuação...)
+Local: UFRN
+Data: 10/03/2010 12:50hs
+
+5o. Encontro (continuação...)
+Local: UNP
+Data: 11/03/2010 12:48hs
+
+<CamposPadroes>
+ DataCadastro
+ DataAlteracao 
+ DataMovimento D
+ ID_UsuarioCadastro
+ ID_UsuarioAlteracao
+ ID_Empresa
+ ID_UnidadeNegocio
+ 
+- Pessoas
+  ID_Pessoa
+  Nome
+  EMail
+  <CamposPadroes>
+  
+- Fisicas
+  CPF
+  RG
+
+- Juridicas  
+  CNPJ
+  InscricaoEstadual
+
+- Alunos 
+  ID_Aluno
+  Foto
+  ID_Matricula
+  DataFimTeorico D
+  DataFimPratico D
+  LiberaMoto*
+  LiberaCarro*
+  MotivoMoto*
+  MotivoCarro*
+  OperadorMoto*
+  OperadorCarro*
+  LiberaFinanceiro*
+  
+- Faltas
+  ID_Aluno
+  DataFalta
+  Vlr_Falta
+  Carro ou Moto?
+  Pago?
+  <CP>  
+
+- Telefones
+  ID_Pessoa
+  Tipo_Telefone
+  Telefone
+  <CP>
+  
+- Marcacoes
+  ID_Aluno
+  DataProvao
+  DataLADV
+  DataTestePratico
+ 
+- Matriculas
+  ID_Matricula
+  Data_Matricula
+  Vlr_Matricula  
+  DataAceite - D
+  
+- ContaCorrente
+  ID_Pessoa
+  Historico
+  D_C
+  Valor
+  Documento
+  <CP>
+  
+- LancamentosCaixa
+  ID_Lancamento
+  ID_Caixa
+  <CP>
+  Valor
+  ID_PlanoContas
+  Historico
+  ID_FormaPagamento  
+  Estonado
+
+- FormasPagamento
+  ID_FormaPagamento
+  <CP>
+  Nome
+
+- Funcionarios
+  ID_Funcionario
+  ID_Cargo
+  ID_Comissao
+  <CP>
+
+- Comissoes
+  ID_Comissao
+  Nome
+  Vlr_ComissaoMatricula
+  Vlr_ComissaoAulaPratica
+  <CP>
+  
+- Cargos
+  ID_Cargo
+  Nome
+  Tipo_Cargo (Instrutores/Outros)
+  <CP>
+  
+- Instrutores
+  ID_Instrutor
+  ID_Funcionario
+  Data_CredeciamentoTeorico
+  Data_CredeciamentoPratico
+  Data_ValidadeCNH
+  CNH
+  
+- Enderecos
+  ID_Endereco
+  ID_Cidade
+  ID_Bairro
+  Endereco
+  Numero
+  Complemento
+  CEP
+  UF (Colocar rule no SQL)
+ 
+- Produtos/Serviços
+  ID_Produto
+  Nome
+  <CP>
+  Vlr_MinimoProduto
+  Tipo (Serviço/Produto)
+     (S) CategoriaHabilitacao (A, B, AB, C, D, ?)
+     (P) Estoque (Alterar apenas para mais? Módulo de entrada mesmo que simples?)
+	     Se existir módulo de compra guardar preco de compra.
+     (P) ID_Unidade	 
+
+- Unidades
+  ID_Unidade
+  Nome
+	 
+- Empresas
+  ID_Empresa
+  
+- Estabelecimentos
+  ID_Empresas
+  ID_Estabelecimento
+  ID_Juridica
+  Diretor
+  TituloDiretor
+  
+- Detran
+  ID_Detran
+  UF
+  Diretor  
+  
+- Veículos
+  ID_Veiculo
+  <CP>
+  ID_VeiculoModelo
+  ID_VeiculoCor
+  ID_VeiculoAno
+  Placa
+  Renavam
+  Tipo_Veiculo (Moto/Carro/Ônibus, etc.)
+  
+- VeiculosAnos
+  ID_VeiculoAno
+  Ano
+	
+- VeiculosCores
+  ID_VeiculoCor
+  Nome
+  <CP>
+	
+- VeiculosModelos
+  ID_ModeloVeiculo
+  Nome
+  <CP>
+
+- Ocorrencias
+  ID_Ocorrencia
+  ID_Veiculo
+  ID_Funcionario
+  ID_Aluno
+  <CP>
+  Historico
+  DataVencimento
+
+- Vendas
+  ID_Venda
+  <CP>
+  ID_Produto
+  ID_Aluno
+  Qtde
+  Pco_Compra
+  Pco_Venda
+  Perc_Desconto
+  Pco_Liquido
+  Vlr_Total
+  
+- Ofícios
+  ID_Oficio
+  <CP>
+  NumeroOficio (não é identity)
+  TipoOficio char (2)
+
+- OficiosItens
+  ID_Oficio
+  ID_Aluno
+
+- Acessos
+  ID_Funcionario
+  Senha 
+  <CP>
+  DataValidade
+  ID_Perfil
+  NomeLogin  
+  
+- Perfis
+  ID_Perfil
+  <CP>
+  Nome
+ 
+- PerfisItens
+  ID_Perfil
+  Categoria
+  Menu
+  Item
+  
+- Sequencias
+  ID_Sequencia
+  TipoSequencia
+  Sequencia
+  <CP>
+  
+- Agendamento* 
+- Estoque* 
+- Fornecedores*
+- Contas a pagar*
+- Contas a receber* 
+* Esses módulos não serão desenvolvidos com prioridade.  
+
