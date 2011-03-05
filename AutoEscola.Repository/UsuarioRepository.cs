@@ -10,7 +10,6 @@ namespace AutoEscola.Repository
 {
     public class UsuarioRepository: IUsuarioRepository
     {
-
         private AutoEscolaContext _context;
 
         public UsuarioRepository(AutoEscolaContext context)
@@ -46,7 +45,7 @@ namespace AutoEscola.Repository
 
         public List<Usuario> FindByEmpresa(Empresa empresa)
         {
-            var usuarios = _context.Usuarios.Where(u => u.EmpresaUsuario.Id == empresa.Id);
+            var usuarios = _context.Usuarios.Where(u => u.Empresa.Id == empresa.Id);
             return usuarios.ToList();
         }
     }

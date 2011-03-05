@@ -15,3 +15,17 @@ CREATE TABLE `empresa` (
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1$$
 
+
+
+CREATE  TABLE `autoescoladb`.`usuario` (
+  `Id` INT NOT NULL AUTO_INCREMENT ,
+  `EmpresaId` INT NOT NULL ,
+  `Login` VARCHAR(45) NOT NULL ,
+  `Senha` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`Id`) ,
+  INDEX `Empresa_Usuario` (`EmpresaId` ASC) ,
+  CONSTRAINT `Empresa_Usuario`
+    FOREIGN KEY (`EmpresaId` )
+    REFERENCES `autoescoladb`.`empresa` (`Id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);

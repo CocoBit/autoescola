@@ -10,7 +10,6 @@ namespace AutoEscola.Contexts.Models
 {
     public class AutoEscolaContext : DbContext
     {
-        public AutoEscolaContext() : base("MySqlConnection") { }
         public DbSet<Empresa> Empresas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
 

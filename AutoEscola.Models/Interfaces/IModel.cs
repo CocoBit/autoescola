@@ -7,6 +7,6 @@ namespace AutoEscola.Interfaces.Models
 {
     public interface IModel
     {
-        int Id { get; set; }
+        
     }
 }

@@ -9,10 +9,9 @@ using AutoEscola.Contexts.Models;
 
 namespace AutoEscola.Repository
 {
-    class EmpresaRepository: IEmpresaRepository
+    class EmpresaRepository: IRepository<Empresa>
     {
         private AutoEscolaContext _context;
-
         public EmpresaRepository(AutoEscolaContext context)
         {
             _context = context;

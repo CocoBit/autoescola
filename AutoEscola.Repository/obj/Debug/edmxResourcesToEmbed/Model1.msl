@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="autoescoladbModelStoreContainer" CdmEntityContainer="autoescoladbEntities">
+    <EntitySetMapping Name="empresa">
+      <EntityTypeMapping TypeName="autoescoladbModel.empresa">
+        <MappingFragment StoreEntitySet="empresa">
+          <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NomeFantasia" ColumnName="NomeFantasia" />
+          <ScalarProperty Name="RazaoSocial" ColumnName="RazaoSocial" />
+          <ScalarProperty Name="Site" ColumnName="Site" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="autoescoladbModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -19,6 +19,6 @@ namespace AutoEscola.Models
         [DataType(DataType.Password)]
         public string Senha { get; set; }
 
-        public virtual Empresa EmpresaUsuario { get; set; }
+        public virtual Empresa Empresa { get; set; }
     }
 }

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="autoescoladbModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="autoescoladbModelStoreContainer">
+    <EntitySet Name="empresa" EntityType="autoescoladbModel.Store.empresa" store:Type="Tables" Schema="autoescoladb" />
+    <EntitySet Name="usuario" EntityType="autoescoladbModel.Store.usuario" store:Type="Tables" Schema="autoescoladb" />
+    <AssociationSet Name="Empresa_Usuario" Association="autoescoladbModel.Store.Empresa_Usuario">
+      <End Role="empresa" EntitySet="empresa" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="empresa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="CNPJ" Type="varchar" Nullable="false" MaxLength="14" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NomeFantasia" Type="varchar" MaxLength="50" />
+    <Property Name="RazaoSocial" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Site" Type="varchar" MaxLength="80" />
+    <Property Name="Telefone" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="EmpresaId" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="Senha" Type="varchar" Nullable="false" MaxLength="45" />
+  </EntityType>
+  <Association Name="Empresa_Usuario">
+    <End Role="empresa" Type="autoescoladbModel.Store.empresa" Multiplicity="1" />
+    <End Role="usuario" Type="autoescoladbModel.Store.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -7,22 +7,24 @@ using AutoEscola.Models;
 using AutoEscola.Repository;
 using AutoEscola.Repository.Interfaces;
 using AutoEscola.Repository.Factory;
+using AutoEscola.Contexts.Models;
 
 namespace AutoEscola.Controllers
 {
     public class EmpresaController : Controller
     {
-        //
-        // GET: /Empresa/
+        IRepository<Empresa> repository;
 
-        IEmpresaRepository repository;
+        public EmpresaController()
+        {
+            repository = RepositoryFactory.CreateEmpresaRepository();
+        }
 
         public ActionResult Index()
         {
-            repository = RepositoryFactory.CreateEmpresaRepository();
             return View(repository.All());
         }
-
+        
         public ActionResult Create()
         {
             var empresa = new Empresa();
@@ -32,10 +34,14 @@ namespace AutoEscola.Controllers
         [HttpPost]
         public ActionResult Create(Empresa model)
         {
-            repository = RepositoryFactory.CreateEmpresaRepository();
             repository.Create(model);
-
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(int id)
+        {
+            var empresa = repository.Find(id);
+            return View(empresa);
         }
     
     }

@@ -10,10 +10,16 @@ namespace AutoEscola.Repository.Factory
 {
     public static class RepositoryFactory
     {
-        public static IEmpresaRepository CreateEmpresaRepository()
+        private static AutoEscolaContext context = new AutoEscolaContext(); 
+
+        public static IRepository<Empresa> CreateEmpresaRepository()
         {
-            var context = new AutoEscolaContext();
             return new EmpresaRepository(context);
+        }
+
+        public static IUsuarioRepository CreateUsuarioRepository()
+        {
+            return new UsuarioRepository(context);
         }
     }
 }
