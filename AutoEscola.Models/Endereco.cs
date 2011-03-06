@@ -11,11 +11,10 @@ namespace AutoEscola.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "O CNPJ é obrigatório")]
+        [Required(ErrorMessage = "A cidade é obrigatória")]
         public string Cidade { get; set; }
 
         [Required(ErrorMessage = "O UF é obrigatório")]
-        [MaxLength(2)]
         public string UF { get; set; }
 
         [Required(ErrorMessage = "O Logradouro é obrigatório")]
