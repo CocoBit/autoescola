@@ -1,0 +1,10 @@
+para criar um novo modelo;
+
+criar o modelo
+declaro o modelo no context do projeto
+crear o repositorio
+declarar o contructor no repositorio factory 
+criar o controle
+
+
+depois emplementar 
