@@ -3,4 +3,5 @@
 AutoEscola/obj/
 AutoEscola/bin/AutoEscola.dll
 AutoEscola/bin/AutoEscola.pdb
-
+AutoEscola.Models/obj/
+AutoEscola.Repository/obj/
