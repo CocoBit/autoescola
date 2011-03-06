@@ -28,6 +28,12 @@ namespace AutoEscola.Controllers
         {
             return View();
         }
+
+        public ActionResult Login()
+        {
+            var usuario = new Usuario();
+            return View(usuario);
+        }
         
         public ActionResult Create(int id)
         {

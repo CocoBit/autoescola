@@ -17,12 +17,10 @@ namespace AutoEscola.Controllers
             return View();
         }
 
-        [ChildActionOnly]
-        [OutputCache(Duration=3600, VaryByParam="empresa")]
-        public ActionResult Create(int empresa)
+        public ActionResult Create()
         {
             var endereco = new Endereco();
-            return PartialView(endereco);
+            return View(endereco);
         }      
     }
 }
