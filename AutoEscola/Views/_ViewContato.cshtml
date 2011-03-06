@@ -1,0 +1,25 @@
+﻿@model AutoEscola.Models.Contato
+<h1>Contato</h1>           
+<div id="Contato">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Email)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Twitter)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Twitter)
+        @Html.ValidationMessageFor(model => model.Twitter)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Fax)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Fax)
+        @Html.ValidationMessageFor(model => model.Fax)
+    </div>
+</div>

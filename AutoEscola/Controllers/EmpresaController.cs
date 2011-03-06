@@ -30,19 +30,19 @@ namespace AutoEscola.Controllers
         public ActionResult Create()
         {
             var empresa = new Empresa();
-            empresa.EnderecoEmpresa = new Endereco();
-            empresa.EnderecoEmpresa.BairroEndereco = new Bairro();
             return View(empresa);
         }
 
         [HttpPost]
-        public ActionResult Create(Empresa model)
+        public ActionResult Create(Empresa model, Endereco endereco, Contato contato)
         {
+            model.EnderecoEmpresa = endereco;
+            model.ContatoEmpresa = contato;
             repository.Create(model);
 
             var usuario = new Usuario();
             usuario.Empresa = model;
-            usuario.Login = "Admin";
+            usuario.Login = model.ContatoEmpresa.Email;
             usuario.Senha = "Admin";
             usuarioRepository.Create(usuario);
 

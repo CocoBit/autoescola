@@ -162,6 +162,18 @@
   <ItemGroup>
     <Content Include="Views\Usuario\Login.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewEndereco.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_HomeLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewContato.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Empresa\_ViewEmpresa.cshtml" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
