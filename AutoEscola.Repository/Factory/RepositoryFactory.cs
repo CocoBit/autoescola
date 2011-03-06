@@ -17,6 +17,12 @@ namespace AutoEscola.Repository.Factory
             return new EmpresaRepository(context);
         }
 
+        public static IRepository<Aluno> CreateAlunoRepository()
+        {
+            return new AlunoRepository(context);
+        }
+
+
         public static IUsuarioRepository CreateUsuarioRepository()
         {
             return new UsuarioRepository(context);
