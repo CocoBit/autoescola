@@ -1,15 +1,16 @@
-﻿@model AutoEscola.Models.Empresa
-@{
+﻿@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
     ViewBag.Title = "Create";
 }
-<h2>
-    Create</h2>
+
+@model AutoEscola.Models.Empresa
+
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>Empresa</legend>
-        <div id="empresa">
+@*        <div id="empresa">
             <div class="editor-label">
                 @Html.LabelFor(model => model.CNPJ)
             </div>
@@ -32,45 +33,10 @@
                 @Html.ValidationMessageFor(model => model.NomeFantasia)
             </div>
         </div>
-        <div id="endereco">
-            <div class="editor-label">
-                @Html.LabelFor(model => model.EnderecoEmpresa.Logradouro)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.EnderecoEmpresa.Logradouro)
-                @Html.ValidationMessageFor(model => model.EnderecoEmpresa.Logradouro)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.EnderecoEmpresa.BairroEndereco.Nome)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.EnderecoEmpresa.BairroEndereco.Nome)
-                @Html.ValidationMessageFor(model => model.EnderecoEmpresa.BairroEndereco.Nome)
-            </div>
-            
-            <div class="editor-label">
-                @Html.LabelFor(model => model.EnderecoEmpresa.Cidade)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.EnderecoEmpresa.Cidade)
-                @Html.ValidationMessageFor(model => model.EnderecoEmpresa.Cidade)
-            </div>
-            <div class="editor-label">
-                @Html.LabelFor(model => model.EnderecoEmpresa.UF)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.EnderecoEmpresa.UF)
-                @Html.ValidationMessageFor(model => model.EnderecoEmpresa.UF)
-            </div>
-            <div class="editor-label">
-                @Html.LabelFor(model => model.EnderecoEmpresa.Cep)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.EnderecoEmpresa.Cep)
-                @Html.ValidationMessageFor(model => model.EnderecoEmpresa.Cep)
-            </div>
-        </div>
+*@        
+        @Html.Partial("~/Views/Empresa/_ViewEmpresa.cshtml", Model)
+        @Html.Partial("~/Views/_ViewEndereco.cshtml", Model.EnderecoEmpresa)
+        @Html.Partial("~/Views/_ViewContato.cshtml", Model.ContatoEmpresa)
         <p>
             <input type="submit" value="Create" />
         </p>

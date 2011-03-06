@@ -9,6 +9,11 @@ namespace AutoEscola.Models
 {
     public class Endereco: IModel
     {
+        public Endereco()
+        {
+            this.BairroEndereco = new Bairro();
+        }
+
         public int Id { get; set; }
 
         [Required(ErrorMessage = "A cidade é obrigatória")]

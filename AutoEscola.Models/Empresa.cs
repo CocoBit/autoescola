@@ -22,8 +22,15 @@ namespace AutoEscola.Models
         public string NomeFantasia { get; set; }
 
         public virtual Endereco EnderecoEmpresa { get; set; }
+        public virtual Contato ContatoEmpresa { get; set; }
         public virtual ICollection<Usuario> Usuarios { get; set; }
         public virtual ICollection<Aluno> Alunos { get; set; }
+
+        public Empresa()
+        {
+            EnderecoEmpresa = new Endereco();
+            ContatoEmpresa = new Contato();
+        }
 
     }
 }

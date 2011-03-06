@@ -10,5 +10,6 @@ namespace AutoEscola.Repository.Interfaces
     {
         //Todo
         List<Usuario> FindByEmpresa(Empresa empresa);
+        Usuario FindByLoginAndPassWord(string senha, string password);
     }
 }
