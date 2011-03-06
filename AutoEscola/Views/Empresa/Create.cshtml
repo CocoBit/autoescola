@@ -32,12 +32,48 @@
                 @Html.ValidationMessageFor(model => model.NomeFantasia)
             </div>
         </div>
-            <p>
-                <input type="submit" value="Create" />
-            </p>
         <div id="endereco">
-        @Html.Partial("~/Views/Endereco/Create.cshtml", new AutoEscola.Models.Endereco())
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EnderecoEmpresa.Logradouro)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EnderecoEmpresa.Logradouro)
+                @Html.ValidationMessageFor(model => model.EnderecoEmpresa.Logradouro)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EnderecoEmpresa.BairroEndereco.Nome)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EnderecoEmpresa.BairroEndereco.Nome)
+                @Html.ValidationMessageFor(model => model.EnderecoEmpresa.BairroEndereco.Nome)
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EnderecoEmpresa.Cidade)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EnderecoEmpresa.Cidade)
+                @Html.ValidationMessageFor(model => model.EnderecoEmpresa.Cidade)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EnderecoEmpresa.UF)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EnderecoEmpresa.UF)
+                @Html.ValidationMessageFor(model => model.EnderecoEmpresa.UF)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EnderecoEmpresa.Cep)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EnderecoEmpresa.Cep)
+                @Html.ValidationMessageFor(model => model.EnderecoEmpresa.Cep)
+            </div>
         </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
     </fieldset>
 }
 <div>

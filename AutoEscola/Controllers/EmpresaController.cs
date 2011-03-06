@@ -28,6 +28,8 @@ namespace AutoEscola.Controllers
         public ActionResult Create()
         {
             var empresa = new Empresa();
+            empresa.EnderecoEmpresa = new Endereco();
+            empresa.EnderecoEmpresa.BairroEndereco = new Bairro();
             return View(empresa);
         }
 
