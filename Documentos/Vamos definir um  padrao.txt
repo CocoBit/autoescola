@@ -1,0 +1,7 @@
+nome de metodos e nome de classes camel Case
+
+Exemplo	-->BuscarClientes
+
+Nome de Variaveis e sempre tudo minusculo
+
+Exemplo	--> repository

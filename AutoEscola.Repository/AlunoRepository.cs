@@ -9,40 +9,42 @@ using AutoEscola.Contexts.Models;
 
 namespace AutoEscola.Repository
 {
-    class EmpresaRepository: IRepository<Empresa>
+    public class AlunoRepository: IRepository<Aluno>
     {
         private AutoEscolaContext _context;
 
-        public EmpresaRepository(AutoEscolaContext context)
+        public AlunoRepository(AutoEscolaContext context)
         {
             _context = context;
         }
 
-        public void Create(Empresa model)
+        public void Create(Aluno model)
         {
-            _context.Empresas.Add(model);
+            _context.Alunos.Add(model);
             _context.SaveChanges();
         }
 
-        public void Delete(Empresa model)
+        public void Delete(Aluno model)
         {
-            _context.Empresas.Remove(model);
+            _context.Alunos.Remove(model);
         }
 
-        public void Update(Empresa model)
+        public void Update(Aluno model)
         {
             throw new NotImplementedException();
         }
 
-        public Empresa Find(int id)
+        public Aluno Find(int id)
         {
-            var empresa = _context.Empresas.Where(e => e.Id == id).Single();
-            return empresa;
+            var Aluno = _context.Alunos.Where(e => e.Id == id).Single();
+            return Aluno;
         }
 
-        public List<Empresa> All()
+        public List<Aluno> All()
         {
-            return _context.Empresas.ToList();
+            return _context.Alunos.ToList();
         }
+
+
     }
 }

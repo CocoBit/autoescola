@@ -11,6 +11,7 @@ namespace AutoEscola.Contexts.Models
     public class AutoEscolaContext : DbContext
     {
         public DbSet<Empresa> Empresas { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Bairro> Bairros { get; set; }
@@ -18,6 +19,7 @@ namespace AutoEscola.Contexts.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Empresa>().ToTable("empresas");
+            modelBuilder.Entity<Aluno>().ToTable("alunos");
             modelBuilder.Entity<Usuario>().ToTable("usuarios");
             modelBuilder.Entity<Endereco>().ToTable("enderecos");
             modelBuilder.Entity<Bairro>().ToTable("bairros");

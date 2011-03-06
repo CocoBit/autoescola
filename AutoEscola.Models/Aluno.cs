@@ -10,7 +10,7 @@ namespace AutoEscola.Models
 {
     public class Aluno : IModel
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public int EnderecoId { get; set; }
         public int EmpresaId { get; set; }
         public int ContatosId { get; set; }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlunoRepository.cs" />
     <Compile Include="EmpresaRepository.cs" />
     <Compile Include="Factory\RepositoryFactory.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
