@@ -32,11 +32,11 @@
                 @Html.ValidationMessageFor(model => model.NomeFantasia)
             </div>
         </div>
-        <div id="endereco">
-            @{Html.RenderAction("Create", "Endereco", new { empresa = Model.Id });}
             <p>
                 <input type="submit" value="Create" />
             </p>
+        <div id="endereco">
+        @Html.Partial("~/Views/Endereco/Create.cshtml", new AutoEscola.Models.Endereco())
         </div>
     </fieldset>
 }
