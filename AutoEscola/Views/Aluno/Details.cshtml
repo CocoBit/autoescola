@@ -1,0 +1,37 @@
+﻿@model AutoEscola.Models.Aluno
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Aluno</legend>
+
+    <div class="display-label">EnderecoId</div>
+    <div class="display-field">@Model.EnderecoId</div>
+
+    <div class="display-label">EmpresaId</div>
+    <div class="display-field">@Model.EmpresaId</div>
+
+    <div class="display-label">ContatosId</div>
+    <div class="display-field">@Model.ContatosId</div>
+
+    <div class="display-label">Nome</div>
+    <div class="display-field">@Model.Nome</div>
+
+    <div class="display-label">RegistroGeral</div>
+    <div class="display-field">@Model.RegistroGeral</div>
+
+    <div class="display-label">CPF</div>
+    <div class="display-field">@Model.CPF</div>
+
+    <div class="display-label">CaminhoDaFoto</div>
+    <div class="display-field">@Model.CaminhoDaFoto</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

@@ -36,7 +36,7 @@ namespace AutoEscola.Controllers
         public ActionResult Create()
         {
             var aluno = new Aluno();
-            return RedirectToAction("Index");
+            return View(aluno);
         }
 
 

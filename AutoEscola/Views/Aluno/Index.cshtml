@@ -1,0 +1,70 @@
+﻿@model IEnumerable<AutoEscola.Models.Aluno>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            EnderecoId
+        </th>
+        <th>
+            EmpresaId
+        </th>
+        <th>
+            ContatosId
+        </th>
+        <th>
+            Nome
+        </th>
+        <th>
+            RegistroGeral
+        </th>
+        <th>
+            CPF
+        </th>
+        <th>
+            CaminhoDaFoto
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+        <td>
+            @item.EnderecoId
+        </td>
+        <td>
+            @item.EmpresaId
+        </td>
+        <td>
+            @item.ContatosId
+        </td>
+        <td>
+            @item.Nome
+        </td>
+        <td>
+            @item.RegistroGeral
+        </td>
+        <td>
+            @item.CPF
+        </td>
+        <td>
+            @item.CaminhoDaFoto
+        </td>
+    </tr>
+}
+
+</table>
+

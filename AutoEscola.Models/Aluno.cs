@@ -24,9 +24,17 @@ namespace AutoEscola.Models
         public string CPF { get; set; }
         public string CaminhoDaFoto { get; set; }
 
-        public virtual Endereco EnderecoEmpresa { get; set; }
+        public virtual Endereco EnderecoAluno { get; set; }
+        public virtual Contato ContatoAluno { get; set; }
         public virtual Empresa Empresa { get; set; }
-        public virtual Contato Contato { get; set; }
+        
+        public Aluno()
+        {
+            EnderecoAluno = new Endereco();
+            ContatoAluno = new Contato();
+
+        }
+
 
     }
 }

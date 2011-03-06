@@ -12,30 +12,6 @@
         <legend>Aluno</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.EnderecoId)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EnderecoId)
-            @Html.ValidationMessageFor(model => model.EnderecoId)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmpresaId)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmpresaId)
-            @Html.ValidationMessageFor(model => model.EmpresaId)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ContatosId)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ContatosId)
-            @Html.ValidationMessageFor(model => model.ContatosId)
-        </div>
-
-        <div class="editor-label">
             @Html.LabelFor(model => model.Nome)
         </div>
         <div class="editor-field">
@@ -66,6 +42,10 @@
             @Html.EditorFor(model => model.CaminhoDaFoto)
             @Html.ValidationMessageFor(model => model.CaminhoDaFoto)
         </div>
+
+        @Html.Partial("~/Views/_ViewEndereco.cshtml", Model.EnderecoAluno)
+        @Html.Partial("~/Views/_ViewContato.cshtml", Model.ContatoAluno)
+
 
         <p>
             <input type="submit" value="Create" />
