@@ -68,7 +68,6 @@
   <ItemGroup>
     <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\EmpresaController.cs" />
-    <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -158,13 +157,10 @@
     <Content Include="Views\Shared\DefaultScripts.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Endereco\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Aluno\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-      <Content Include="Views\Usuario\Login.cshtml" />
+    <Content Include="Views\Usuario\Login.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
