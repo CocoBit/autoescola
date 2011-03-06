@@ -14,10 +14,12 @@ namespace AutoEscola.Controllers
     public class EmpresaController : Controller
     {
         IRepository<Empresa> repository;
+        IUsuarioRepository usuarioRepository;
 
         public EmpresaController()
         {
             repository = RepositoryFactory.CreateEmpresaRepository();
+            usuarioRepository = RepositoryFactory.CreateUsuarioRepository();
         }
 
         public ActionResult Index()
@@ -37,7 +39,14 @@ namespace AutoEscola.Controllers
         public ActionResult Create(Empresa model)
         {
             repository.Create(model);
-            return RedirectToAction("Index");
+
+            var usuario = new Usuario();
+            usuario.Empresa = model;
+            usuario.Login = "Admin";
+            usuario.Senha = "Admin";
+            usuarioRepository.Create(usuario);
+
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Details(int id)

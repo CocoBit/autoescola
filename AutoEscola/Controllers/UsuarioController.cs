@@ -29,12 +29,14 @@ namespace AutoEscola.Controllers
             return View();
         }
 
-        public ActionResult Login()
+        public ActionResult Login(string login, string senha)
         {
-            var usuario = new Usuario();
-            return View(usuario);
+            var usuario = usuarioRepository.FindByLoginAndPassWord(login, senha);
+            if (usuario != null)
+                Session["Usuario"] = usuario;
+            return RedirectToAction("Index", "Home");
         }
-        
+
         public ActionResult Create(int id)
         {
             var usuario = new Usuario();
