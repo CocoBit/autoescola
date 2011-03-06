@@ -161,11 +161,10 @@
     <Content Include="Views\Endereco\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Content Include="Views\Aluno\Create.cshtml" />
-=======
-    <Content Include="Views\Usuario\Login.cshtml" />
->>>>>>> cb05bac4b89a631ff59f9501e7adb87839a41669
+  </ItemGroup>
+  <ItemGroup>
+      <Content Include="Views\Usuario\Login.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
