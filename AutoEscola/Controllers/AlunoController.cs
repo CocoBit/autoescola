@@ -16,40 +16,35 @@ namespace AutoEscola.Controllers
         IRepository<Aluno> repository;
 
         public AlunoController()
-        {   
+        {
             repository = RepositoryFactory.CreateAlunoRepository();
         }
 
 
         public ActionResult Index()
         {
-            return View();
+            return View(repository.All());
         }
 
 
         public ActionResult Details(int id)
         {
-            return View();
+            var aluno = repository.Find(id);
+            return View(aluno);
         }
 
         public ActionResult Create()
         {
-            return View();
-        } 
+            var aluno = new Aluno();
+            return RedirectToAction("Index");
+        }
 
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Aluno model)
         {
-            try
-            {
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            repository.Create(model);
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edit(int id)
@@ -58,7 +53,7 @@ namespace AutoEscola.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Aluno model)
         {
             try
             {
@@ -77,7 +72,7 @@ namespace AutoEscola.Controllers
 
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Aluno model)
         {
             try
             {

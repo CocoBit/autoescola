@@ -9,7 +9,11 @@
     <link href="@Url.Content("~/Content/Index.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <header class="big">teste</header>
-    @RenderPage("~/Views/Shared/DefaultScripts.cshtml")
+    <h1>Sistema de Controle de Auto Escola</h1>
+    <div id = "Menu">
+       @Html.ActionLink("Login","Login","Usuario")    
+       @Html.ActionLink("Registre-Se","Create","Empresa")
+       @Html.ActionLink("Entre Em Contato","Contato","FaleConosco")
+    </div>
 </body>
 </html>

@@ -1,0 +1,79 @@
+﻿@model AutoEscola.Models.Aluno
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Aluno</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EnderecoId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EnderecoId)
+            @Html.ValidationMessageFor(model => model.EnderecoId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmpresaId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmpresaId)
+            @Html.ValidationMessageFor(model => model.EmpresaId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContatosId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContatosId)
+            @Html.ValidationMessageFor(model => model.ContatosId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RegistroGeral)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RegistroGeral)
+            @Html.ValidationMessageFor(model => model.RegistroGeral)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CPF)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CPF)
+            @Html.ValidationMessageFor(model => model.CPF)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CaminhoDaFoto)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CaminhoDaFoto)
+            @Html.ValidationMessageFor(model => model.CaminhoDaFoto)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
