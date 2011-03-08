@@ -2,46 +2,19 @@
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
     ViewBag.Title = "Create";
 }
-
 @model AutoEscola.Models.Empresa
-
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>Empresa</legend>
-@*        <div id="empresa">
-            <div class="editor-label">
-                @Html.LabelFor(model => model.CNPJ)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.CNPJ)
-                @Html.ValidationMessageFor(model => model.CNPJ)
-            </div>
-            <div class="editor-label">
-                @Html.LabelFor(model => model.RazaoSocial)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.RazaoSocial)
-                @Html.ValidationMessageFor(model => model.RazaoSocial)
-            </div>
-            <div class="editor-label">
-                @Html.LabelFor(model => model.NomeFantasia)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.NomeFantasia)
-                @Html.ValidationMessageFor(model => model.NomeFantasia)
-            </div>
-        </div>
-*@        
-        @Html.Partial("~/Views/Empresa/_ViewEmpresa.cshtml", Model)
-        @Html.Partial("~/Views/_ViewEndereco.cshtml", Model.EnderecoEmpresa)
-        @Html.Partial("~/Views/_ViewContato.cshtml", Model.ContatoEmpresa)
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+    <div>
+        <fieldset>
+            <legend>Empresa</legend>
+            @Html.Partial("~/Views/Empresa/_ViewEmpresa.cshtml", Model)
+            @Html.Partial("~/Views/_ViewEndereco.cshtml", Model.EnderecoEmpresa)
+            @Html.Partial("~/Views/_ViewContato.cshtml", Model.ContatoEmpresa)
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    </div>
 }
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

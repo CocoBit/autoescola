@@ -1,20 +1,35 @@
 ﻿@{
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Página principal";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>@ViewBag.Title</title>
-    <link href="@Url.Content("~/Content/Home.css")" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    <h1>Sistema de Controle de Auto Escola</h1>
-    <div id = "Menu">
-       @Html.ActionLink("Login","Login","Usuario")    
-       @Html.ActionLink("Registre-Se","Create","Empresa")
-       @Html.ActionLink("Entre Em Contato","Contato","FaleConosco")
-       @Html.ActionLink("Alunos","Create","Aluno")
+<div>
+    <div id="conteudo">
+        <div class="column">
+            <h2>
+                <img src="../../Content/images/onebit_15.png" dir="ltr" />
+                Serviços
+            </h2>
+            <span>Mãos frias e úmidas, coração batendo mais forte, respiração acelerada, sobressalto,
+                angústia... Muitas pessoas tem medos - medo de avião, medo de assaltos, medo de
+                elevador... Um dos tipos mais comuns de medos é o MEDO DE DIRIGIR.</span>
+        </div>
+        <div class="column">
+            <h2>
+                <img src="../../Content/images/onebit_17.png" />
+                Serviços
+            </h2>
+            <span>Mãos frias e úmidas, coração batendo mais forte, respiração acelerada, sobressalto,
+                angústia... Muitas pessoas tem medos - medo de avião, medo de assaltos, medo de
+                elevador... Um dos tipos mais comuns de medos é o MEDO DE DIRIGIR.</span>
+        </div>
+        <div class="column">
+            <h2>
+                <img src="../../Content/images/onebit_21.png" dir="rtl" />
+                Serviços
+            </h2>
+            <span>Mãos frias e úmidas, coração batendo mais forte, respiração acelerada, sobressalto,
+                angústia... Muitas pessoas tem medos - medo de avião, medo de assaltos, medo de
+                elevador... Um dos tipos mais comuns de medos é o MEDO DE DIRIGIR.</span>
+        </div>
     </div>
-</body>
-</html>
+</div>

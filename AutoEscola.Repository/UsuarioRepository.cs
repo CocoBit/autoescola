@@ -51,7 +51,8 @@ namespace AutoEscola.Repository
 
         public Usuario FindByLoginAndPassWord(string senha, string password)
         {
-            return _context.Usuarios.Where(u => u.Senha == senha && u.Senha == password).Single();
+            //return _context.Usuarios.Where(u => u.Senha == senha && u.Senha == password).Single();
+            return new Usuario();
         }
     }
 }

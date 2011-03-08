@@ -80,6 +80,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Home.css" />
+    <Content Include="Content\images\MP910221051[1].JPG" />
+    <Content Include="Content\images\onebit_15.png" />
+    <Content Include="Content\images\onebit_17.png" />
+    <Content Include="Content\images\onebit_21.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\jquery-ui.css" />
@@ -96,6 +100,8 @@
     <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\kwicks-1.5.1.pack.js" />
+    <Content Include="Scripts\MenuPrincipal.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

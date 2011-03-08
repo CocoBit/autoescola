@@ -3,11 +3,67 @@
 <head>
     <title>@ViewBag.Title</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Home.css")" rel="stylesheet" type="text/css" />
     @RenderSection("css", required: false)
 </head>
 <body>
+    <div id="header">
+        <div id="contentHeader">
+            <h1>
+                Auto escola
+            </h1>
+            <h2>
+                Sistema de gestão
+                <br />
+                para centro de formação de condutores
+            </h2>
+            <br />
+            <br />
+            <div class="column">
+                <h3>
+                    Serviços
+                </h3>
+                <span>Mãos frias e úmidas, coração batendo mais forte, respiração acelerada, sobressalto,
+                    angústia... Muitas pessoas tem medos - medo de avião, medo de assaltos, medo de
+                    elevador... Um dos tipos mais comuns de medos é o MEDO DE DIRIGIR.</span>
+            </div>
+            <div class="column">
+                <h3>
+                    Serviços
+                </h3>
+                <span>Mãos frias e úmidas, coração batendo mais forte, respiração acelerada, sobressalto,
+                    angústia... Muitas pessoas tem medos - medo de avião, medo de assaltos, medo de
+                    elevador... Um dos tipos mais comuns de medos é o MEDO DE DIRIGIR.</span>
+            </div>
+        </div>
+        <div id="menu">
+            <ul class="kwicks horizontal">
+                <li id="kwick1">@Html.ActionLink("HOME", "Index", "Home")</li>
+                <li id="kwick2">@Html.ActionLink("SERVIÇOS", "Login", "Usuario")</li>
+                <li id="kwick3">@Html.ActionLink("CADASTRE-SE", "Create", "Empresa")</li>
+                <li id="kwick4">@Html.ActionLink("CONTATO", "Contato", "FaleConosco")</li>
+                <li id="kwick5">@Html.ActionLink("Alunos", "Create", "Aluno")</li>
+            </ul>
+        </div>
+    </div>
+
     @RenderBody()
+
+    <div id="footer">
+    </div>
     @RenderPage("DefaultScripts.cshtml")
     @RenderSection("Scripts", required: false)
-    </body>
+    <script src="../../Scripts/kwicks-1.5.1.pack.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.kwicks').kwicks({
+                max: 346,
+                spacing: 0,
+                sticky: true,
+                defaultKwick: 0,
+                event: 'mouseover'
+            });
+        });
+    </script>
+</body>
 </html>
