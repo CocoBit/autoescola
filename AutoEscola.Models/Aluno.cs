@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 using AutoEscola.Interfaces.Models;
-using System.ComponentModel.DataAnnotations;
 
 
 namespace AutoEscola.Models
@@ -11,12 +7,9 @@ namespace AutoEscola.Models
     public class Aluno : IModel
     {
         public int Id { get; set; }
-        public int EnderecoId { get; set; }
-        public int EmpresaId { get; set; }
-        public int ContatosId { get; set; }
-        
+
         [Required(ErrorMessage = "O Nome é obrigatório")]
-        public string Nome{ get; set; }
+        public string Nome { get; set; }
         public string RegistroGeral { get; set; }
 
         [Required(ErrorMessage = "O CPF é obrigatório")]
@@ -32,7 +25,7 @@ namespace AutoEscola.Models
         {
             EnderecoAluno = new Endereco();
             ContatoAluno = new Contato();
-
+            Empresa = new Empresa();
         }
 
 

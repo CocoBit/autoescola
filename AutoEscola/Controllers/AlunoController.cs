@@ -41,9 +41,15 @@ namespace AutoEscola.Controllers
 
 
         [HttpPost]
-        public ActionResult Create(Aluno model)
+        public ActionResult Create(Aluno model, Endereco endereco, Contato contato)
         {
+            var reporitoryEmpresa = RepositoryFactory.CreateEmpresaRepository();
+            model.Empresa = reporitoryEmpresa.Find(1);
+
+            model.EnderecoAluno = endereco;
+            model.ContatoAluno = contato;
             repository.Create(model);
+
             return RedirectToAction("Index");
         }
 
