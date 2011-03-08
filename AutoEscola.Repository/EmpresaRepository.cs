@@ -37,6 +37,8 @@ namespace AutoEscola.Repository
         public Empresa Find(int id)
         {
             var empresa = _context.Empresas.Where(e => e.Id == id).Single();
+            empresa.EnderecoEmpresa = _context.Enderecos.Where(l => l.Id == 1).Single();
+            empresa.EnderecoEmpresa.BairroEndereco = _context.Bairros.Where(l => l.Id == 1).Single();
             return empresa;
         }
 
