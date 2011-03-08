@@ -11,11 +11,11 @@ body
 
 #header
 {
-    background-position: right center;
+    background-position: right -10px;
     margin: 0;
     padding: 0;
     height: 570px;
-    background-image: url('images/MP910221051[1].JPG');
+    background-image: url('images/00448493.jpg');
     background-repeat: no-repeat;
 }
 
@@ -49,7 +49,7 @@ body
 #menu
 {
     width: 1024px;
-    margin: 200px auto;
+    margin: 170px auto;
     height: 156px;
 }
 
@@ -95,29 +95,34 @@ body
     text-decoration: none;
 }
 
-.kwicks #kwick1
+.kwicks #linkHome
 {
     background-color: #f2b705;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
 }
 
-.kwicks #kwick2
+.kwicks #linkServicos
 {
     background-color: #f29f05;
 }
 
-.kwicks #kwick3
+.kwicks #linkCadatro
 {
     background-color: #d34e00;
 }
 
-.kwicks #kwick4
+.kwicks #linkContato
 {
     background-color: #bf0d0d;
 }
 
-.kwicks #kwick5
+.kwicks #linkLogin
 {
     background-color: #980421;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    
 }
 
 
@@ -125,15 +130,15 @@ body
 
 #conteudo
 {
-    display:block;
     width: 1024px;
-    margin: 50px auto;
+    margin: 70px auto;
+    display: block;
 }
 
 .column
 {
     float: left;
-    width: 300px;
+    width: 270px;
     margin-right: 20px;
     padding-left: 10px;
     border-left-style: dotted;
@@ -148,9 +153,9 @@ body
     color: #FF9900;
 }
 
-/* footer */
-
 #footer
 {
-    height: 200px;
+    height: 100px;
+    width: 1024px;
+    margin: 0 auto;
 }

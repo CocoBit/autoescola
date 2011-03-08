@@ -15,7 +15,11 @@
             <h2>
                 Sistema de gestão
                 <br />
-                para centro de formação de condutores
+                para centro de 
+                <br />
+                formação de 
+                <br />
+                condutores
             </h2>
             <br />
             <br />
@@ -38,18 +42,19 @@
         </div>
         <div id="menu">
             <ul class="kwicks horizontal">
-                <li id="kwick1">@Html.ActionLink("HOME", "Index", "Home")</li>
-                <li id="kwick2">@Html.ActionLink("SERVIÇOS", "Login", "Usuario")</li>
-                <li id="kwick3">@Html.ActionLink("CADASTRE-SE", "Create", "Empresa")</li>
-                <li id="kwick4">@Html.ActionLink("CONTATO", "Contato", "FaleConosco")</li>
-                <li id="kwick5">@Html.ActionLink("Alunos", "Create", "Aluno")</li>
+                <li id="linkHome">@Html.ActionLink("HOME", "Index", "Home")</li>
+                <li id="linkServicos">@Html.ActionLink("SERVIÇOS", "Login", "Usuario")</li>
+                <li id="linkCadatro">@Html.ActionLink("CADASTRE-SE", "Create", "Empresa")</li>
+                <li id="linkContato">@Html.ActionLink("CONTATO", "Contato", "FaleConosco")</li>
+                <li id="linkLogin">@Html.ActionLink("LOGIN", "Create", "Aluno")</li>
             </ul>
         </div>
     </div>
-
-    @RenderBody()
-
+    <div id="content">
+        @RenderBody()
+    </div>
     <div id="footer">
+    Desenvolvido por cocobit
     </div>
     @RenderPage("DefaultScripts.cshtml")
     @RenderSection("Scripts", required: false)

@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Home.css" />
+    <Content Include="Content\images\00448493.jpg" />
     <Content Include="Content\images\MP910221051[1].JPG" />
     <Content Include="Content\images\onebit_15.png" />
     <Content Include="Content\images\onebit_17.png" />
