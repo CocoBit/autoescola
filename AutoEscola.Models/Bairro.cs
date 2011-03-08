@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+﻿using System.ComponentModel.DataAnnotations;
 using AutoEscola.Interfaces.Models;
 
 namespace AutoEscola.Models
@@ -6,7 +6,7 @@ namespace AutoEscola.Models
     public class Bairro: IModel
     {
         public int Id { get; set; }
-        [DisplayName("Bairro")]
+        [Display(Name = "Bairro")]
         public string Nome { get; set; }
     }
 }
