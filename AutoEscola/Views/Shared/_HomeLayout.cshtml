@@ -15,9 +15,9 @@
             <h2>
                 Sistema de gestão
                 <br />
-                para centro de 
+                para centro de
                 <br />
-                formação de 
+                formação de
                 <br />
                 condutores
             </h2>
@@ -31,7 +31,7 @@
                     angústia... Muitas pessoas tem medos - medo de avião, medo de assaltos, medo de
                     elevador... Um dos tipos mais comuns de medos é o MEDO DE DIRIGIR.</span>
             </div>
-            <div class="column">
+@*            <div class="column">
                 <h3>
                     Serviços
                 </h3>
@@ -39,7 +39,7 @@
                     angústia... Muitas pessoas tem medos - medo de avião, medo de assaltos, medo de
                     elevador... Um dos tipos mais comuns de medos é o MEDO DE DIRIGIR.</span>
             </div>
-        </div>
+*@        </div>
         <div id="menu">
             <ul class="kwicks horizontal">
                 <li id="linkHome">@Html.ActionLink("HOME", "Index", "Home")</li>
@@ -54,10 +54,21 @@
         @RenderBody()
     </div>
     <div id="footer">
-    Desenvolvido por cocobit
+        <div id="contentFooter">
+            <div id="footerTwitter">
+                <a href="#"><span>Acesse nossa página
+                    <br />
+                    no twitter e nos siga</span></a>
+            </div>
+            <div id="footerFacebook">
+                <span>Acesse nossa página
+                    <br />
+                    no Facebook</span>
+            </div>
+        </div>
     </div>
     @RenderPage("DefaultScripts.cshtml")
-    @RenderSection("Scripts", required: false)
+    @RenderSection("scripts", required: false)
     <script src="../../Scripts/kwicks-1.5.1.pack.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {

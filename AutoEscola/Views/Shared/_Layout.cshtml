@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
     @RenderSection("css", required: false)
 </head>
 <body>
@@ -13,6 +14,6 @@
     </div>
     @RenderBody()
     @RenderPage("DefaultScripts.cshtml")
-    @RenderSection("Scripts", required: false)
+    @RenderSection("scripts", required: false)
     </body>
 </html>

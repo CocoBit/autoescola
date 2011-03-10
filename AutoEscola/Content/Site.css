@@ -9,17 +9,28 @@ body
 /* Styles for basic forms
 -----------------------------------------------------------*/
 
-fieldset 
+fieldset
 {
-    border:1px solid #ddd;
-    padding:0 1.4em 1.4em 1.4em;
-    margin:0 0 1.5em 0;
+    border-style: solid none none none;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 50px auto;
+    width: 1024px;
+    border-top-width: 1px;
+    border-top-color: #ddd;
 }
 
 legend 
 {
-    font-size:1.2em;
+    font-family: Segoe UI Light, Verdana, Times New Roman;
+    font-size:3em;
     font-weight: bold;
+}
+
+fieldset h1, h2
+{
+    font-family: Segoe UI Light, Verdana, Times New Roman;
+    font-size: 2.2em;
+    color: #FF9900;
 }
 
 textarea 
@@ -35,6 +46,20 @@ textarea
 .editor-field 
 {
     margin:0.5em 0 0 0;
+}
+
+input[type="text"] 
+{
+    padding: 5px;
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+input[type="password"] 
+{
+    padding: 5px;
+    width: 200px;
+    border: 1px solid #CCC;
 }
 
 

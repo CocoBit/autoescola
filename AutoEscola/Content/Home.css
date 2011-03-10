@@ -14,8 +14,8 @@ body
     background-position: right -10px;
     margin: 0;
     padding: 0;
-    height: 570px;
-    background-image: url('images/00448493.jpg');
+    height: 600px;
+    background-image: url('images/00448493_4.jpg');
     background-repeat: no-repeat;
 }
 
@@ -122,7 +122,6 @@ body
     background-color: #980421;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    
 }
 
 
@@ -155,7 +154,52 @@ body
 
 #footer
 {
+    background-color: #CCCCCC;
+    border-width: 2px;
+    border-color: #666666;
+    border-top-style: dotted;
+    height: 100px;
+    padding-top: 30px;
+}
+
+#contentFooter
+{
     height: 100px;
     width: 1024px;
-    margin: 0 auto;
+    margin: 0px auto;
+}
+
+#footerTwitter
+{
+    background-position: 5px center;
+    float: left;
+    background-image: url('images/53.png');
+    background-repeat: no-repeat;
+    height: 48px;
+    margin-right: 50px;
+    padding-left: 55px;
+    line-height: 24px;
+    border-left-style: dotted;
+    border-left-width: 2px;
+    border-left-color: #666666;
+}
+
+#footerTwitter a
+{
+    text-decoration: none;
+}
+
+#footerFacebook
+{
+    background-position: 5px center;
+    float: left;
+    background-image: url('images/56.png');
+    background-repeat: no-repeat;
+    height: 48px;
+    margin-right: 50px;
+    padding-left: 55px;
+    line-height: 24px;
+    border-left-style: dotted;
+    border-left-width: 2px;
+    border-left-color: #666666;
 }
