@@ -14,6 +14,7 @@
     <AssemblyName>AutoEscola</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -86,7 +87,6 @@
     <Content Include="Content\images\00448493_4.jpg" />
     <Content Include="Content\images\53.png" />
     <Content Include="Content\images\56.png" />
-    <Content Include="Content\images\70.png" />
     <Content Include="Content\images\MP910221051[1].JPG" />
     <Content Include="Content\images\onebit_15.png" />
     <Content Include="Content\images\onebit_17.png" />
@@ -108,7 +108,6 @@
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Scripts\kwicks-1.5.1.pack.js" />
-    <Content Include="Scripts\MenuPrincipal.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -213,10 +212,9 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1034</DevelopmentServerPort>
+          <DevelopmentServerPort>2865</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:2865/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

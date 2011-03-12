@@ -34,15 +34,15 @@ namespace AutoEscola.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Empresa model, Endereco endereco, Contato contato)
+        public ActionResult Create(Empresa empresa, Endereco endereco, Contato contato)
         {
-            model.EnderecoEmpresa = endereco;
-            model.ContatoEmpresa = contato;
-            repository.Create(model);
+            empresa.EnderecoEmpresa = endereco;
+            empresa.ContatoEmpresa = contato;
+            repository.Create(empresa);
 
             var usuario = new Usuario();
-            usuario.Empresa = model;
-            usuario.Login = model.ContatoEmpresa.Email;
+            usuario.Empresa = empresa;
+            usuario.Login = empresa.ContatoEmpresa.Email;
             usuario.Senha = "Admin";
             usuarioRepository.Create(usuario);
 
