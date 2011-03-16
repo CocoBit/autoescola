@@ -23,6 +23,7 @@ namespace AutoEscola.Models
         public string UF { get; set; }
 
         [Required(ErrorMessage = "O Logradouro é obrigatório")]
+        [Display(Name = "Endereço (Rua, Av. etc)")]
         public string Logradouro { get; set; }
         
         public string Cep { get; set; }

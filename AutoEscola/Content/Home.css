@@ -6,7 +6,12 @@
 
 body
 {
+}
+
+#HomeContent
+{
     width: 1280px;
+    margin: 0 auto;
 }
 
 #header
@@ -178,7 +183,7 @@ body
     height: 48px;
     margin-right: 50px;
     padding-left: 55px;
-    line-height: 24px;
+    line-height: 16px;
     border-left-style: dotted;
     border-left-width: 2px;
     border-left-color: #666666;
@@ -198,7 +203,7 @@ body
     height: 48px;
     margin-right: 50px;
     padding-left: 55px;
-    line-height: 24px;
+    line-height: 16px;
     border-left-style: dotted;
     border-left-width: 2px;
     border-left-color: #666666;

@@ -13,7 +13,7 @@ namespace AutoEscola.Models
         public string RegistroGeral { get; set; }
 
         [Required(ErrorMessage = "O CPF é obrigatório")]
-        [MaxLength(11)]
+        [MaxLength(11, ErrorMessage="CPF inválido")]
         public string CPF { get; set; }
         public string CaminhoDaFoto { get; set; }
 

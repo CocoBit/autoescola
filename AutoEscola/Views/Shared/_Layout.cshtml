@@ -6,12 +6,6 @@
     @RenderSection("css", required: false)
 </head>
 <body>
-    <h1>   Sistema de Contrle de Auto Escola (CFC)  </h1>
-
-    <div id = "cabecalho">
-    @Html.ActionLink("Cadastro de Alunos","create","Aluno")
-
-    </div>
     @RenderBody()
     @RenderPage("DefaultScripts.cshtml")
     @RenderSection("scripts", required: false)
