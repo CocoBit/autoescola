@@ -7,6 +7,7 @@ using AutoEscola.Models;
 using AutoEscola.Repository.Interfaces;
 using AutoEscola.Repository.Factory;
 using AutoEscola.Contexts.Models;
+using System.Web.Helpers;
 
 namespace AutoEscola.Controllers
 {
@@ -17,11 +18,14 @@ namespace AutoEscola.Controllers
 
         IUsuarioRepository usuarioRepository;
         IRepository<Empresa> empresaRepository;
+        IPessoaRepository pessoaRepository;
 
         public UsuarioController()
         {
             usuarioRepository = RepositoryFactory.CreateUsuarioRepository();
             empresaRepository = RepositoryFactory.CreateEmpresaRepository();
+            pessoaRepository = RepositoryFactory.CreatePessoaRepository();
+
         }
 
         public ActionResult Index()
@@ -48,12 +52,34 @@ namespace AutoEscola.Controllers
         [HttpPost]
         public ActionResult Create(Usuario usuario)
         {
-            // TODO: Buscar pessoa por CPF Se não existir abortar
-            // TODO: Criar código de ativação do aluno
+            var pessoa = pessoaRepository.FindByCpf(usuario.Pessoa.CPF);
+            if (pessoa == null)
+            {
+                ViewBag.Message = "Não foi identificado cadastro liberado para este CPF";
+                return View(usuario);
+            }
+
+            usuario.Pessoa = pessoa;
+            usuario.GerarChaveDeAtivacao();
             usuarioRepository.Create(usuario);
-            // TODO: Enviar email de confirmação
-            
-            return View(usuario);
+            EnviarEmail(usuario);
+            return RedirectToAction("Index", "Home");
+        }
+
+        private void EnviarEmail(Usuario usuario)
+        {
+            WebMail.SmtpServer = "mail.cocobit.com.br";
+            WebMail.From = "cadastro@cocobit.com.br";
+            WebMail.UserName = "cadastro@cocobit.com.br";
+            WebMail.Password = "brunoramonyan";
+
+            string assunto = "confirmação de email";
+
+            string mensagem = "Para ativar sua conta no sistema de auto escola, você deve acessar o link abaixo" +
+                @"http://www.cocobit.com.br/autoescola/usuario/confirmacao/chave="+usuario.CodigoAtivacao;
+
+
+            WebMail.Send(usuario.Email, assunto, mensagem);
         }
 
     }

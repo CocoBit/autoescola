@@ -26,5 +26,10 @@ namespace AutoEscola.Repository.Factory
         {
             return new UsuarioRepository(context);
         }
+
+        public static IPessoaRepository CreatePessoaRepository()
+        {
+            return new PessoaRepository(context);
+        }
     }
 }

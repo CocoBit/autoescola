@@ -9,6 +9,11 @@
     @Html.ValidationSummary(true)
     Model.Empresa = ViewBag.empresa;
 
+    if (ViewBag.Message != null)
+    {
+        <h4>@ViewBag.Message</h4>
+    }
+
     <fieldset>
         <legend>Usuario</legend>
         <div class="editor-label">
