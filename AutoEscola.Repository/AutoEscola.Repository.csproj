@@ -49,6 +49,7 @@
     <Compile Include="AlunoRepository.cs" />
     <Compile Include="EmpresaRepository.cs" />
     <Compile Include="Factory\RepositoryFactory.cs" />
+    <Compile Include="Interfaces\IEmpresaRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

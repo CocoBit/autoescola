@@ -22,7 +22,6 @@ namespace AutoEscola.Repository.Factory
             return new AlunoRepository(context);
         }
 
-
         public static IUsuarioRepository CreateUsuarioRepository()
         {
             return new UsuarioRepository(context);

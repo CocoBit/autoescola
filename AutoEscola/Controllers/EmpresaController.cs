@@ -42,7 +42,7 @@ namespace AutoEscola.Controllers
 
             var usuario = new Usuario();
             usuario.Empresa = empresa;
-            usuario.Login = empresa.ContatoEmpresa.Email;
+            usuario.Email = empresa.ContatoEmpresa.Email;
             usuario.Senha = "Admin";
             usuarioRepository.Create(usuario);
 

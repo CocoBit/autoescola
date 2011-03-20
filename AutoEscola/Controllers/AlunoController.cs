@@ -39,7 +39,6 @@ namespace AutoEscola.Controllers
             return View(aluno);
         }
 
-
         [HttpPost]
         public ActionResult Create(Aluno model, Endereco endereco, Contato contato)
         {

@@ -37,19 +37,22 @@ namespace AutoEscola.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult Create(int id)
+        public ActionResult Create()
         {
             var usuario = new Usuario();
-            usuario.Empresa = empresaRepository.Find(id);
+            usuario.Pessoa = new Pessoa();
             return View(usuario);
         }
 
-        [HttpPost]
-        public ActionResult Create(Usuario usuario, Empresa empresa)
-        {
-            usuario.Empresa = empresaRepository.Find(empresa.Id);
-            usuarioRepository.Create(usuario);
 
+        [HttpPost]
+        public ActionResult Create(Usuario usuario)
+        {
+            // TODO: Buscar pessoa por CPF Se não existir abortar
+            // TODO: Criar código de ativação do aluno
+            usuarioRepository.Create(usuario);
+            // TODO: Enviar email de confirmação
+            
             return View(usuario);
         }
 
