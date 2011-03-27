@@ -13,7 +13,7 @@ namespace AutoEscola.Controllers
 {
     public class AlunoController : Controller
     {
-        IRepository<Aluno> repository;
+        IAlunoRepository repository;
 
         public AlunoController()
         {
@@ -40,13 +40,14 @@ namespace AutoEscola.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Aluno model, Endereco endereco, Contato contato)
+        public ActionResult Create(Aluno model, Endereco endereco, Contato contato, Pessoa pessoa, FormCollection form)
         {
             var reporitoryEmpresa = RepositoryFactory.CreateEmpresaRepository();
-            model.Empresa = reporitoryEmpresa.Find(1);
 
-            model.EnderecoAluno = endereco;
-            model.ContatoAluno = contato;
+            model.Empresa = reporitoryEmpresa.Find(2);
+            model.Pessoa = pessoa;
+            model.Pessoa.Endereco = endereco;
+            model.Pessoa.Contato = contato;
             repository.Create(model);
 
             return RedirectToAction("Index");

@@ -36,13 +36,13 @@ namespace AutoEscola.Controllers
         [HttpPost]
         public ActionResult Create(Empresa empresa, Endereco endereco, Contato contato)
         {
-            empresa.EnderecoEmpresa = endereco;
-            empresa.ContatoEmpresa = contato;
+            empresa.Endereco = endereco;
+            empresa.Contato = contato;
             repository.Create(empresa);
 
             var usuario = new Usuario();
             usuario.Empresa = empresa;
-            usuario.Email = empresa.ContatoEmpresa.Email;
+            usuario.Email = empresa.Contato.Email;
             usuario.Senha = "Admin";
             usuarioRepository.Create(usuario);
 

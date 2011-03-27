@@ -9,7 +9,7 @@ using AutoEscola.Contexts.Models;
 
 namespace AutoEscola.Repository
 {
-    public class AlunoRepository: IRepository<Aluno>
+    public class AlunoRepository: IAlunoRepository
     {
         private AutoEscolaContext _context;
 
@@ -20,8 +20,15 @@ namespace AutoEscola.Repository
 
         public void Create(Aluno model)
         {
-            _context.Alunos.Add(model);
-            _context.SaveChanges();
+            try
+            {
+                _context.Alunos.Add(model);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void Delete(Aluno model)
@@ -32,6 +39,19 @@ namespace AutoEscola.Repository
         public void Update(Aluno model)
         {
             throw new NotImplementedException();
+        }
+
+        public Aluno FindByPessoa(Pessoa pessoa)
+        {
+            var aluno = _context.Alunos.Where(a => a.Pessoa.Id == pessoa.Id);
+            return aluno.Count() > 0 ? aluno.Single() : null;
+        }
+
+        public Aluno FindByEmpresaAndPessoa(Empresa empresa, Pessoa pessoa)
+        {
+            var aluno = _context.Alunos.Where(a => a.Pessoa.CPF == pessoa.CPF  &&
+                a.Empresa.CNPJ == empresa.CNPJ);
+            return aluno.Count() > 0 ? aluno.Single() : null;
         }
 
         public Aluno Find(int id)

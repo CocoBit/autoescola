@@ -11,41 +11,9 @@
     <fieldset>
         <legend>Aluno</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Nome)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Nome)
-            @Html.ValidationMessageFor(model => model.Nome)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.RegistroGeral)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.RegistroGeral)
-            @Html.ValidationMessageFor(model => model.RegistroGeral)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CPF)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CPF)
-            @Html.ValidationMessageFor(model => model.CPF)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CaminhoDaFoto)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CaminhoDaFoto)
-            @Html.ValidationMessageFor(model => model.CaminhoDaFoto)
-        </div>
-
-        @Html.Partial("~/Views/_ViewEndereco.cshtml", Model.EnderecoAluno)
-        @Html.Partial("~/Views/_ViewContato.cshtml", Model.ContatoAluno)
-
+        @Html.Partial("~/Views/_ViewPessoa.cshtml", Model.Pessoa)
+        @Html.Partial("~/Views/_ViewEndereco.cshtml", Model.Pessoa.Endereco)
+        @Html.Partial("~/Views/_ViewContato.cshtml", Model.Pessoa.Contato)
 
         <p>
             <input type="submit" value="Create" />

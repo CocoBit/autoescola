@@ -69,8 +69,8 @@ namespace AutoEscola.Controllers
         private void EnviarEmail(Usuario usuario)
         {
             WebMail.SmtpServer = "mail.cocobit.com.br";
-            WebMail.From = "cadastro@cocobit.com.br";
-            WebMail.UserName = "cadastro@cocobit.com.br";
+            WebMail.From = "postmaster@cocobit.com.br";
+            WebMail.UserName = "postmaster@cocobit.com.br";
             WebMail.Password = "brunoramonyan";
 
             string assunto = "confirmação de email";

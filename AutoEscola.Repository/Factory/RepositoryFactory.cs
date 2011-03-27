@@ -12,12 +12,12 @@ namespace AutoEscola.Repository.Factory
     {
         private static AutoEscolaContext context = new AutoEscolaContext(); 
 
-        public static IRepository<Empresa> CreateEmpresaRepository()
+        public static IEmpresaRepository CreateEmpresaRepository()
         {
             return new EmpresaRepository(context);
         }
 
-        public static IRepository<Aluno> CreateAlunoRepository()
+        public static IAlunoRepository CreateAlunoRepository()
         {
             return new AlunoRepository(context);
         }

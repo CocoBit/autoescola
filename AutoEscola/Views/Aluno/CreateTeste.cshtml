@@ -1,0 +1,38 @@
+﻿@model AutoEscola.Models.Aluno
+
+@{
+    ViewBag.Title = "CreateTeste";
+}
+
+<h2>CreateTeste</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Aluno</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CPF)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CPF)
+            @Html.ValidationMessageFor(model => model.CPF)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

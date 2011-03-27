@@ -1,0 +1,19 @@
+﻿@model AutoEscola.Models.Pessoa
+<h1>Endereço</h1>
+<div id="endereco">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Nome)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Nome)
+        @Html.ValidationMessageFor(model => model.Nome)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.CPF)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.CPF)
+        @Html.ValidationMessageFor(model => model.CPF)
+    </div>
+</div>
+

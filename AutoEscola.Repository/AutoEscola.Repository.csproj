@@ -30,6 +30,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="EntityFramework">
       <HintPath>..\..\documente.me\packages\EFCodeFirst.0.8\lib\EntityFramework.dll</HintPath>
@@ -49,6 +50,7 @@
     <Compile Include="AlunoRepository.cs" />
     <Compile Include="EmpresaRepository.cs" />
     <Compile Include="Factory\RepositoryFactory.cs" />
+    <Compile Include="Interfaces\IAlunoRepository.cs" />
     <Compile Include="Interfaces\IEmpresaRepository.cs" />
     <Compile Include="Interfaces\IPessoaRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
