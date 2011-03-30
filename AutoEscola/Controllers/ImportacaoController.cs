@@ -31,7 +31,7 @@ namespace AutoEscola.Controllers
         }
 
         [HttpPost]
-        public string ImportarAluno(Endereco endereco, Contato contato, Pessoa pessoa, Empresa empresa)
+        public string ImportarAluno(Pessoa pessoa, Empresa empresa)
         {
             try
             {
@@ -42,8 +42,8 @@ namespace AutoEscola.Controllers
                 Aluno model = new Aluno();
                 model.Empresa = empresaTemp;
                 model.Pessoa = pessoa;
-                model.Pessoa.Endereco = endereco;
-                model.Pessoa.Contato = contato;
+                //model.Pessoa.Endereco = new Endereco();
+                //model.Pessoa.Contato = new Contato();
                 repository.Create(model);
 
                 return "Deu certo";

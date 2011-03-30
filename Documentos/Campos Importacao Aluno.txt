@@ -1,0 +1,5 @@
+Url: */importacao/importaraluno
+
+Nome=Nome do Aluno
+CPF=Cpf do Aluno
+CNPJ=Cnpj da empresa

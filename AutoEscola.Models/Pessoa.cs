@@ -19,8 +19,6 @@ namespace AutoEscola.Models
 
         public Pessoa()
         {
-            Endereco = new Endereco();
-            Contato = new Contato();
         }
     }
 }
