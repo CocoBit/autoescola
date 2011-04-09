@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using AutoEscola.Models;
+using System.Data.Entity.Database;
 
 namespace AutoEscola.Contexts.Models
 {
@@ -20,13 +21,14 @@ namespace AutoEscola.Contexts.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            DbDatabase.SetInitializer<AutoEscolaContext>(new CreateDatabaseIfNotExists<AutoEscolaContext>());
             modelBuilder.Entity<Empresa>().ToTable("empresas");
             modelBuilder.Entity<Aluno>().ToTable("alunos");
             modelBuilder.Entity<Usuario>().ToTable("usuarios");
             modelBuilder.Entity<Endereco>().ToTable("enderecos");
             modelBuilder.Entity<Bairro>().ToTable("bairros");
             modelBuilder.Entity<Contato>().ToTable("contatos");
-            modelBuilder.Entity<Pessoa>().ToTable("pessoa");
+            modelBuilder.Entity<Pessoa>().ToTable("pessoas");
         }
     }
 }
