@@ -30,6 +30,10 @@ namespace AutoEscola.Controllers
         public ActionResult Create()
         {
             var empresa = new Empresa();
+            empresa.Endereco = new Endereco();
+            empresa.Endereco.BairroEndereco = new Bairro();
+            empresa.Contato = new Contato();
+
             return View(empresa);
         }
 
@@ -40,11 +44,11 @@ namespace AutoEscola.Controllers
             empresa.Contato = contato;
             repository.Create(empresa);
 
-            var usuario = new Usuario();
-            usuario.Empresa = empresa;
-            usuario.Email = empresa.Contato.Email;
-            usuario.Senha = "Admin";
-            usuarioRepository.Create(usuario);
+            //var usuario = new Usuario();
+            //usuario.Empresa = empresa;
+            //usuario.Email = empresa.Contato.Email;
+            //usuario.Senha = "Admin";
+            //usuarioRepository.Create(usuario);
 
             return RedirectToAction("Index", "Home");
         }

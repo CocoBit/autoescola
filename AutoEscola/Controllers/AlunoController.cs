@@ -36,6 +36,8 @@ namespace AutoEscola.Controllers
         public ActionResult Create()
         {
             var aluno = new Aluno();
+            aluno.Pessoa.Endereco = new Endereco();
+            aluno.Pessoa.Contato = new Contato();
             return View(aluno);
         }
 
@@ -44,7 +46,11 @@ namespace AutoEscola.Controllers
         {
             var reporitoryEmpresa = RepositoryFactory.CreateEmpresaRepository();
 
-            model.Empresa = reporitoryEmpresa.Find(2);
+            var emp = reporitoryEmpresa.Find(2);
+            if (emp == null)
+                emp = new Empresa() { CNPJ = "00000000001234", NomeFantasia = "Teste", RazaoSocial = "Teste" };
+            
+            model.Empresa = emp;
             model.Pessoa = pessoa;
             model.Pessoa.Endereco = endereco;
             model.Pessoa.Contato = contato;
