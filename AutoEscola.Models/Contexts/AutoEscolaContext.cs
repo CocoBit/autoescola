@@ -21,14 +21,15 @@ namespace AutoEscola.Contexts.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Empresa>();
+            modelBuilder.Entity<Aluno>();
+            modelBuilder.Entity<Usuario>();
+            modelBuilder.Entity<Endereco>();
+            modelBuilder.Entity<Bairro>();
+            modelBuilder.Entity<Contato>();
+            modelBuilder.Entity<Pessoa>();
+
             DbDatabase.SetInitializer<AutoEscolaContext>(new CreateDatabaseIfNotExists<AutoEscolaContext>());
-            modelBuilder.Entity<Empresa>().ToTable("empresas");
-            modelBuilder.Entity<Aluno>().ToTable("alunos");
-            modelBuilder.Entity<Usuario>().ToTable("usuarios");
-            modelBuilder.Entity<Endereco>().ToTable("enderecos");
-            modelBuilder.Entity<Bairro>().ToTable("bairros");
-            modelBuilder.Entity<Contato>().ToTable("contatos");
-            modelBuilder.Entity<Pessoa>().ToTable("pessoas");
         }
     }
 }

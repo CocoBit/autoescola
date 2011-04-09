@@ -20,8 +20,15 @@ namespace AutoEscola.Repository
 
         public void Create(Empresa model)
         {
-            _context.Empresas.Add(model);
-            _context.SaveChanges();
+            try
+            {
+                _context.Empresas.Add(model);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void Delete(Empresa model)
