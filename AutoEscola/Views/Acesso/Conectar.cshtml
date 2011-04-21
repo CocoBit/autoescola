@@ -1,0 +1,16 @@
+﻿@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Acesso</legend>
+
+        <label>Usuário</label>
+        @Html.Editor("usuario")
+
+        <label>Senha</label>
+        @Html.Password("senha")
+
+        <input type="submit" value="Acessar" />
+
+        @Html.ValidationSummary(true, "Não foi possível conectar.")
+    </fieldset>
+}
