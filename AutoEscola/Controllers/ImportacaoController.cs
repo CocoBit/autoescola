@@ -35,7 +35,7 @@ namespace AutoEscola.Controllers
         {
             try
             {
-                var empresaTemp = reporitoryEmpresa.Find(2);
+                var empresaTemp = reporitoryEmpresa.FindByCnpj(empresa.CNPJ);
                 if (repository.FindByEmpresaAndPessoa(empresaTemp, pessoa) != null)
                     throw new Exception("O CPF do aluno já possui cadastro no sistema cadastrado no sistema");
 
