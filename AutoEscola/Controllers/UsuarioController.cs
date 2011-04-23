@@ -8,6 +8,7 @@ using AutoEscola.Repository.Interfaces;
 using AutoEscola.Repository.Factory;
 using AutoEscola.Contexts.Models;
 using System.Web.Helpers;
+using System.Web.Security;
 
 namespace AutoEscola.Controllers
 {
@@ -52,35 +53,33 @@ namespace AutoEscola.Controllers
         [HttpPost]
         public ActionResult Create(Usuario usuario)
         {
-            var pessoa = pessoaRepository.FindByCpf(usuario.Pessoa.CPF);
-            if (pessoa == null)
+            try
             {
-                ViewBag.Message = "Não foi identificado cadastro liberado para este CPF";
-                return View(usuario);
+                var pessoa = pessoaRepository.FindByCpf(usuario.Pessoa.CPF);
+                if (pessoa == null)
+                {
+                    ViewBag.Message = "Não foi identificado cadastro liberado para este CPF";
+                    return View(usuario);
+                }
+
+                if (Membership.GetUserNameByEmail(usuario.Email) != null)
+                {
+                    ViewBag.Message = "Não foi identificado cadastro liberado para este CPF";
+                    return View(usuario);
+                }
+
+                Membership.CreateUser(usuario.Login, usuario.Senha, usuario.Email);
+
+                usuario.Pessoa = pessoa;
+                usuario.GerarChaveDeAtivacao();
+                usuarioRepository.Create(usuario);
+                return RedirectToAction("Index", "Home");
+
             }
-
-            usuario.Pessoa = pessoa;
-            usuario.GerarChaveDeAtivacao();
-            usuarioRepository.Create(usuario);
-            EnviarEmail(usuario);
-            return RedirectToAction("Index", "Home");
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-
-        private void EnviarEmail(Usuario usuario)
-        {
-            WebMail.SmtpServer = "mail.cocobit.com.br";
-            WebMail.From = "postmaster@cocobit.com.br";
-            WebMail.UserName = "postmaster@cocobit.com.br";
-            WebMail.Password = "brunoramonyan";
-
-            string assunto = "confirmação de email";
-
-            string mensagem = "Para ativar sua conta no sistema de auto escola, você deve acessar o link abaixo" +
-                @"http://www.cocobit.com.br/autoescola/usuario/confirmacao/chave="+usuario.CodigoAtivacao;
-
-
-            WebMail.Send(usuario.Email, assunto, mensagem);
-        }
-
     }
 }

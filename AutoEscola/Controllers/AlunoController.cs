@@ -20,12 +20,10 @@ namespace AutoEscola.Controllers
             repository = RepositoryFactory.CreateAlunoRepository();
         }
 
-
         public ActionResult Index()
         {
             return View(repository.All());
         }
-
 
         public ActionResult Details(int id)
         {
@@ -77,12 +75,12 @@ namespace AutoEscola.Controllers
                 return View();
             }
         }
+
         public ActionResult Delete(int id)
         {
             return View();
         }
-
-
+        
         [HttpPost]
         public ActionResult Delete(int id, Aluno model)
         {

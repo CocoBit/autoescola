@@ -16,13 +16,6 @@
 
     <fieldset>
         <legend>Usuario</legend>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Pessoa.Nome)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Pessoa.Nome)
-            @Html.ValidationMessageFor(model => model.Pessoa.Nome)
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Pessoa.CPF)
@@ -30,6 +23,14 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.Pessoa.CPF)
             @Html.ValidationMessageFor(model => model.Pessoa.CPF)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Login)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Login)
+            @Html.ValidationMessageFor(model => model.Login)
         </div>
 
         <div class="editor-label">

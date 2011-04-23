@@ -19,6 +19,10 @@ namespace AutoEscola.Models
 
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "O login é obrigatória")]
+        [Display(Name = "Login")]
+        public string Login { get; set; }
+
         [Required(ErrorMessage = "O Email é obrigatório")]
         [RegularExpression(regexEmail)]
         public string Email { get; set; }
