@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AutoEscola.Interfaces.Models;
+using System.Collections.Generic;
 
 
 namespace AutoEscola.Models
@@ -14,10 +15,12 @@ namespace AutoEscola.Models
         public string RegistroGeral { get; set; }
         public string CaminhoDaFoto { get; set; }
 
+        public virtual ICollection<Ocorrencia> Ocorrencias { get; set; }
+
         public Aluno()
         {
             Empresa = new Empresa();
-            Pessoa = new Pessoa();
+            //Pessoa = new Pessoa();
         }
     }
 }

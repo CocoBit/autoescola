@@ -27,7 +27,7 @@ namespace AutoEscola.Controllers
 
         public ActionResult Details(int id)
         {
-            var aluno = repository.Find(id);
+            Aluno aluno = repository.Find(id);
             return View(aluno);
         }
 

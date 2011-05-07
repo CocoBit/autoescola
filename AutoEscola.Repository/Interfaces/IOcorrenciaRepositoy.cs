@@ -6,8 +6,8 @@ using AutoEscola.Models;
 
 namespace AutoEscola.Repository.Interfaces
 {
-    public interface IPessoaRepository: IRepository<Pessoa>
+    public interface IOcorrenciaRepositoy: IRepository<Ocorrencia>
     {
-        Pessoa FindByCpf(string cpf);
+        List<Ocorrencia> FindOcorrenciaByIdAluno(int id);
     }
 }

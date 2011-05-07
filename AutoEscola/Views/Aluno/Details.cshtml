@@ -1,28 +1,19 @@
 ﻿@model AutoEscola.Models.Aluno
-
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <fieldset>
     <legend>Aluno</legend>
-
-    <div class="display-label">Nome</div>
-    <div class="display-field">@Model.Nome</div>
-
-    <div class="display-label">RegistroGeral</div>
+    <div class="display-label">
+        Nome</div>
+    <div class="display-field">@Model.Pessoa.Nome</div>
+    <div class="display-label">
+        RegistroGeral</div>
     <div class="display-field">@Model.RegistroGeral</div>
-
-    <div class="display-label">CPF</div>
-    <div class="display-field">@Model.CPF</div>
-
-    <div class="display-label">CaminhoDaFoto</div>
-    <div class="display-field">@Model.CaminhoDaFoto</div>
+    <div class="display-label">
+        CPF</div>
+    <div class="display-field">@Model.Pessoa.CPF</div>
+    <br />
+    @Html.Partial("~/Views/Ocorrencia/Index.cshtml", Model.Ocorrencias)
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
-

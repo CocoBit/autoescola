@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using AutoEscola.Models;
 
 namespace AutoEscola.Controllers
 {
@@ -12,13 +13,9 @@ namespace AutoEscola.Controllers
         //
         // GET: /Ocorrencia/
 
-        public ActionResult Index()
+        public ActionResult Index(List<Ocorrencia> ocorrencias)
         {
-            return View();
-            
+            return View(ocorrencias);
         }
-
-
-
     }
 }

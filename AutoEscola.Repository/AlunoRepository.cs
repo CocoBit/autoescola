@@ -9,7 +9,7 @@ using AutoEscola.Contexts.Models;
 
 namespace AutoEscola.Repository
 {
-    public class AlunoRepository: IAlunoRepository
+    public class AlunoRepository : IAlunoRepository
     {
         private AutoEscolaContext _context;
 
@@ -49,15 +49,15 @@ namespace AutoEscola.Repository
 
         public Aluno FindByEmpresaAndPessoa(Empresa empresa, Pessoa pessoa)
         {
-            var aluno = _context.Alunos.Where(a => a.Pessoa.CPF == pessoa.CPF  &&
+            var aluno = _context.Alunos.Where(a => a.Pessoa.CPF == pessoa.CPF &&
                 a.Empresa.CNPJ == empresa.CNPJ);
             return aluno.Count() > 0 ? aluno.Single() : null;
         }
 
         public Aluno Find(int id)
         {
-            var Aluno = _context.Alunos.Where(e => e.Id == id).Single();
-            return Aluno;
+            var aluno = _context.Alunos.Where(e => e.Id == id && e.Pessoa.Id != -1);
+            return aluno.Count() == 0 ? null : aluno.First();
         }
 
         public List<Aluno> All()

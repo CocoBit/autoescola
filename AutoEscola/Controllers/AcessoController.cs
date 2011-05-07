@@ -32,7 +32,7 @@ namespace AutoEscola.Controllers
                     var usuarioRepository = RepositoryFactory.CreateUsuarioRepository();
                     usuarioRepository.FindByLoginAndPassWord(usuario, senha);
 
-                    var usuarioDaSessao = 
+                    //var usuarioDaSessao = 
                     return Redirect(url);
                 }
                 else

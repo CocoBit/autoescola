@@ -31,5 +31,11 @@ namespace AutoEscola.Repository.Factory
         {
             return new PessoaRepository(context);
         }
+
+        public static IOcorrenciaRepositoy CreateOcorrenciaRepository()
+        {
+            return new OcorrenciaRepository(context);
+        }
+
     }
 }

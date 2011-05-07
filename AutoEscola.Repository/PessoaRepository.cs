@@ -25,5 +25,32 @@ namespace AutoEscola.Repository
             else
                 return pessoas.Single();
         }
+
+        public void Create(Pessoa model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Pessoa model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Pessoa model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Pessoa Find(int id)
+        {
+            var pessoas = _context.Pessoas.Where(p => p.Id == id);
+            return pessoas.Count() == 0 ? null : pessoas.First();
+
+        }
+
+        public List<Pessoa> All()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

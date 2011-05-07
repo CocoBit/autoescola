@@ -18,6 +18,7 @@ namespace AutoEscola.Contexts.Models
         public DbSet<Bairro> Bairros { get; set; }
         public DbSet<Contato> Contatos { get; set; }
         public DbSet<Pessoa> Pessoas { get; set; }
+        public DbSet<Ocorrencia> Ocorrencias { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,6 +29,7 @@ namespace AutoEscola.Contexts.Models
             modelBuilder.Entity<Bairro>();
             modelBuilder.Entity<Contato>();
             modelBuilder.Entity<Pessoa>();
+            modelBuilder.Entity<Ocorrencia>();
 
             DbDatabase.SetInitializer<AutoEscolaContext>(new CreateDatabaseIfNotExists<AutoEscolaContext>());
         }
