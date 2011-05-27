@@ -23,7 +23,5 @@ namespace AutoEscola.Models
 
         public virtual Endereco Endereco { get; set; }
         public virtual Contato Contato { get; set; }
-        public virtual ICollection<Usuario> Usuarios { get; set; }
-        public virtual ICollection<Aluno> Alunos { get; set; }
     }
 }

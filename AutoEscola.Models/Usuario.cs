@@ -34,9 +34,7 @@ namespace AutoEscola.Models
 
         public string CodigoAtivacao { get; set; }
 
-        public virtual Empresa Empresa { get; set; }
         public virtual Pessoa Pessoa { get; set; }
-
 
         public string GerarChaveDeAtivacao()
         {

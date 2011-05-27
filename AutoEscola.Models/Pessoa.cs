@@ -11,14 +11,12 @@ namespace AutoEscola.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
+
         [Required(ErrorMessage="É necessário informar o CPF")]
         public string CPF { get; set; }
 
         public virtual Endereco Endereco { get; set; }
         public virtual Contato Contato { get; set; }
-
-        public Pessoa()
-        {
-        }
+        public virtual Empresa Empresa { get; set; }
     }
 }

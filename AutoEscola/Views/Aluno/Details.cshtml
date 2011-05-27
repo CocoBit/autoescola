@@ -1,10 +1,11 @@
 ﻿@model AutoEscola.Models.Aluno
 @{
     ViewBag.Title = "Details";
+    <link href="@Url.Content("~/Content/formulario.css")" rel="stylesheet" type="text/css" />
 }
 
 <fieldset>
-    <legend>Aluno</legend>
+    <legend>Seus dados</legend>
     <div class="display-label">
         Nome</div>
     <div class="display-field">@Model.Pessoa.Nome</div>

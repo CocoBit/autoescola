@@ -34,14 +34,6 @@ namespace AutoEscola.Controllers
             return View();
         }
 
-        public ActionResult Login(string login, string senha)
-        {
-            var usuario = usuarioRepository.FindByLoginAndPassWord(login, senha);
-            if (usuario != null)
-                Session["Usuario"] = usuario;
-            return RedirectToAction("Index", "Home");
-        }
-
         public ActionResult Create()
         {
             var usuario = new Usuario();
@@ -49,13 +41,13 @@ namespace AutoEscola.Controllers
             return View(usuario);
         }
 
-
         [HttpPost]
         public ActionResult Create(Usuario usuario)
         {
             try
             {
                 var pessoa = pessoaRepository.FindByCpf(usuario.Pessoa.CPF);
+
                 if (pessoa == null)
                 {
                     ViewBag.Message = "Não foi identificado cadastro liberado para este CPF";
@@ -68,12 +60,13 @@ namespace AutoEscola.Controllers
                     return View(usuario);
                 }
 
-                Membership.CreateUser(usuario.Login, usuario.Senha, usuario.Email);
-
                 usuario.Pessoa = pessoa;
                 usuario.GerarChaveDeAtivacao();
                 usuarioRepository.Create(usuario);
-                return RedirectToAction("Index", "Home");
+
+                Membership.CreateUser(usuario.Login, usuario.Senha, usuario.Email);
+
+                return RedirectToAction("Conectar", "Acesso");
 
             }
             catch (Exception ex)

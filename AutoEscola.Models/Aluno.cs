@@ -9,18 +9,10 @@ namespace AutoEscola.Models
     {
         public int Id { get; set; }
 
-        public virtual Empresa Empresa { get; set; }
         public virtual Pessoa Pessoa { get; set; }
-
         public string RegistroGeral { get; set; }
         public string CaminhoDaFoto { get; set; }
 
         public virtual ICollection<Ocorrencia> Ocorrencias { get; set; }
-
-        public Aluno()
-        {
-            Empresa = new Empresa();
-            //Pessoa = new Pessoa();
-        }
     }
 }

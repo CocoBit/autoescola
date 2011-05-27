@@ -43,16 +43,17 @@ namespace AutoEscola.Repository
             throw new NotImplementedException();
         }
 
-        public List<Usuario> FindByEmpresa(Empresa empresa)
-        {
-            var usuarios = _context.Usuarios.Where(u => u.Empresa.Id == empresa.Id);
-            return usuarios.ToList();
-        }
-
         public Usuario FindByLoginAndPassWord(string senha, string password)
         {
-            //return _context.Usuarios.Where(u => u.Senha == senha && u.Senha == password).Single();
-            return new Usuario();
+
+            var usuario = _context.Usuarios.Where(u => u.Login == senha && u.Senha == password);
+            return usuario.Count() == 0 ? null : usuario.First();
+            //return new Usuario();
+        }
+
+        public List<Usuario> FindByEmpresa(Empresa empresa)
+        {
+            throw new NotImplementedException();
         }
     }
 }

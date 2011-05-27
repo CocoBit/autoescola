@@ -28,12 +28,18 @@ namespace AutoEscola.Controllers
                 if (Membership.Provider.ValidateUser(usuario, senha))
                 {
                     FormsAuthentication.SetAuthCookie(usuario, false);
+                    FormsAuthentication.Authenticate(usuario, senha);
 
                     var usuarioRepository = RepositoryFactory.CreateUsuarioRepository();
-                    usuarioRepository.FindByLoginAndPassWord(usuario, senha);
+                    var usuario_sessao = usuarioRepository.FindByLoginAndPassWord(usuario, senha);
 
-                    //var usuarioDaSessao = 
-                    return Redirect(url);
+                    if (usuario_sessao == null)
+                        ModelState.AddModelError("", "Usuário não localizado.");
+                    else
+                    {
+                        Session["pessoa_sessao"] = usuario_sessao.Pessoa;
+                        return RedirectToAction("Details", "Aluno", usuario_sessao.Pessoa.Id);
+                    }
                 }
                 else
                 {
@@ -49,11 +55,12 @@ namespace AutoEscola.Controllers
             }
         }
 
+        [HttpGet]
         public ActionResult Desconectar()
         {
+            Session.Clear();
             FormsAuthentication.SignOut();
-
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Conectar", "Acesso");
         }
     }
 }

@@ -1,15 +1,23 @@
-﻿@using (Html.BeginForm())
+﻿<link href="../../Content/formulario.css" rel="stylesheet" type="text/css" />
+
+@using (Html.BeginForm())
 {
     <fieldset>
         <legend>Acesso</legend>
 
-        <label>Usuário</label>
-        @Html.Editor("usuario")
+        <label class="form_label">Usuário</label>
+        <div class="form_edit_text">
+            @Html.Editor("usuario")
+        </div>
 
-        <label>Senha</label>
-        @Html.Password("senha")
+        <label class="form_label">Senha</label>
+        <div class="form_edit_text">
+            @Html.Password("senha")
+        </div>
 
-        <input type="submit" value="Acessar" />
+        <input class="form_button" type="submit" value="Acessar" />
+
+        @Html.ActionLink("Cadastra-se", "Create", "Usuario")
 
         @Html.ValidationSummary(true, "Não foi possível conectar.")
     </fieldset>

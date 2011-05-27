@@ -1,12 +1,10 @@
 ﻿@model IEnumerable<AutoEscola.Models.Ocorrencia>
-
 @{
     <link href="@Url.Content("~/Content/table.css")" rel="stylesheet" type="text/css" />
 }
-
 <br />
-<h1>Ocorrências do aluno</h1>
-
+<h1>
+    Ocorrências do aluno</h1>
 <table>
     <tr>
         <th>
@@ -16,8 +14,23 @@
             Descricao
         </th>
     </tr>
-    @foreach (var item in Model)
-    {
+    @{
+        int contador = 0;
+        foreach (var item in Model)
+        {
+            if (contador % 2 == 0)
+            {
+        <tr class="form_row">
+            <td>
+                @item.DataCadastro
+            </td>
+            <td>
+                @item.Descricao
+            </td>
+        </tr>
+            }
+            else
+            {
         <tr>
             <td>
                 @item.DataCadastro
@@ -26,5 +39,8 @@
                 @item.Descricao
             </td>
         </tr>
+            }
+            contador++;
+        }
     }
 </table>

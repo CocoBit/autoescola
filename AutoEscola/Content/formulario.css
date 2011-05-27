@@ -1,0 +1,32 @@
+﻿body
+{
+}
+
+.form_edit_text
+{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+legend
+{
+    margin-bottom: 30px;
+}
+
+.form_button
+{
+    margin-bottom: 15px;
+}
+
+.display-field
+{
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.form_row
+{
+    background-color:Silver;
+}
+
+

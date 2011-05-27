@@ -103,6 +103,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\formulario.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\images\00448493.jpg" />
     <Content Include="Content\images\00448493_2.jpg" />
@@ -197,9 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Aluno\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Usuario\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\_ViewEndereco.cshtml" />

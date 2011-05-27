@@ -25,9 +25,13 @@ namespace AutoEscola.Controllers
             return View(repository.All());
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
-            Aluno aluno = repository.Find(id);
+            if (Session["pessoa_sessao"] == null)
+                return RedirectToAction("Conectar", "Acesso");
+
+            Pessoa pessoa = (Pessoa)Session["pessoa_sessao"];
+            Aluno aluno = repository.FindByPessoa(pessoa);
             return View(aluno);
         }
 
@@ -47,9 +51,9 @@ namespace AutoEscola.Controllers
             var emp = reporitoryEmpresa.Find(2);
             if (emp == null)
                 emp = new Empresa() { CNPJ = "00000000001234", NomeFantasia = "Teste", RazaoSocial = "Teste" };
-            
-            model.Empresa = emp;
+
             model.Pessoa = pessoa;
+            model.Pessoa.Empresa = emp;
             model.Pessoa.Endereco = endereco;
             model.Pessoa.Contato = contato;
             repository.Create(model);
