@@ -1,0 +1,33 @@
+﻿@model IEnumerable<AutoEscola.Models.Ocorrencia>
+@{
+    <link href="@Url.Content("~/Content/table.css")" rel="stylesheet" type="text/css" />
+}
+@{
+    int contador = 0;
+    <table>
+        @{
+            foreach (var item in Model)
+            {
+                if (contador % 2 == 0)
+                {
+            <tr class="row odd">
+                <td>@item.DataCadastro
+                </td>
+                <td>@item.Descricao
+                </td>
+            </tr>
+                }
+                else
+                {
+            <tr class="row">
+                <td>@item.DataCadastro
+                </td>
+                <td>@item.Descricao
+                </td>
+            </tr>
+                }
+                contador++; 
+            }
+            }
+    </table>
+}

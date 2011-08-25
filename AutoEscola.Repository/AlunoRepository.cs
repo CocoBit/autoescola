@@ -18,7 +18,7 @@ namespace AutoEscola.Repository
             _context = context;
         }
 
-        public void Create(Aluno model)
+        public void Criar(Aluno model)
         {
             try
             {
@@ -31,12 +31,12 @@ namespace AutoEscola.Repository
             }
         }
 
-        public void Delete(Aluno model)
+        public void Excluir(Aluno model)
         {
             _context.Alunos.Remove(model);
         }
 
-        public void Update(Aluno model)
+        public void Atualizar(Aluno model)
         {
             throw new NotImplementedException();
         }
@@ -55,13 +55,13 @@ namespace AutoEscola.Repository
             return null;
         }
 
-        public Aluno Find(int id)
+        public Aluno Buscar(int id)
         {
             var aluno = _context.Alunos.Where(e => e.Id == id && e.Pessoa.Id != -1);
             return aluno.Count() == 0 ? null : aluno.First();
         }
 
-        public List<Aluno> All()
+        public List<Aluno> BuscarTodos()
         {
             return _context.Alunos.ToList();
         }

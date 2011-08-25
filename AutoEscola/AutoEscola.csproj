@@ -89,32 +89,27 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AcessoController.cs" />
-    <Compile Include="Controllers\AlunoController.cs" />
-    <Compile Include="Controllers\ContatoController.cs" />
-    <Compile Include="Controllers\EmpresaController.cs" />
+    <Compile Include="Areas\Administracao\AdministracaoAreaRegistration.cs" />
+    <Compile Include="Areas\Alunos\AlunosAreaRegistration.cs" />
+    <Compile Include="Areas\Alunos\Controllers\HomeAlunosController.cs" />
+    <Compile Include="Areas\Alunos\Controllers\OcorrenciasController.cs" />
+    <Compile Include="Areas\Alunos\Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ImportacaoController.cs" />
-    <Compile Include="Controllers\OcorrenciaController.cs" />
-    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\botoes.css" />
     <Content Include="Content\formulario.css" />
     <Content Include="Content\Home.css" />
-    <Content Include="Content\images\00448493.jpg" />
-    <Content Include="Content\images\00448493_2.jpg" />
-    <Content Include="Content\images\00448493_3.jpg" />
-    <Content Include="Content\images\00448493_4.jpg" />
     <Content Include="Content\images\53.png" />
     <Content Include="Content\images\56.png" />
+    <Content Include="Content\images\bg_top_home.jpg" />
+    <Content Include="Content\images\blocks.jpg" />
     <Content Include="Content\images\MP910221051[1].JPG" />
-    <Content Include="Content\images\onebit_15.png" />
-    <Content Include="Content\images\onebit_17.png" />
-    <Content Include="Content\images\onebit_21.png" />
+    <Content Include="Content\images\MP910221051[2].jpg" />
     <Content Include="Content\Table.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -166,12 +161,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Empresa\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Empresa\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\AutoEscola.Models\AutoEscola.Models.csproj">
       <Project>{A8A68AAF-3723-4CCA-BEF5-392B97736565}</Project>
       <Name>AutoEscola.Models</Name>
@@ -182,13 +171,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Administracao\Controllers\" />
+    <Folder Include="Areas\Administracao\Models\" />
+    <Folder Include="Areas\Administracao\Views\Shared\" />
+    <Folder Include="Areas\Alunos\Models\" />
+    <Folder Include="Areas\Alunos\Views\Shared\" />
     <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Usuario\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Empresa\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
@@ -197,40 +185,28 @@
     <Content Include="Views\Shared\DefaultScripts.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Aluno\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\_ViewEndereco.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_HomeLayout.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\_ViewContato.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Empresa\_ViewEmpresa.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Aluno\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Aluno\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Aluno\CreateTeste.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\_ViewPessoa.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\_Autenticacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Acesso\Conectar.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Ocorrencia\Index.cshtml" />
+    <Content Include="Areas\Administracao\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Alunos\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Alunos\Views\Ocorrencias\Detalhes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Alunos\Views\Ocorrencias\_ListaOcorrencias.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Alunos\Views\HomeAlunos\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Alunos\Views\Usuario\Create.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

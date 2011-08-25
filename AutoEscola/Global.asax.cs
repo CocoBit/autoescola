@@ -24,7 +24,7 @@ namespace AutoEscola
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Acesso", action = "Conectar", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }
@@ -35,6 +35,11 @@ namespace AutoEscola
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+        }
+
+        public void GravarUsuarioNaSessao(string usuario)
+        {
+            Session["usuario_sessao"] = usuario;
         }
     }
 }

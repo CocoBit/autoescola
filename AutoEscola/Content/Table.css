@@ -1,8 +1,29 @@
 ﻿body {
 }
 
+table
+{
+    margin-top: 10px;
+    width: 100%;
+}
+
 table th, td
 {
     padding: 10px;
     text-align: left;
 }
+
+.row
+{
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: #CCCCCC;
+}
+
+.odd
+{
+    background-color: #F0F0F0;
+}
+
+

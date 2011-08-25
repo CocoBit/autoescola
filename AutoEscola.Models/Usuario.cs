@@ -5,11 +5,13 @@ using System.Text;
 using System.ComponentModel.DataAnnotations;
 using AutoEscola.Interfaces.Models;
 using System.Security.Cryptography;
+using System.Web.Mvc;
 
 namespace AutoEscola.Models
 {
     public class Usuario : IModel
     {
+        public enum PapelUsuario { Aluno, Administrador }
 
         private const string regexEmail = @"^(([^<>()[\]\\.,;:\s@\""]+"
                                         + @"(\.[^<>()[\]\\.,;:\s@\""]+)*)|(\"".+\""))@"
@@ -24,13 +26,20 @@ namespace AutoEscola.Models
         public string Login { get; set; }
 
         [Required(ErrorMessage = "O Email é obrigatório")]
-        [RegularExpression(regexEmail)]
+        [RegularExpression(regexEmail, ErrorMessage = "Email inválido")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "A Senha é obrigatória")]
         [Display(Name = "Senha")]
         [DataType(DataType.Password)]
         public string Senha { get; set; }
+
+        [NotMapped]
+        [Required(ErrorMessage = "A Senha de confirmação é obrigatória")]
+        [Display(Name = "Senha de Confirmação")]
+        [DataType(DataType.Password)]
+        [Compare("Senha", ErrorMessage = "Senha diferente da informada anteriormente")]
+        public string SenhaConfirmacao { get; set; }
 
         public string CodigoAtivacao { get; set; }
 
@@ -46,7 +55,7 @@ namespace AutoEscola.Models
             HashValue = SHhash.ComputeHash(MessageBytes);
             foreach (byte b in HashValue)
                 strHex += String.Format("{0:x2}", b);
-            
+
             this.CodigoAtivacao = strHex;
 
             return strHex;

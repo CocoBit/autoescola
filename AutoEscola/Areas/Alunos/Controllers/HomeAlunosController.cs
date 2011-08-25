@@ -4,16 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace AutoEscola.Controllers
+namespace AutoEscola.Areas.Alunos.Controllers
 {
-    public class HomeController : Controller
+    public class HomeAlunosController : Controller
     {
         //
-        // GET: /Home/
+        // GET: /Alunos/HomeAlunos/
 
         public ActionResult Index()
         {
             return View();
         }
+
     }
 }

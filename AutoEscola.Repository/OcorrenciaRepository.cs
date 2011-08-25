@@ -16,33 +16,8 @@ namespace AutoEscola.Repository
         {
             _context = context;
         }
-        
-        public void Create(Models.Ocorrencia model)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void Delete(Models.Ocorrencia model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Models.Ocorrencia model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Models.Ocorrencia Find(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Models.Ocorrencia> All()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Ocorrencia> FindOcorrenciaByIdAluno(int id)
+        public List<Ocorrencia> SelecionarOcorrenciaPorIdAluno(int id)
         {
             List<Ocorrencia> collectionOcorrencia = _context.Ocorrencias.Where(o => o.Aluno.Id == id).ToList();
 

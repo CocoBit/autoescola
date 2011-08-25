@@ -6,10 +6,10 @@ using AutoEscola.Models;
 
 namespace AutoEscola.Repository.Interfaces
 {
-    public interface IUsuarioRepository: IRepository<Usuario>
+    public interface IUsuarioRepository
     {
-        //Todo
-        List<Usuario> FindByEmpresa(Empresa empresa);
-        Usuario FindByLoginAndPassWord(string senha, string password);
+        bool Validar(string login, string password, string perfil);
+        bool EmailValidoParaCadastro(string email);
+        void Criar(Usuario usuario, string perfil);
     }
 }

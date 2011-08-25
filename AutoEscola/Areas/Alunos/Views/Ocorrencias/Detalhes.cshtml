@@ -1,0 +1,26 @@
+﻿@model AutoEscola.Models.Aluno
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link href="@Url.Content("~/Content/formulario.css")" rel="stylesheet" type="text/css" />
+}
+<div class="content">
+    @RenderPage("~/Views/Shared/_Autenticacao.cshtml")
+    <header class="page-header image_top_home">
+        <hgroup>
+            <h1>
+                Ocorrências</h1>
+            <h2>
+                Visualização de histórico de ocorrências do aluno.</h2>
+        </hgroup>
+    </header>
+
+    <div class="display-label">
+        Nome</div>
+    <div class="display-field">@Model.Pessoa.Nome</div>
+    <div class="display-label">
+        CPF</div>
+    <div class="display-field">@Model.Pessoa.CPF</div>
+    <br />
+    @Html.Partial("~/Areas/Alunos/Views/Ocorrencias/_ListaOcorrencias.cshtml", Model.Ocorrencias)
+</div>

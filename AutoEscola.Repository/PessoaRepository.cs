@@ -17,40 +17,44 @@ namespace AutoEscola.Repository
             _context = context;
         }
 
-        public Pessoa FindByCpf(string cpf)
+        public Pessoa ProcurarPessoaPorCpf(string cpf)
         {
             var pessoas = _context.Pessoas.Where(p => p.CPF == cpf);
-            if (pessoas.Count() == 0)
-                return null;
-            else
-                return pessoas.Single();
+            return pessoas.Count() == 0 ? null : pessoas.First();
         }
 
-        public void Create(Pessoa model)
+        public void Criar(Pessoa model)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Pessoa model)
+        public void Excluir(Pessoa model)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Pessoa model)
+        public void Atualizar(Pessoa model)
         {
             throw new NotImplementedException();
         }
 
-        public Pessoa Find(int id)
+        public Pessoa Buscar(int id)
         {
             var pessoas = _context.Pessoas.Where(p => p.Id == id);
             return pessoas.Count() == 0 ? null : pessoas.First();
 
         }
 
-        public List<Pessoa> All()
+        public List<Pessoa> BuscarTodos()
         {
             throw new NotImplementedException();
         }
+
+        public bool ExisteUmUsuarioCadastradoParaPessoa(Pessoa model)
+        {
+            var pessoas = _context.Usuarios.Where(u => u.Pessoa.Id == model.Id);
+            return pessoas.Count() > 0;
+        }
+
     }
 }

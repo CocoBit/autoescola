@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using AutoEscola.Contexts.Models;
 using AutoEscola.Repository.Interfaces;
-using AutoEscola.Models;
-using AutoEscola.Contexts.Models;
 
 namespace AutoEscola.Repository.Factory
 {
     public static class RepositoryFactory
     {
-        private static AutoEscolaContext context = new AutoEscolaContext(); 
+        private static AutoEscolaContext context = new AutoEscolaContext();
 
         public static IEmpresaRepository CreateEmpresaRepository()
         {
@@ -36,6 +31,5 @@ namespace AutoEscola.Repository.Factory
         {
             return new OcorrenciaRepository(context);
         }
-
     }
 }

@@ -1,36 +1,49 @@
-﻿@{
-    Layout = "~/Views/Shared/_HomeLayout.cshtml";
-    ViewBag.Title = "Página principal";
+﻿@section css{
+    <link href="@Url.Content("~/Content/home.css")" rel="stylesheet" type="text/css" />
 }
-
-<div>
-    <div id="conteudo" style="height: 200px">
-        <div class="column">
-            <h2 style="background-position: left center; line-height: 48px; background-image: url('../../Content/images/onebit_15.png'); background-repeat: no-repeat; padding-left: 50px;">
-                Serviços
+<div class="content">
+    <header class="page-header image_top_home">
+        <hgroup>
+            <h1>
+                Pensando
+                <br />
+                simples.</h1>
+            <h2>
+                Ataque a complexidade dos procesos de gestão
+                <br />
+                de sua auto escola garantindo bons resultados
+                <br />
+                com o <mark class="nome-logo"> Auto escola simples</mark>
             </h2>
-            <br />
-            <span>Mãos frias e úmidas, coração batendo mais forte, respiração acelerada, sobressalto,
-                angústia... Muitas pessoas tem medos - medo de avião, medo de assaltos, medo de
-                elevador... Um dos tipos mais comuns de medos é o MEDO DE DIRIGIR.</span>
-        </div>
-        <div class="column">
-            <h2 style="background-position: left center; line-height: 48px; background-image: url('../../Content/images/onebit_17.png'); background-repeat: no-repeat; padding-left: 50px;">
-                Serviços
-            </h2>
-            <br />
-            <span>Mãos frias e úmidas, coração batendo mais forte, respiração acelerada, sobressalto,
-                angústia... Muitas pessoas tem medos - medo de avião, medo de assaltos, medo de
-                elevador... Um dos tipos mais comuns de medos é o MEDO DE DIRIGIR.</span>
-        </div>
-        <div class="column">
-            <h2 style="background-position: left center; line-height: 48px; background-image: url('../../Content/images/onebit_21.png'); background-repeat: no-repeat; padding-left: 50px;">
-                Serviços
-            </h2>
-            <br />
-            <span>Mãos frias e úmidas, coração batendo mais forte, respiração acelerada, sobressalto,
-                angústia... Muitas pessoas tem medos - medo de avião, medo de assaltos, medo de
-                elevador... Um dos tipos mais comuns de medos é o MEDO DE DIRIGIR.</span>
-        </div>
-    </div>
+        </hgroup>
+    </header>
+    <article>
+        <section class="box info bord-left-blue">
+                <h2>Para os alunos</h2>
+                Acesse sua conta e <b>acompanhe os processos referentes a sua habilitação</b>.
+                O site lhe apresentará um <b>histórico conciso e de fácil entendimento</b>
+                das ocorrências geradas a partir do processo de documentação na geração
+                de sua primeira habilitação. Aqui você encontrará um elo entre o Centro
+                de formação de condutores e sua na sua necessidade de acompanhar o
+                passo a passo do processo de sua habilitação. 
+                @Html.ActionLink("Saiba mais", "Index", "Alunos/HomeAlunos")
+            </section>
+        <section class="box info bord-left-orange">
+                <h2>Para o gestor</h2>
+                Acesse sua conta e <b>acompanhe os processos referentes a sua habilitação</b>.
+                O site lhe apresentará um <b>histórico conciso e de fácil </b>entendimento
+                das ocorrências geradas a partir do processo de documentação na geração
+                de sua primeira habilitação. Aqui você encontrará um elo entre o Centro
+                de formação de condutores e sua na sua necessidade de acompanhar o
+                passo a passo do processo de sua habilitação.
+            </section>
+        <section class="box info bord-left-gold">
+            <h2>
+                Login</h2>
+            @using (Html.BeginForm("logar", "Usuario", FormMethod.Post))
+            {
+                @Html.Partial("~/Views/Shared/_Login.cshtml")
+            }
+        </section>
+    </article>
 </div>

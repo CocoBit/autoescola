@@ -1,10 +1,10 @@
 ﻿<div id="autenticacao">
     @if (HttpContext.Current.User.Identity.IsAuthenticated)
     {
-        @Html.ActionLink("Desconectar", "Desconectar", "Acesso") 
+        @Html.ActionLink("Desconectar", "Desconectar", "Usuario", new { area = "" }, null) 
     }
     @if (!HttpContext.Current.User.Identity.IsAuthenticated)
     {
-        @Html.ActionLink("Conectar", "Conectar", "Acesso")
+        @Html.ActionLink("Conectar", "Conectar", "Usuario")
     }
 </div>

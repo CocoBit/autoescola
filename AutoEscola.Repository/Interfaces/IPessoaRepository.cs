@@ -8,6 +8,7 @@ namespace AutoEscola.Repository.Interfaces
 {
     public interface IPessoaRepository: IRepository<Pessoa>
     {
-        Pessoa FindByCpf(string cpf);
+        Pessoa ProcurarPessoaPorCpf(string cpf);
+        bool ExisteUmUsuarioCadastradoParaPessoa(Pessoa model);
     }
 }

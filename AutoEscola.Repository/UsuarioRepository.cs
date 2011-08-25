@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using AutoEscola.Repository.Interfaces;
 using AutoEscola.Contexts.Models;
 using AutoEscola.Models;
+using System.Web.Security;
 
 namespace AutoEscola.Repository
 {
-    public class UsuarioRepository: IUsuarioRepository
+    public class UsuarioRepository : IUsuarioRepository
     {
         private AutoEscolaContext _context;
 
@@ -17,43 +15,62 @@ namespace AutoEscola.Repository
             _context = context;
         }
 
-        public void Create(Usuario model)
+        public void Criar(Usuario usuario, string perfil)
         {
-            _context.Usuarios.Add(model);
+            _context.Usuarios.Add(usuario);
             _context.SaveChanges();
+
+            RegistrarUsuarioAoPerfilDeAcesso(usuario, perfil);
         }
 
-        public void Delete(Usuario model)
+        public bool Validar(string login, string password, string perfil)
         {
-            throw new NotImplementedException();
+            var usuario = BuscarUsuariosPorLoginSenha(login, password);
+
+            if (!UsuarioValidoParaSessao(usuario, perfil))
+                return false;
+
+            Sessao.Iniciar(usuario);
+
+            return true;
         }
 
-        public void Update(Usuario model)
+        private bool UsuarioValidoParaSessao(Usuario usuario, string perfil)
         {
-            throw new NotImplementedException();
+            return ((usuario != null) && (UsuarioEstaRegistradoAoPerfil(usuario, perfil)));
         }
 
-        public Usuario Find(int id)
+        private Usuario BuscarUsuariosPorLoginSenha(string login, string password)
         {
-            throw new NotImplementedException();
+            var usuarios = _context.Usuarios.Where(u => (u.Login == login || u.Email == login) &&
+                           u.Senha == password && u.Pessoa != null);
+
+            return usuarios.Count() == 0 ? null : usuarios.First();
         }
 
-        public List<Usuario> All()
+        public bool EmailValidoParaCadastro(string email)
         {
-            throw new NotImplementedException();
+            var usuarios = _context.Usuarios.Where(u => u.Email == email);
+            return usuarios.Count() <= 0;
         }
 
-        public Usuario FindByLoginAndPassWord(string senha, string password)
+        private static void CriarPerfilDeAcessoCasoEleNaoExista(string perfil)
         {
-
-            var usuario = _context.Usuarios.Where(u => u.Login == senha && u.Senha == password);
-            return usuario.Count() == 0 ? null : usuario.First();
-            //return new Usuario();
+            if (!Roles.RoleExists(perfil))
+                Roles.CreateRole(perfil);
         }
 
-        public List<Usuario> FindByEmpresa(Empresa empresa)
+        private static void RegistrarUsuarioAoPerfilDeAcesso(Usuario usuario, string perfil)
         {
-            throw new NotImplementedException();
+            CriarPerfilDeAcessoCasoEleNaoExista(perfil);
+
+            if (!UsuarioEstaRegistradoAoPerfil(usuario, perfil))
+                Roles.AddUserToRole(usuario.Email, perfil);
+        }
+
+        private static bool UsuarioEstaRegistradoAoPerfil(Usuario usuario, string perfil)
+        {
+            return Roles.IsUserInRole(usuario.Email, perfil);
         }
     }
 }

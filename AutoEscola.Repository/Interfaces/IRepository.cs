@@ -8,11 +8,11 @@ namespace AutoEscola.Repository.Interfaces
 {
     public interface IRepository <T> where T:  IModel
     {
-        void Create(T model);
-        void Delete(T model);
-        void Update(T model);
+        void Criar(T model);
+        void Excluir(T model);
+        void Atualizar(T model);
 
-        T Find(int id);
-        List<T> All();
+        T Buscar(int id);
+        List<T> BuscarTodos();
     }
 }

@@ -5,12 +5,7 @@
 .form_edit_text
 {
     margin-top: 5px;
-    margin-bottom: 15px;
-}
-
-legend
-{
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .form_button
@@ -20,13 +15,74 @@ legend
 
 .display-field
 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
-.form_row
+textarea
 {
-    background-color:Silver;
+    min-height: 75px;
 }
+
+.editor-label
+{
+    margin: 1em 0 0 0;
+}
+
+.editor-field
+{
+    margin: 0.5em 0 0 0;
+}
+
+input[type="text"]
+{
+    padding: 5px;
+    height: 25px;
+    width: 300px;
+    border: 1px solid #CCC;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+input[type="password"]
+{
+    padding: 5px;
+    height: 25px;
+    width: 300px;
+    border: 1px solid #CCC;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
 
 
