@@ -142,6 +142,11 @@ body.chrome, body.safari
     font-family: Georgia, 'Times New Roman' , Times;
 }
 
+.info a
+{
+    text-decoration: none;
+}
+
 .page-header
 {
     width: 100%;

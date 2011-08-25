@@ -5,7 +5,6 @@ using System.Text;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using AutoEscola.Models;
-using System.Data.Entity.Database;
 
 namespace AutoEscola.Contexts.Models
 {
@@ -20,7 +19,7 @@ namespace AutoEscola.Contexts.Models
         public DbSet<Pessoa> Pessoas { get; set; }
         public DbSet<Ocorrencia> Ocorrencias { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Empresa>();
             modelBuilder.Entity<Aluno>();
@@ -30,8 +29,8 @@ namespace AutoEscola.Contexts.Models
             modelBuilder.Entity<Contato>();
             modelBuilder.Entity<Pessoa>();
             modelBuilder.Entity<Ocorrencia>();
-
-            DbDatabase.SetInitializer<AutoEscolaContext>(new CreateDatabaseIfNotExists<AutoEscolaContext>());
+            
+            Database.SetInitializer<AutoEscolaContext>(new CreateDatabaseIfNotExists<AutoEscolaContext>());
         }
     }
 }
