@@ -169,6 +169,7 @@
     <Folder Include="Areas\Administracao\Views\Shared\" />
     <Folder Include="Areas\Alunos\Models\" />
     <Folder Include="Areas\Alunos\Views\Shared\" />
+    <Folder Include="Documentacao\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -42,8 +42,7 @@ namespace AutoEscola.Repository
 
         private Usuario BuscarUsuariosPorLoginSenha(string login, string password)
         {
-            var usuarios = _context.Usuarios.Where(u => (u.Login == login || u.Email == login) &&
-                           u.Senha == password && u.Pessoa != null);
+            var usuarios = _context.Usuarios.Where(u => u.Login == login || u.Email == login);
 
             return usuarios.Count() == 0 ? null : usuarios.First();
         }

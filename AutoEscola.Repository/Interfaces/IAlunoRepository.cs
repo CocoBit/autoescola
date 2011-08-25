@@ -6,9 +6,9 @@ using AutoEscola.Models;
 
 namespace AutoEscola.Repository.Interfaces
 {
-    public interface IAlunoRepository : IRepository<Aluno>
+    public interface IAlunoRepository
     {
-        Aluno FindByPessoa(Pessoa pessoa);
+        Aluno ProcurarPorIdPessoa(int id);
         Aluno FindByEmpresaAndPessoa(Empresa empresa, Pessoa pessoa);
     }
 }

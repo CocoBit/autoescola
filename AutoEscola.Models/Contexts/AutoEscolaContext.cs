@@ -23,13 +23,17 @@ namespace AutoEscola.Contexts.Models
         {
             modelBuilder.Entity<Empresa>();
             modelBuilder.Entity<Aluno>();
-            modelBuilder.Entity<Usuario>();
             modelBuilder.Entity<Endereco>();
             modelBuilder.Entity<Bairro>();
             modelBuilder.Entity<Contato>();
             modelBuilder.Entity<Pessoa>();
             modelBuilder.Entity<Ocorrencia>();
-            
+
+            modelBuilder.Entity<Usuario>().HasRequired(a => a.Pessoa);
+                           //.HasRequired(a => a.Pessoa)
+                           //.WithMany()
+                           //.HasForeignKey(u => u.PessoaId);
+
             Database.SetInitializer<AutoEscolaContext>(new CreateDatabaseIfNotExists<AutoEscolaContext>());
         }
     }

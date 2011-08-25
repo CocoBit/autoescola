@@ -44,6 +44,8 @@ namespace AutoEscola.Areas.Alunos.Controllers
                 usuario.GerarChaveDeAtivacao();
                 usuarioRepository.Criar(usuario, PERFIL_ALUNOS);
 
+                //Regra envio email
+
                 return RedirectToAction("Index", "HomeAlunos");
             }
             catch (Exception ex)

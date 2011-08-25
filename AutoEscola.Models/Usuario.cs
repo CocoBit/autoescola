@@ -21,6 +21,8 @@ namespace AutoEscola.Models
 
         public int Id { get; set; }
 
+        public int PessoaId { get; set; }
+
         [Required(ErrorMessage = "O login é obrigatória")]
         [Display(Name = "Login")]
         public string Login { get; set; }
@@ -42,7 +44,8 @@ namespace AutoEscola.Models
         public string SenhaConfirmacao { get; set; }
 
         public string CodigoAtivacao { get; set; }
-
+        
+        [ForeignKey("PessoaId")]
         public virtual Pessoa Pessoa { get; set; }
 
         public string GerarChaveDeAtivacao()

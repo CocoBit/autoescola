@@ -15,6 +15,7 @@ namespace AutoEscola.Models
         }
 
         public int Id { get; set; }
+        public int BairroId { get; set; }
 
         [Required(ErrorMessage = "A cidade é obrigatória")]
         public string Cidade { get; set; }
@@ -28,6 +29,7 @@ namespace AutoEscola.Models
         
         public string Cep { get; set; }
 
+        [ForeignKey("BairroId")]
         public virtual Bairro BairroEndereco { get; set; }
     }
 }

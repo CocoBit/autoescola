@@ -25,7 +25,7 @@ namespace AutoEscola.Areas.Alunos.Controllers
         
         public ActionResult Detalhes()
         {
-            Aluno aluno = repository.FindByPessoa(Sessao.Usuario.Pessoa);
+            Aluno aluno = repository.ProcurarPorIdPessoa(Sessao.Usuario.PessoaId);
             return View(aluno);
         }
     }

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="eb01fff6-2eb6-43fa-a5f1-fb9e83a5785c" name="Login" linkedPackageId="fc44b8e2-6b61-4c98-95b3-d14064bfafb2" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="6c26851f-175c-441e-848a-3405703306ef">
+      <profileInstance Id="f775cc59-d880-40b1-a0d4-f418e3f766fd" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="cb6d4dee-2ecb-4edc-8758-78444c63bda0">
+      <profileInstance Id="5f14d8da-700a-46ba-b8c8-1d0138a4ca67" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="eb2e05a4-45ef-48ad-b96b-fd562d954dd6" name="Actor1" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a8503490-bcd5-404a-aa57-1d35a3a57188" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="fc44b8e2-6b61-4c98-95b3-d14064bfafb2" name="AutoEscola.Modelagem">
+    <elementDefinition Id="e3bd5fd5-0109-4308-8614-79f92d9c632e" />
+  </package>
+</useCaseModelRoot>

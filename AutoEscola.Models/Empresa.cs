@@ -10,6 +10,8 @@ namespace AutoEscola.Models
     public class Empresa: IModel
     {
         public int Id { get; set; }
+        public int EnderecoId { get; set; }
+        public int ContatoId { get; set; }
 
         [Required(ErrorMessage = "O CNPJ é obrigatório")]
         public string CNPJ { get; set; }
@@ -21,7 +23,9 @@ namespace AutoEscola.Models
         [Display(Name = "Nome Fantasia")]
         public string NomeFantasia { get; set; }
 
+        [ForeignKey("EnderecoId")]
         public virtual Endereco Endereco { get; set; }
+        [ForeignKey("ContatoId")]
         public virtual Contato Contato { get; set; }
     }
 }
