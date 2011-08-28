@@ -90,22 +90,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Contato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\info-box.css" />
+    <Content Include="Content\page-header.css" />
+    <Content Include="Content\images\AutoEscolaSimples.jpg" />
     <Content Include="Content\botoes.css" />
     <Content Include="Content\formulario.css" />
-    <Content Include="Content\Home.css" />
-    <Content Include="Content\images\53.png" />
-    <Content Include="Content\images\56.png" />
     <Content Include="Content\images\bg_top_home.jpg" />
-    <Content Include="Content\images\blocks.jpg" />
-    <Content Include="Content\images\MP910221051[1].JPG" />
-    <Content Include="Content\images\MP910221051[2].jpg" />
-    <Content Include="Content\Table.css" />
+    <Content Include="Content\images\blocks.png" />
+    <Content Include="Content\images\MP910221051[2].png" />
+    <Content Include="Content\table.css" />
     <Content Include="EFCodeFirstReadMe.txt" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\site.css" />
     <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
