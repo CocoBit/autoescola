@@ -1,0 +1,52 @@
+﻿.bord-left-blue
+{
+    border-left-color: #0066FF;
+}
+
+.bord-left-blue b
+{
+    color: #0066FF;
+}
+
+.bord-left-orange
+{
+    border-left-color: #FF9900;
+}
+
+.bord-left-orange b
+{
+    color: #FF9900;
+}
+
+.box
+{
+    padding-left: 10px;
+    margin-right: 10px;
+    float: left;
+    padding-bottom: 10px;
+}
+
+.info
+{
+    border-left-style: dotted;
+    border-left-width: 2px;
+    border-left-color: #999999;
+}
+
+.info h2
+{
+    padding: 5px;
+    font-size: 30pt;
+}
+
+.info b
+{
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman' , Times;
+    color: #000000;
+}
+
+.info a
+{
+    text-decoration: none;
+}

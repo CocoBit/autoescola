@@ -4,9 +4,10 @@
 @section css{
     <link href="@Url.Content("~/Content/home.css")" rel="stylesheet" type="text/css" />
 }
-<div class="content">
-    <header class="page-header image_top_home_alunos">
-        <hgroup>
+
+<div class="page-header header-blue">
+    <div class="page-header-content image-top-home-alunos">
+        <div class="content">
             <h1>
                 Acompanhamento
                 <br />
@@ -17,37 +18,35 @@
                 em sua auto escola
                 <br />
                 com o
-                <mark class="nome-logo"> Auto escola simples</mark>
+                <b class="mark"> Auto escola simples</b>
             </h2>
-        </hgroup>
-    </header>
-    <article>
-        <section class="box info bord-left-blue">
-            <h2>
-                Area do aluno</h2>
-                Acesse sua conta e <b>acompanhe os processos referentes a sua habilitação</b>.
-                O site lhe apresentará um <b>histórico conciso e de fácil </b>entendimento
-                das ocorrências geradas a partir do processo de documentação na geração
-                de sua primeira habilitação. Aqui você encontrará um elo entre o Centro
-                de formação de condutores e sua na sua necessidade de acompanhar o
-                passo a passo do processo de sua habilitação.
-        </section>
-        <section class="box info">
-                <h2>
-                    Como acessar?</h2>
-                Para acesse sua conta e acompanhar os processos referentes a sua habilitação.
-                <b>Você precisará estar cadastrado em uma auto escola associada ao Auto escola simples</b>.
-                Uma vez que esta envie os dados de ocorrências do processo de sua habilitação,
-                você poderá cadastra-se no site e acessar uma área específica com informações
-                do tipo data do provão, resultados de aprovação, agendamento de aulas etc.
-        </section>
-        <section class="box info bord-left-Maroon">
-            <h2>
-                Login</h2>
-            @using (Html.BeginForm("logar", "Usuario", FormMethod.Post, null))
-            {
-                @Html.Partial("~/Views/Shared/_Login.cshtml")
-            }
-        </section>
-    </article>
+        </div>
+    </div>
 </div>
+<div class="content">
+    <div class="box info bord-left-blue" style="width:600px">
+        <h2>
+            Area do aluno</h2>
+        Acesse sua conta e <b>acompanhe os processos referentes a sua habilitação</b>. O
+        site lhe apresentará um <b>histórico conciso e de fácil </b>entendimento das ocorrências
+        geradas a partir do processo de documentação na geração de sua primeira habilitação.
+        Aqui você encontrará um elo entre o Centro de formação de condutores e sua na sua
+        necessidade de acompanhar o passo a passo do processo de sua habilitação.
+        <h2>
+            Como acessar?</h2>
+        Para acesse sua conta e acompanhar os processos referentes a sua habilitação. <b>Você
+            precisará estar cadastrado em uma auto escola associada ao Auto escola simples</b>.
+        Uma vez que esta envie os dados de ocorrências do processo de sua habilitação, você
+        poderá cadastra-se no site e acessar uma área específica com informações do tipo
+        data do provão, resultados de aprovação, agendamento de aulas etc.
+
+    </div>
+    <div class="box info bord-left-Maroon">
+        <h2>
+            Login</h2>
+        @using (Html.BeginForm("logar", "Usuario", FormMethod.Post, null))
+        {
+            @Html.Partial("~/Views/Shared/_Login.cshtml")
+        }
+    </div>
+</article> 

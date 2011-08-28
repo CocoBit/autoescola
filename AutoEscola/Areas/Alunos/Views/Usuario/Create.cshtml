@@ -1,64 +1,68 @@
 ﻿@model AutoEscola.Models.Usuario
 @{
     ViewBag.Title = "Criar conta de usuário";
-    Layout = "~/Views/Shared/_Layout.cshtml";    
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using (Html.BeginForm())
 {
-    @Html.ValidationSummary(true)
 
     if (ViewBag.Message != null)
     {
     <h4>@ViewBag.Message</h4>
     }
 
+    <header class="page-header header_blue">
+            <hgroup class="content">
+                <h1>Ativação de conta.</h1>
+                <h2>
+                    Ative sua conta de usuário 
+                    <br /> para utilizar todos os recursos
+                    <br />disponíveis para você no Auto Escola Simples
+                </h2>
+            </hgroup>
+    </header>
+    
     <div class="content">
-        <div class="page-header">
-            <h1>
-                People who design.</h1>
-            <h2>
-                We're a group of rollup your sleeves, get it done designers<br />
-                and strategists, at it for more than 10 years.</h2>
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Pessoa.CPF)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Pessoa.CPF)
-            @Html.ValidationMessageFor(model => model.Pessoa.CPF)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Login)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Login)
-            @Html.ValidationMessageFor(model => model.Login)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Email)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Email)
-            @Html.ValidationMessageFor(model => model.Email)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Senha)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Senha)
-            @Html.ValidationMessageFor(model => model.Senha)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.SenhaConfirmacao)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.SenhaConfirmacao)
-            @Html.ValidationMessageFor(model => model.SenhaConfirmacao)
-        </div>
-        <p>
-            <input class="button green" type="submit" value="Criar sua conta agora" />
-        </p>
+        <section class="box">
+            @Html.ValidationSummary(true)
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Pessoa.CPF)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Pessoa.CPF)
+                @Html.ValidationMessageFor(model => model.Pessoa.CPF)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Login)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Login)
+                @Html.ValidationMessageFor(model => model.Login)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Senha)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Senha)
+                @Html.ValidationMessageFor(model => model.Senha)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SenhaConfirmacao)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SenhaConfirmacao)
+                @Html.ValidationMessageFor(model => model.SenhaConfirmacao)
+            </div>
+            <p>
+                <input class="button green" type="submit" value="Criar sua conta agora" />
+            </p>
+        </section>
     </div>
 }

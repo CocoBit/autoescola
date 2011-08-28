@@ -10,11 +10,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, cod
     font-family: inherit;
     text-align: left;
 }
-table
-{
-    border-collapse: collapse;
-    border-spacing: 0;
-}
+
 
 h1, h2, h3, h4, h5, h6
 {
@@ -62,6 +58,8 @@ h6
 
 body
 {
+    padding: 0px;
+    margin: 0px;
     background: #fff;
     font-family: Arial, Helvetica, Helvetica Neue, Verdana, sans-serif;
     font-size: 13px;
@@ -76,153 +74,34 @@ body.chrome, body.safari
     text-shadow: rgba(0,0,0,0.1) 0px 0px 1px;
 }
 
-.bord-left-blue
+.menu
 {
-    border-left-color: #0066FF;
+    width: 1024px;
+    height: 100px;
+    margin: 10px auto;
 }
 
-.bord-left-blue b
+.logo-marca-site
 {
-    color: #0066FF;
-}
-
-.bord-left-Maroon
-{
-    border-left-color: #FF6600;
-}
-
-.bord-left-Maroon b
-{
-    color: #FF6600;
-}
-
-.bord-left-orange
-{
-    border-left-color: #FF9900;
-}
-
-.bord-left-orange b
-{
-    color: #FF9900;
-}
-
-.bord-left-gold
-{
-    border-left-color: #FFCC00;
-}
-
-.bord-left-gold b
-{
-    color: #FFCC00;
-}
-
-.box
-{
-    padding-left: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-.info
-{
-    border-left-style: dotted;
-    border-left-width: 2px;
-    width: 300px;
-}
-
-.info h2
-{
-    padding: 5px;
-    font-size: 30pt;
-}
-
-.info b
-{
-    font-style: oblique;
-    font-family: Georgia, 'Times New Roman' , Times;
-}
-
-.info a
-{
-    text-decoration: none;
-}
-
-.page-header
-{
-    width: 100%;
-    position: relative;
-    margin: 0 0 20px 0;
-    padding: 20px 0 20px 0;
-    border-bottom: 2px solid #eee;
-    clear: both;
-    background-position: right bottom;
+    background-image: url('images/AutoEscolaSimples.jpg');
     background-repeat: no-repeat;
+    background-position: left center;
 }
-
-.page-header h1
-{
-    display: block;
-    font-size: 81px;
-    line-height: 1;
-    font-weight: bold;
-    letter-spacing: -3px;
-    margin: 0;
-    color: #222;
-}
-.page-header h2
-{
-    margin: 6px 0 0;
-    font-size: 24px;
-    line-height: 1.25;
-    color: #777;
-    font-weight: normal;
-    letter-spacing: 0;
-}
-.page-header h2 a
-{
-    text-decoration: underline;
-    font-weight: inherit;
-    line-height: inherit;
-}
-.page-header h2 a.button
-{
-    display: inline-block;
-    position: relative;
-    top: -5px;
-}
-.page-header h1 span, div.page-header h2 span
-{
-    display: block;
-}
-.page-header h1 small, div.page-header h2 small
-{
-    font-size: 75%;
-    font-weight: normal;
-}
-
-
-/* Styles for basic forms
------------------------------------------------------------*/
 
 .content
 {
-    border-style: none;
-    padding: 0 1.4em 1.4em 1.4em;
-    margin: 50px auto;
+    margin: 0px auto;
     width: 1024px;
+    height: auto;
+    padding-top: 0;
 }
 
-.nome-logo
-{
-    font-family: Georgia, 'Times New Roman' , Times;
-    font-style: oblique;
-}
-
-Mark
+.mark
 {
     padding: 1px 8px;
     border-radius: 8px;
-    background-color: #9900CC;
     color: #FFFFFF;
+    font-family: Georgia, 'Times New Roman' , Times;
+    font-style: oblique;    
 }
 

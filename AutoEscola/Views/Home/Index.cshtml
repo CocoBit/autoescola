@@ -1,9 +1,9 @@
 ﻿@section css{
     <link href="@Url.Content("~/Content/home.css")" rel="stylesheet" type="text/css" />
 }
-<div class="content">
-    <header class="page-header image_top_home">
-        <hgroup>
+<div class="page-header header-orange ">
+    <div class="page-header-content image-top-home">
+        <div class="content">
             <h1>
                 Pensando
                 <br />
@@ -13,37 +13,30 @@
                 <br />
                 de sua auto escola garantindo bons resultados
                 <br />
-                com o <mark class="nome-logo"> Auto escola simples</mark>
+                com o
+                <b class="mark"> Auto escola simples</b>
             </h2>
-        </hgroup>
-    </header>
-    <article>
-        <section class="box info bord-left-blue">
-                <h2>Para os alunos</h2>
-                Acesse sua conta e <b>acompanhe os processos referentes a sua habilitação</b>.
-                O site lhe apresentará um <b>histórico conciso e de fácil entendimento</b>
-                das ocorrências geradas a partir do processo de documentação na geração
-                de sua primeira habilitação. Aqui você encontrará um elo entre o Centro
-                de formação de condutores e sua na sua necessidade de acompanhar o
-                passo a passo do processo de sua habilitação. 
-                <br />@Html.ActionLink("Cadastre-se ou faça seu login", "Index", "Alunos/HomeAlunos")
-            </section>
-        <section class="box info bord-left-orange">
-                <h2>Para o gestor</h2>
-                Acesse sua conta e <b>acompanhe os processos referentes a sua habilitação</b>.
-                O site lhe apresentará um <b>histórico conciso e de fácil </b>entendimento
-                das ocorrências geradas a partir do processo de documentação na geração
-                de sua primeira habilitação. Aqui você encontrará um elo entre o Centro
-                de formação de condutores e sua na sua necessidade de acompanhar o
-                passo a passo do processo de sua habilitação.
-            </section>
-        <section class="box info bord-left-gold">
-            <h2>
-                Login</h2>
-            @using (Html.BeginForm("logar", "Usuario", FormMethod.Post))
-            {
-                @Html.Partial("~/Views/Shared/_Login.cshtml")
-            }
-        </section>
-    </article>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="box info" style="width:450px">
+        <h2>
+            Para alunos</h2>
+        Acesse sua conta e <b>acompanhe os processos referentes a sua habilitação</b>. O
+        site lhe apresentará um <b>histórico conciso e de fácil entendimento</b> das ocorrências
+        geradas a partir do processo de documentação na geração de sua primeira habilitação.
+        Aqui você encontrará um elo entre o Centro de formação de condutores e sua na sua
+        necessidade de acompanhar o passo a passo do processo de sua habilitação.
+        <br />@Html.ActionLink("Cadastre-se ou faça seu login", "Index", "Alunos/HomeAlunos")
+    </div>
+    <div class="box info" style="width:450px">
+        <h2>
+            Para gestores</h2>
+        Acesse sua conta e <b>acompanhe os processos referentes a sua habilitação</b>. O
+        site lhe apresentará um <b>histórico conciso e de fácil </b>entendimento das ocorrências
+        geradas a partir do processo de documentação na geração de sua primeira habilitação.
+        Aqui você encontrará um elo entre o Centro de formação de condutores e sua na sua
+        necessidade de acompanhar o passo a passo do processo de sua habilitação.
+    </div>
 </div>

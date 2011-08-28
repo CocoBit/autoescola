@@ -1,0 +1,104 @@
+﻿.page-header
+{
+    width: 100%;
+    position: relative;
+    margin: 0px 0 20px 0;
+    border-bottom: 2px solid #eee;
+    clear: both;
+}
+
+.header-blue
+{
+    background: #c5deea;
+    background: -moz-linear-gradient(top, #c5deea 0%, #8abbd7 31%, #066dab 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c5deea), color-stop(31%,#8abbd7), color-stop(100%,#066dab));
+    background: -webkit-linear-gradient(top, #c5deea 0%,#8abbd7 31%,#066dab 100%);
+    background: -o-linear-gradient(top, #c5deea 0%,#8abbd7 31%,#066dab 100%);
+    background: -ms-linear-gradient(top, #c5deea 0%,#8abbd7 31%,#066dab 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=0 );
+    background: linear-gradient(top, #c5deea 0%,#8abbd7 31%,#066dab 100%);
+}
+
+.page-header.header-blue h2
+{
+    color: #FFFFFF;
+}
+
+.page-header-content
+{
+    padding: 20px 0 20px 0;
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.header-orange
+{
+    background: #f9ee89;
+    background: -moz-linear-gradient(top, #f9ee89 0%, #fc9d05 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9ee89), color-stop(100%,#fc9d05));
+    background: -webkit-linear-gradient(top, #f9ee89 0%,#fc9d05 100%);
+    background: -o-linear-gradient(top, #f9ee89 0%,#fc9d05 100%);
+    background: -ms-linear-gradient(top, #f9ee89 0%,#fc9d05 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ee89', endColorstr='#fc9d05',GradientType=0 );
+    background: linear-gradient(top, #f9ee89 0%,#fc9d05 100%);
+}
+
+.page-header.header-orange h2
+{
+    color: #FFFFFF;
+}
+
+.page-header h1
+{
+    display: block;
+    font-size: 81px;
+    line-height: 1;
+    font-weight: bold;
+    letter-spacing: -3px;
+    margin: 0;
+    color: #222;
+}
+.page-header h2
+{
+    margin: 6px 0 0;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #777;
+    font-weight: normal;
+    letter-spacing: 0;
+}
+.page-header h2 a
+{
+    text-decoration: underline;
+    font-weight: inherit;
+    line-height: inherit;
+}
+.page-header h2 a.button
+{
+    display: inline-block;
+    position: relative;
+    top: -5px;
+}
+.page-header h1 span, div.page-header h2 span
+{
+    display: block;
+}
+.page-header h1 small, div.page-header h2 small
+{
+    font-size: 75%;
+    font-weight: normal;
+}
+
+.image-top-home
+{
+    background-position: right bottom;
+    background-image: url('images/blocks.png');
+    background-repeat: no-repeat;
+}
+
+.image-top-home-alunos
+{
+    background-position: right top;
+    background-image: url('images/MP910221051[2].png');
+    background-repeat: no-repeat;
+}

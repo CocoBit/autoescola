@@ -44,7 +44,16 @@ namespace AutoEscola.Areas.Alunos.Controllers
                 usuario.GerarChaveDeAtivacao();
                 usuarioRepository.Criar(usuario, PERFIL_ALUNOS);
 
-                //Regra envio email
+
+                var mensagem = "Foi realiza uma solicitação de ativação de sua conta no " +
+                               "Sistema Auto Escola Simples. Caso deseje realmente ativá-la,"+
+                               " acesse o linque a baixo" +
+                               "\r\n" +
+                               "\r\n" +
+                               "http://www.autoescolasimples.com.br/alunos/ativacao/" + usuario.CodigoAtivacao;
+
+                Helpers.Contato contato = new Helpers.Contato();
+                contato.Enviar("teste", usuario.Email, "Ativação de conta", mensagem);
 
                 return RedirectToAction("Index", "HomeAlunos");
             }

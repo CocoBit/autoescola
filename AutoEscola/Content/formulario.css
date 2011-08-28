@@ -1,8 +1,4 @@
-﻿body
-{
-}
-
-.form_edit_text
+﻿.form_edit_text
 {
     margin-top: 5px;
     margin-bottom: 10px;
@@ -83,6 +79,8 @@ input[type="password"]
 {
     display: none;
 }
+
+
 
 
 
