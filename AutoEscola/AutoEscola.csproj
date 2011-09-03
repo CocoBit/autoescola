@@ -83,10 +83,12 @@
   <ItemGroup>
     <Compile Include="Areas\Administracao\AdministracaoAreaRegistration.cs" />
     <Compile Include="Areas\Alunos\AlunosAreaRegistration.cs" />
+    <Compile Include="Areas\Alunos\Controllers\AtivacaoController.cs" />
     <Compile Include="Areas\Alunos\Controllers\HomeAlunosController.cs" />
     <Compile Include="Areas\Alunos\Controllers\OcorrenciasController.cs" />
     <Compile Include="Areas\Alunos\Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MensagemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -95,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\info-box.css" />
+    <Content Include="Content\menu.css" />
     <Content Include="Content\page-header.css" />
     <Content Include="Content\images\AutoEscolaSimples.jpg" />
     <Content Include="Content\botoes.css" />
@@ -201,6 +204,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Alunos\Views\Usuario\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Mensagem\Show.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Alunos\Views\Usuario\error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Alunos\Views\Ativacao\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

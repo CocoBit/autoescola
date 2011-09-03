@@ -74,12 +74,7 @@ body.chrome, body.safari
     text-shadow: rgba(0,0,0,0.1) 0px 0px 1px;
 }
 
-.menu
-{
-    width: 1024px;
-    height: 100px;
-    margin: 10px auto;
-}
+
 
 .logo-marca-site
 {
@@ -103,5 +98,18 @@ body.chrome, body.safari
     color: #FFFFFF;
     font-family: Georgia, 'Times New Roman' , Times;
     font-style: oblique;    
+}
+
+.erro-page
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    float:none;
+    width:1024px;
+}
+
+.erro-page h2
+{
+    color: #808080;
 }
 

@@ -23,11 +23,5 @@ namespace AutoEscola.Repository
             var aluno = _context.Alunos.Where(a => a.Pessoa.Id == id);
             return aluno.Count() > 0 ? aluno.Single() : null;
         }
-
-        public Aluno FindByEmpresaAndPessoa(Empresa empresa, Pessoa pessoa)
-        {
-            return null;
-        }
-
     }
 }

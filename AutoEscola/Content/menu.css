@@ -1,0 +1,19 @@
+﻿.menu
+{
+    width: 1024px;
+    height: 100px;
+    margin: 10px auto;
+}
+
+.menu ul
+{
+    padding-top: 50px;
+    float: right;
+}
+
+.menu ul li
+{
+    float: left;
+    margin-left: 5px;
+    list-style-type: none;
+}

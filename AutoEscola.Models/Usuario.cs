@@ -37,7 +37,6 @@ namespace AutoEscola.Models
         public string Senha { get; set; }
 
         [NotMapped]
-        [Required(ErrorMessage = "A Senha de confirmação é obrigatória")]
         [Display(Name = "Senha de Confirmação")]
         [DataType(DataType.Password)]
         [Compare("Senha", ErrorMessage = "Senha diferente da informada anteriormente")]

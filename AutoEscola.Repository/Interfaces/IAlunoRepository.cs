@@ -9,6 +9,5 @@ namespace AutoEscola.Repository.Interfaces
     public interface IAlunoRepository
     {
         Aluno ProcurarPorIdPessoa(int id);
-        Aluno FindByEmpresaAndPessoa(Empresa empresa, Pessoa pessoa);
     }
 }

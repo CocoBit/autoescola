@@ -3,6 +3,7 @@ using AutoEscola.Repository.Interfaces;
 using AutoEscola.Contexts.Models;
 using AutoEscola.Models;
 using System.Web.Security;
+using System;
 
 namespace AutoEscola.Repository
 {
@@ -17,22 +18,59 @@ namespace AutoEscola.Repository
 
         public void Criar(Usuario usuario, string perfil)
         {
-            _context.Usuarios.Add(usuario);
-            _context.SaveChanges();
-
-            RegistrarUsuarioAoPerfilDeAcesso(usuario, perfil);
+            try
+            {
+                _context.Usuarios.Add(usuario);
+                _context.SaveChanges();
+                RegistrarUsuarioAoPerfilDeAcesso(usuario, perfil);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao tentar criar conta de usuário", ex);
+            }
         }
 
         public bool Validar(string login, string password, string perfil)
         {
-            var usuario = BuscarUsuariosPorLoginSenha(login, password);
+            try
+            {
+                var usuario = BuscarUsuariosPorLoginSenha(login, password);
+                if (!UsuarioValidoParaSessao(usuario, perfil))
+                    return false;
 
-            if (!UsuarioValidoParaSessao(usuario, perfil))
+                Sessao.Iniciar(usuario);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar validar usuário", ex);
+            }
+        }
+
+        public bool Ativar(string chave)
+        {
+            try
+            {
+                var usuarios = from u in _context.Usuarios
+                               where u.CodigoAtivacao == chave
+                               select u;
+
+                if (usuarios.Count() > 0)
+                {
+                    Usuario usuario = usuarios.First();
+                    usuario.CodigoAtivacao = "";
+                    usuario.SenhaConfirmacao = usuario.Senha;
+                    _context.SaveChanges();
+                    return true;
+                }
                 return false;
 
-            Sessao.Iniciar(usuario);
-
-            return true;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private bool UsuarioValidoParaSessao(Usuario usuario, string perfil)
@@ -42,7 +80,8 @@ namespace AutoEscola.Repository
 
         private Usuario BuscarUsuariosPorLoginSenha(string login, string password)
         {
-            var usuarios = _context.Usuarios.Where(u => u.Login == login || u.Email == login);
+            var usuarios = _context.Usuarios.Where(u =>( u.Login == login || u.Email == login) && 
+                                                   string.IsNullOrEmpty(u.CodigoAtivacao));
 
             return usuarios.Count() == 0 ? null : usuarios.First();
         }
@@ -71,5 +110,6 @@ namespace AutoEscola.Repository
         {
             return Roles.IsUserInRole(usuario.Email, perfil);
         }
-    }
+
+   }
 }

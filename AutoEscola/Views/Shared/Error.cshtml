@@ -1,15 +1,26 @@
-﻿@{
-    Layout = null;
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    ViewBag.Title = "Error";
 }
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Error</title>
-</head>
-<body>
-    <h2>
-        Sorry, an error occurred while processing your request.
-    </h2>
-</body>
-</html>
+<div class="menu logo-marca-site">
+</div>
+<div class="content">
+    <div class="box info erro-page">
+        <h1>
+            Ocorreu um erro enquanto
+            <br />
+            sua requisição era processada.</h1>
+        <h2>@Model.Exception.Message</h2>
+        @*<p>
+        <p>
+            Controller = @Model.ControllerName</p>
+        <p>
+            Action = @Model.ActionName</p>
+        StackTrace :</p>
+    <pre>@Model.Exception.StackTrace</pre>*@
+    </div>
+    <div>
+        @Html.ActionLink("página Inicial", "Index", "Home", new { area = "" }, new { @class = "button orange" })
+        <a class="button orange" href="@Request.UrlReferrer">Voltar para página anteriror</a> 
+    </div>
+</div>

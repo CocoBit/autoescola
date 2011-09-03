@@ -75,6 +75,11 @@ input[type="password"]
     color: #ff0000;
 }
 
+.validation-summary-errors ul li
+{
+    list-style-type: none;
+}
+
 .validation-summary-valid
 {
     display: none;

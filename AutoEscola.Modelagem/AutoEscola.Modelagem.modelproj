@@ -17,14 +17,14 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
   <ItemGroup>
+    <Content Include="UsuarioController_logar.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UsuarioController_logar.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UsuarioController_logar.sequencediagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
-    <Content Include="Login.usecasediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Login.usecasediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Login.usecasediagram</DependentUpon>
-    </Content>
     <Content Include="ModelDefinition\AutoEscola.Modelagem.uml">
       <SubType>Content</SubType>
     </Content>

@@ -7,11 +7,10 @@
     <link href="@Url.Content("~/Content/page-header.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/botoes.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/formulario.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/menu.css")" rel="stylesheet" type="text/css" />
     @RenderSection("css", required: false)
 </head>
 <body>
-    <div class="menu logo-marca-site">
-    </div>
     @RenderBody()
     @RenderPage("DefaultScripts.cshtml")
     @RenderSection("scripts", required: false)

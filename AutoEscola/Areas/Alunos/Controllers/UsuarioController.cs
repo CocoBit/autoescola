@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using AutoEscola.Repository.Interfaces;
 using AutoEscola.Repository.Factory;
 using AutoEscola.Models;
+using AutoEscola.Controllers;
 
 namespace AutoEscola.Areas.Alunos.Controllers
 {
@@ -17,6 +18,7 @@ namespace AutoEscola.Areas.Alunos.Controllers
         private IUsuarioRepository usuarioRepository;
         private IPessoaRepository pessoaRepository;
         private const string PERFIL_ALUNOS = "role_alunos";
+        private static List<string> Mensagens = new List<string>();
 
         public UsuarioController()
         {
@@ -32,58 +34,57 @@ namespace AutoEscola.Areas.Alunos.Controllers
         }
 
         [HttpPost]
+        [HandleError]
         public ActionResult Create(Usuario usuario)
         {
-            try
-            {
-                AssociarPessoaAoUsuario(usuario);
+            AssociarPessoaAoUsuario(usuario);
 
-                if (!UsuarioValidoParaCadastro(usuario))
-                    return View(usuario);
+            if (!UsuarioValidoParaCadastro(usuario))
+                return View(usuario);
 
-                usuario.GerarChaveDeAtivacao();
-                usuarioRepository.Criar(usuario, PERFIL_ALUNOS);
+            usuario.GerarChaveDeAtivacao();
+            usuarioRepository.Criar(usuario, PERFIL_ALUNOS);
+            EnviarEmail(usuario);
 
+            return RedirectToAction("Index", "HomeAlunos");
+        }
 
-                var mensagem = "Foi realiza uma solicitação de ativação de sua conta no " +
-                               "Sistema Auto Escola Simples. Caso deseje realmente ativá-la,"+
-                               " acesse o linque a baixo" +
-                               "\r\n" +
-                               "\r\n" +
-                               "http://www.autoescolasimples.com.br/alunos/ativacao/" + usuario.CodigoAtivacao;
+        private static void EnviarEmail(Usuario usuario)
+        {
+            var mensagem = "Foi realiza uma solicitação de ativação de sua conta no " +
+                           "Sistema Auto Escola Simples. Caso deseje realmente ativá-la," +
+                           " acesse o linque a baixo" +
+                           "\r\n" +
+                           "\r\n" +
+                           "http://www.autoescolasimples.com.br/alunos/ativacao/?chave=" + usuario.CodigoAtivacao;
 
-                Helpers.Contato contato = new Helpers.Contato();
-                contato.Enviar("teste", usuario.Email, "Ativação de conta", mensagem);
-
-                return RedirectToAction("Index", "HomeAlunos");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            Helpers.Contato contato = new Helpers.Contato();
+            contato.Enviar("teste", usuario.Email, "Ativação de conta", mensagem);
         }
 
         [HttpPost]
+        [HandleError]
         public ActionResult logar(FormCollection formulario)
         {
+            Mensagens.Clear();
             var usuario = formulario["usuario"];
             var senha = formulario["senha"];
 
-            try
+            if (usuarioRepository.Validar(usuario, senha, PERFIL_ALUNOS))
+                return RedirectToAction("Detalhes", "Ocorrencias");
+            else
             {
-                if (usuarioRepository.Validar(usuario, senha, PERFIL_ALUNOS))
-                    return RedirectToAction("Detalhes", "Ocorrencias");
-                else
-                {
-                    ModelState.AddModelError("", "Usuário não localizado.");
-                    return RedirectToAction("Index", "HomeAluno");
-                }
+                Mensagens.Add("Usuário / e-mail e senhas inválidos.");
+                return RedirectToAction("error");
             }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", "Erro ao autenticar usuario: " + ex.Message);
-                return RedirectToAction("Index", "HomeAluno");
-            }
+        }
+
+        public ActionResult error()
+        {
+            foreach (string mensagem in Mensagens)
+                ModelState.AddModelError("", mensagem);
+
+            return View();
         }
 
         private bool UsuarioValidoParaCadastro(Usuario usuario)
@@ -95,7 +96,7 @@ namespace AutoEscola.Areas.Alunos.Controllers
         {
             if (!usuarioRepository.EmailValidoParaCadastro(usuario.Email))
             {
-                ViewBag.Message = string.Format("O endereço eletrônico {0} já cadastrado. Tentre outro endereço", usuario.Email);
+                Mensagens.Add("e-mail inválido. Tentre outro endereço");
                 return false;
             }
             return true;
@@ -111,12 +112,12 @@ namespace AutoEscola.Areas.Alunos.Controllers
         {
             if (pessoa == null)
             {
-                ViewBag.Message = "Não há registro deste CPF para realização de cadastro para este usuário";
+                Mensagens.Add("Não há registro deste CPF para realização de cadastro para este usuário");
                 return false;
             }
             else if (pessoaRepository.ExisteUmUsuarioCadastradoParaPessoa(pessoa))
             {
-                ViewBag.Message = string.Format("O proprietário do CPF '{0}' já possui um usuário associado", pessoa.CPF);
+                Mensagens.Add(string.Format("O proprietário do CPF '{0}' já possui um usuário associado", pessoa.CPF));
                 return false;
             }
             return true;
