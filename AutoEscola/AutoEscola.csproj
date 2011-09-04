@@ -96,6 +96,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\bg_body.gif" />
+    <Content Include="Content\images\bg_header.gif" />
+    <Content Include="Content\images\btn_next.gif" />
+    <Content Include="Content\images\btn_prev.gif" />
+    <Content Include="Content\images\control-img1.jpg" />
+    <Content Include="Content\images\faturamento_tela4.gif" />
     <Content Include="Content\info-box.css" />
     <Content Include="Content\menu.css" />
     <Content Include="Content\page-header.css" />
@@ -106,6 +112,7 @@
     <Content Include="Content\images\blocks.png" />
     <Content Include="Content\images\MP910221051[2].png" />
     <Content Include="Content\table.css" />
+    <Content Include="Content\screen.css" />
     <Content Include="EFCodeFirstReadMe.txt" />
     <Content Include="Global.asax" />
     <Content Include="Content\site.css" />
@@ -123,6 +130,7 @@
     <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\easySlider1.7.js" />
     <Content Include="Scripts\kwicks-1.5.1.pack.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
