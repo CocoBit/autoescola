@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using AutoEscola.Interfaces.Models;
 
 namespace AutoEscola.Models
 {
-    public class Bairro: IModel
+    public class Bairro
     {
         public int Id { get; set; }
 

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
-using AutoEscola.Interfaces.Models;
 using System.Security.Cryptography;
 using System.Web.Mvc;
 
 namespace AutoEscola.Models
 {
-    public class Usuario : IModel
+    public class Usuario
     {
         public enum PapelUsuario { Aluno, Administrador }
 

@@ -3,27 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AutoEscola.Repository.Interfaces;
-using AutoEscola.Repository.Factory;
 using AutoEscola.Models;
 using AutoEscola.Controllers;
+using AutoEscola.Models.Repositories;
+using AutoEscola.Models.Sevices.Interfaces;
+using AutoEscola.Models.Sevices;
+using AutoEscola.Helpers;
 
 namespace AutoEscola.Areas.Alunos.Controllers
 {
     public class UsuarioController : Controller
     {
-        //
-        // GET: /Alunos/Usuario/
+        private IUsuarioRepository UsuarioRepository;
+        private IPessoaRepository PessoaRepository;
+        private IServicosUsuario ServicosUsuario;
 
-        private IUsuarioRepository usuarioRepository;
-        private IPessoaRepository pessoaRepository;
-        private const string PERFIL_ALUNOS = "role_alunos";
-        private static List<string> Mensagens = new List<string>();
-
-        public UsuarioController()
+        public UsuarioController(IUsuarioRepository usuarioRepository, IPessoaRepository pessoaRepository)
         {
-            usuarioRepository = RepositoryFactory.CreateUsuarioRepository();
-            pessoaRepository = RepositoryFactory.CreatePessoaRepository();
+            this.UsuarioRepository = usuarioRepository;
+            this.PessoaRepository = pessoaRepository;
+            this.ServicosUsuario = new ServicosUsuarioAluno(usuarioRepository, pessoaRepository);
         }
 
         public ActionResult Create()
@@ -37,96 +36,60 @@ namespace AutoEscola.Areas.Alunos.Controllers
         [HandleError]
         public ActionResult Create(Usuario usuario)
         {
-            AssociarPessoaAoUsuario(usuario);
+            ServicosUsuario.CriarNovoUsuario(usuario);
 
-            if (!UsuarioValidoParaCadastro(usuario))
+            if (ServicosUsuario.PossuiErros())
+            {
+                foreach (string mensagem in ServicosUsuario.Erros())
+                    ModelState.AddModelError("", mensagem);
                 return View(usuario);
+            }
 
-            usuario.GerarChaveDeAtivacao();
-            usuarioRepository.Criar(usuario, PERFIL_ALUNOS);
             EnviarEmail(usuario);
 
-            return RedirectToAction("Index", "HomeAlunos");
+            return RedirectToAction("ConfirmarCadastro", "Ativacao");
         }
 
-        private static void EnviarEmail(Usuario usuario)
+        private void EnviarEmail(Usuario usuario)
         {
-            var mensagem = "Foi realiza uma solicitação de ativação de sua conta no " +
-                           "Sistema Auto Escola Simples. Caso deseje realmente ativá-la," +
+            var mensagem = "<html><p>" + 
+                           "Foi realiza uma solicitaÃ§Ã£o de ativaÃ§Ã£o de sua conta no " +
+                           "Sistema Auto Escola Simples. Caso deseje realmente ativÃ¡-la," +
                            " acesse o linque a baixo" +
-                           "\r\n" +
-                           "\r\n" +
-                           "http://www.autoescolasimples.com.br/alunos/ativacao/?chave=" + usuario.CodigoAtivacao;
+                           "<br/>" +
+                           "<br/>" +
+                           "<a href=\"http://www.autoescolasimples.com.br/alunos/ativacao/?chave=" + usuario.CodigoAtivacao + "\">Clique aqui para ativar sua conta</a>" +
+                           "</p></html>";
 
-            Helpers.Contato contato = new Helpers.Contato();
-            contato.Enviar("teste", usuario.Email, "Ativação de conta", mensagem);
+            Email email = new Email();
+            email.Enviar("teste", usuario.Email, "AtivaÃ§Ã£o de conta", mensagem);
         }
 
         [HttpPost]
         [HandleError]
         public ActionResult logar(FormCollection formulario)
         {
-            Mensagens.Clear();
             var usuario = formulario["usuario"];
             var senha = formulario["senha"];
 
-            if (usuarioRepository.Validar(usuario, senha, PERFIL_ALUNOS))
+            if (ServicosUsuario.Logar(usuario, senha))
                 return RedirectToAction("Detalhes", "Ocorrencias");
             else
-            {
-                Mensagens.Add("Usuário / e-mail e senhas inválidos.");
-                return RedirectToAction("error");
-            }
+                return RedirectToAction("Error");
         }
 
-        public ActionResult error()
+        public ActionResult Error()
         {
-            foreach (string mensagem in Mensagens)
+            foreach (string mensagem in ServicosUsuario.Erros())
                 ModelState.AddModelError("", mensagem);
 
             return View();
         }
 
-        private bool UsuarioValidoParaCadastro(Usuario usuario)
-        {
-            return ((PessoaPodeSerAssociadaAoUsuario(usuario.Pessoa)) || (EmailValidoParaCadastro(usuario)));
-        }
-
-        private bool EmailValidoParaCadastro(Usuario usuario)
-        {
-            if (!usuarioRepository.EmailValidoParaCadastro(usuario.Email))
-            {
-                Mensagens.Add("e-mail inválido. Tentre outro endereço");
-                return false;
-            }
-            return true;
-        }
-
-        private void AssociarPessoaAoUsuario(Usuario usuario)
-        {
-            Pessoa pessoa = pessoaRepository.ProcurarPessoaPorCpf(usuario.Pessoa.CPF);
-            usuario.Pessoa = pessoa;
-        }
-
-        private bool PessoaPodeSerAssociadaAoUsuario(Pessoa pessoa)
-        {
-            if (pessoa == null)
-            {
-                Mensagens.Add("Não há registro deste CPF para realização de cadastro para este usuário");
-                return false;
-            }
-            else if (pessoaRepository.ExisteUmUsuarioCadastradoParaPessoa(pessoa))
-            {
-                Mensagens.Add(string.Format("O proprietário do CPF '{0}' já possui um usuário associado", pessoa.CPF));
-                return false;
-            }
-            return true;
-        }
-
         [HttpGet]
         public ActionResult Desconectar()
         {
-            Sessao.Sair();
+            ServicosUsuario.Desconectar();
             return RedirectToAction("Index", "Home");
         }
 

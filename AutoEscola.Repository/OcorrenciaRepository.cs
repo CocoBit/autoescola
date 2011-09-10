@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AutoEscola.Repository.Interfaces;
 using AutoEscola.Contexts.Models;
 using AutoEscola.Models;
+using AutoEscola.Models.Repositories;
 
 namespace AutoEscola.Repository
 {

@@ -50,13 +50,6 @@
   <ItemGroup>
     <Compile Include="AlunoRepository.cs" />
     <Compile Include="EmpresaRepository.cs" />
-    <Compile Include="Factory\RepositoryFactory.cs" />
-    <Compile Include="Interfaces\IAlunoRepository.cs" />
-    <Compile Include="Interfaces\IEmpresaRepository.cs" />
-    <Compile Include="Interfaces\IOcorrenciaRepositoy.cs" />
-    <Compile Include="Interfaces\IPessoaRepository.cs" />
-    <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\IUsuarioRepository.cs" />
     <Compile Include="OcorrenciaRepository.cs" />
     <Compile Include="PessoaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +64,7 @@
   <ItemGroup>
     <None Include="App.Config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

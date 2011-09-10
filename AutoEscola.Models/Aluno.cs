@@ -1,11 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using AutoEscola.Interfaces.Models;
 using System.Collections.Generic;
 
 
 namespace AutoEscola.Models
 {
-    public class Aluno : IModel
+    public class Aluno
     {
         public int Id { get; set; }
         public int PessoaId { get; set; }

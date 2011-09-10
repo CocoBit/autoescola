@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AutoEscola.Interfaces.Models;
 using System.ComponentModel.DataAnnotations;
 
 
 namespace AutoEscola.Models
 {
-    public class Contato : IModel
+    public class Contato
     {
         private const string regexEmail = @"^(([^<>()[\]\\.,;:\s@\""]+"
                                         + @"(\.[^<>()[\]\\.,;:\s@\""]+)*)|(\"".+\""))@"

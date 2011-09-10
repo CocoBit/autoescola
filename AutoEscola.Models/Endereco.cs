@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AutoEscola.Interfaces.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace AutoEscola.Models
 {
-    public class Endereco: IModel
+    public class Endereco
     {
         public Endereco()
         {

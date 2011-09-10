@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using AutoEscola.Repository.Interfaces;
 using AutoEscola.Contexts.Models;
 using AutoEscola.Models;
 using System.Web.Security;
 using System;
+using AutoEscola.Models.Repositories;
 
 namespace AutoEscola.Repository
 {
@@ -80,8 +80,11 @@ namespace AutoEscola.Repository
 
         private Usuario BuscarUsuariosPorLoginSenha(string login, string password)
         {
-            var usuarios = _context.Usuarios.Where(u =>( u.Login == login || u.Email == login) && 
-                                                   string.IsNullOrEmpty(u.CodigoAtivacao));
+            var usuarios = from u in _context.Usuarios
+                           where (u.Login == login || u.Email == login) &&
+                           u.Senha == password &&
+                           string.IsNullOrEmpty(u.CodigoAtivacao)
+                           select u;
 
             return usuarios.Count() == 0 ? null : usuarios.First();
         }

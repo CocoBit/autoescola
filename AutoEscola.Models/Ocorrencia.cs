@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AutoEscola.Interfaces.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace AutoEscola.Models
 {
-    public class Ocorrencia: IModel
+    public class Ocorrencia
     {
         public int Id { get; set; }
         public int AlunoId { get; set; }

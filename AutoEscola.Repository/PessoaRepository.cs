@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AutoEscola.Repository.Interfaces;
 using AutoEscola.Models;
 using AutoEscola.Contexts.Models;
+using AutoEscola.Models.Repositories;
 
 namespace AutoEscola.Repository
 {
-    class PessoaRepository : IPessoaRepository
+    public class PessoaRepository : IPessoaRepository
     {
         private AutoEscolaContext _context;
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AutoEscola.Repository;
-using AutoEscola.Repository.Factory;
+using AutoEscola.Models.Repositories;
 
 namespace AutoEscola.Areas.Alunos.Controllers
 {
@@ -13,13 +13,24 @@ namespace AutoEscola.Areas.Alunos.Controllers
         //
         // GET: /Alunos/Ativacao/
 
+        private IUsuarioRepository usuarioRepositorio;
+
+        public AtivacaoController(IUsuarioRepository usuarioRepositorio)
+        {
+            this.usuarioRepositorio = usuarioRepositorio;
+        }
+
         [HandleError]
         public ActionResult Index(string chave)
         {
-            var repositorio = RepositoryFactory.CreateUsuarioRepository();
-            if (repositorio.Ativar(chave))
+            if (this.usuarioRepositorio.Ativar(chave))
                 return View();
             return RedirectToAction("Index", "HomeAlunos");
+        }
+
+        public ActionResult ConfirmarCadastro()
+        {
+            return View();
         }
 
     }

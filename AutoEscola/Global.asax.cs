@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using AutoEscola.App_Start;
 
 namespace AutoEscola
 {
@@ -35,11 +36,6 @@ namespace AutoEscola
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
-        }
-
-        public void GravarUsuarioNaSessao(string usuario)
-        {
-            Session["usuario_sessao"] = usuario;
         }
     }
 }
