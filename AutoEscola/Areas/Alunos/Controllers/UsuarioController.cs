@@ -5,24 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using AutoEscola.Models;
 using AutoEscola.Controllers;
-using AutoEscola.Models.Repositories;
-using AutoEscola.Models.Sevices.Interfaces;
-using AutoEscola.Models.Sevices;
-using AutoEscola.Helpers;
+using AutoEscola.Models.Repositorios;
+using AutoEscola.Models.Servicos.Interfaces;
+using AutoEscola.Models.Servicos;
 
 namespace AutoEscola.Areas.Alunos.Controllers
 {
     public class UsuarioController : Controller
     {
-        private IUsuarioRepository UsuarioRepository;
-        private IPessoaRepository PessoaRepository;
-        private IServicosUsuario ServicosUsuario;
+        private IServicosUsuarioAluno ServicosUsuarioAluno;
 
-        public UsuarioController(IUsuarioRepository usuarioRepository, IPessoaRepository pessoaRepository)
+        public UsuarioController(IServicosUsuarioAluno servicoUsuario)
         {
-            this.UsuarioRepository = usuarioRepository;
-            this.PessoaRepository = pessoaRepository;
-            this.ServicosUsuario = new ServicosUsuarioAluno(usuarioRepository, pessoaRepository);
+            this.ServicosUsuarioAluno = servicoUsuario;
         }
 
         public ActionResult Create()
@@ -36,33 +31,24 @@ namespace AutoEscola.Areas.Alunos.Controllers
         [HandleError]
         public ActionResult Create(Usuario usuario)
         {
-            ServicosUsuario.CriarNovoUsuario(usuario);
+            ServicosUsuarioAluno.CriarContaDeUsuarioAluno(usuario);
 
-            if (ServicosUsuario.PossuiErros())
+            if (ServicosUsuarioAluno.ExisteErros())
             {
-                foreach (string mensagem in ServicosUsuario.Erros())
+                foreach (string mensagem in ServicosUsuarioAluno.Erros())
                     ModelState.AddModelError("", mensagem);
                 return View(usuario);
             }
 
             EnviarEmail(usuario);
 
-            return RedirectToAction("ConfirmarCadastro", "Ativacao");
+            return RedirectToAction("Confirmar", "Conta", new { area = "" });
         }
 
         private void EnviarEmail(Usuario usuario)
         {
-            var mensagem = "<html><p>" + 
-                           "Foi realiza uma solicitaÃ§Ã£o de ativaÃ§Ã£o de sua conta no " +
-                           "Sistema Auto Escola Simples. Caso deseje realmente ativÃ¡-la," +
-                           " acesse o linque a baixo" +
-                           "<br/>" +
-                           "<br/>" +
-                           "<a href=\"http://www.autoescolasimples.com.br/alunos/ativacao/?chave=" + usuario.CodigoAtivacao + "\">Clique aqui para ativar sua conta</a>" +
-                           "</p></html>";
-
-            Email email = new Email();
-            email.Enviar("teste", usuario.Email, "AtivaÃ§Ã£o de conta", mensagem);
+            var email = new EmailController();
+            email.VerificationEmail(usuario).Deliver();
         }
 
         [HttpPost]
@@ -72,7 +58,7 @@ namespace AutoEscola.Areas.Alunos.Controllers
             var usuario = formulario["usuario"];
             var senha = formulario["senha"];
 
-            if (ServicosUsuario.Logar(usuario, senha))
+            if (ServicosUsuarioAluno.Logar(usuario, senha))
                 return RedirectToAction("Detalhes", "Ocorrencias");
             else
                 return RedirectToAction("Error");
@@ -80,7 +66,7 @@ namespace AutoEscola.Areas.Alunos.Controllers
 
         public ActionResult Error()
         {
-            foreach (string mensagem in ServicosUsuario.Erros())
+            foreach (string mensagem in ServicosUsuarioAluno.Erros())
                 ModelState.AddModelError("", mensagem);
 
             return View();
@@ -89,7 +75,7 @@ namespace AutoEscola.Areas.Alunos.Controllers
         [HttpGet]
         public ActionResult Desconectar()
         {
-            ServicosUsuario.Desconectar();
+            ServicosUsuarioAluno.Desconectar();
             return RedirectToAction("Index", "Home");
         }
 

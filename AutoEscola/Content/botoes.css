@@ -5,7 +5,7 @@
 	text-align: center;
 	text-decoration: none;
 	font: 14px/100% Arial, Helvetica, sans-serif;
-	padding: .5em 2em .55em;
+	padding: .7em 2.5em .7em;
 	text-shadow: 0 1px 1px rgba(0,0,0,.3);
 	-webkit-border-radius: .5em; 
 	-moz-border-radius: .5em;
@@ -42,6 +42,28 @@
 	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#444));
 	background: -moz-linear-gradient(top,  #000,  #444);
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#666666');
+}
+
+
+.bt-house
+{
+	background-image: url('images/53-house.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.bt-alunos
+{
+	background-image: url('images/112-group.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.bt-gestor
+{
+	background-image: url('images/111-user.png');
+	background-repeat: no-repeat;
+	background-position: left center;
 }
 
 /* gray */

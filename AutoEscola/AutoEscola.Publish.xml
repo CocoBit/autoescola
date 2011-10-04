@@ -1,97 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="ftp://ftp.cocobit.com.br/" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FTP" replaceMatchingFiles="True" userName="cocobitc" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvS4VcZUihEOvRYpUsDrf7AAAAAACAAAAAAAQZgAAAAEAACAAAAAzfhHHGQp1fRdhT2W+Gu4BQQyonGBqLQ30gp7hRM9/8gAAAAAOgAAAAAIAACAAAABdAW2ehxTMC7IGUT/4jgwuLz3xLmnZizNxcP6cZ0IJNiAAAAA5hBSUA5u0advbMf1JJ/7a+yLy6C02EbendMlCApdItUAAAADS2jGimcrnCxHL5Cd/YdGw7IO1XuAhpV8MEziys9/YrMrORE+fAq778RJ/osZ/ZwCtmNQfO2/zi85AhzUDYmYz" SelectedForPublish="True">
+  <publishProfile publishUrl="ftp://ftp.autoescolasimples.com.br" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FTP" replaceMatchingFiles="False" userName="cocobitc" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvS4VcZUihEOvRYpUsDrf7AAAAAACAAAAAAAQZgAAAAEAACAAAAAzfhHHGQp1fRdhT2W+Gu4BQQyonGBqLQ30gp7hRM9/8gAAAAAOgAAAAAIAACAAAABdAW2ehxTMC7IGUT/4jgwuLz3xLmnZizNxcP6cZ0IJNiAAAAA5hBSUA5u0advbMf1JJ/7a+yLy6C02EbendMlCApdItUAAAADS2jGimcrnCxHL5Cd/YdGw7IO1XuAhpV8MEziys9/YrMrORE+fAq778RJ/osZ/ZwCtmNQfO2/zi85AhzUDYmYz" SelectedForPublish="True">
     <file relUrl="Scripts/jquery.validate.unobtrusive.js" publishTime="02/09/2011 12:58:17" />
     <file relUrl="Views/Web.config" publishTime="02/09/2011 13:53:03" />
-    <file relUrl="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="02/09/2011 12:58:17" />
+    <file relUrl="Views/Shared/_Login.cshtml" publishTime="09/04/2011 08:40:59" />
+    <file relUrl="Content/images/aluno.jpg" publishTime="09/12/2011 22:28:13" />
     <file relUrl="Scripts/MicrosoftAjax.js" publishTime="02/09/2011 12:58:17" />
     <file relUrl="Scripts/jquery-1.4.4.js" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Views/Empresa/_ViewEmpresa.cshtml" publishTime="03/09/2011 23:22:37" />
-    <file relUrl="Views/Aluno/Details.cshtml" publishTime="05/21/2011 13:23:07" />
-    <file relUrl="Content/images/onebit_21.png" publishTime="03/08/2011 17:23:05" />
+    <file relUrl="Views/Shared/_Menu.cshtml" publishTime="09/12/2011 23:09:19" />
+    <file relUrl="bin/ActionMailer.Net.dll" publishTime="09/10/2011 10:22:34" />
+    <file relUrl="bin/EntityFramework.xml" publishTime="08/24/2011 21:49:25" />
+    <file relUrl="Content/images/btn_next.gif" publishTime="09/04/2011 10:10:09" />
     <file relUrl="Scripts/MicrosoftMvcValidation.debug.js" publishTime="02/09/2011 12:58:18" />
-    <file relUrl="Scripts/jquery-1.4.4-vsdoc.js" publishTime="02/09/2011 12:58:17" />
+    <file relUrl="Areas/Alunos/Views/Usuario/Error.cshtml" publishTime="08/31/2011 14:01:38" />
+    <file relUrl="Content/menu.css" publishTime="09/12/2011 23:22:44" />
     <file relUrl="bin/System.Web.Mvc.dll" publishTime="01/05/2011 17:42:16" />
-    <file relUrl="Web.config" publishTime="05/21/2011 13:28:55" />
-    <file relUrl="Views/Ocorrencia/Index.cshtml" publishTime="05/21/2011 15:40:08" />
+    <file relUrl="Web.config" publishTime="09/12/2011 23:45:40" />
     <file relUrl="bin/System.Web.WebPages.Deployment.xml" publishTime="12/20/2010 10:52:36" />
-    <file relUrl="Views/_ViewEndereco.cshtml" publishTime="04/09/2011 15:37:22" />
-    <file relUrl="Content/themes/base/images/ui-icons_cd0a0a_256x240.png" publishTime="02/09/2011 12:58:17" />
     <file relUrl="Scripts/MicrosoftMvcAjax.js" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Views/_ViewContato.cshtml" publishTime="03/06/2011 09:44:38" />
-    <file relUrl="Content/images/00448493_4.jpg" publishTime="03/09/2011 21:57:07" />
-    <file relUrl="Content/images/00448493.jpg" publishTime="03/08/2011 20:00:39" />
-    <file relUrl="Content/themes/base/images/ui-icons_2e83ff_256x240.png" publishTime="02/09/2011 12:58:17" />
+    <file relUrl="bin/Ninject.xml" publishTime="09/08/2011 12:35:59" />
+    <file relUrl="bin/Ninject.Web.Mvc.pdb" publishTime="09/08/2011 12:35:59" />
+    <file relUrl="Content/images/control-img1.jpg" publishTime="09/04/2011 12:24:05" />
+    <file relUrl="bin/Ninject.Web.Mvc.dll" publishTime="09/08/2011 12:35:59" />
+    <file relUrl="bin/System.Web.WebPages.xml" publishTime="12/19/2010 23:59:38" />
+    <file relUrl="Global.asax" publishTime="02/09/2011 12:58:18" />
     <file relUrl="Scripts/jquery-1.4.4.min.js" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="02/09/2011 12:58:17" />
     <file relUrl="Scripts/jquery-ui.js" publishTime="02/09/2011 12:58:17" />
     <file relUrl="bin/System.Web.Razor.xml" publishTime="12/20/2010 10:52:36" />
     <file relUrl="bin/System.Web.WebPages.dll" publishTime="01/05/2011 15:45:38" />
-    <file relUrl="Views/Aluno/CreateTeste.cshtml" publishTime="03/19/2011 17:56:58" />
     <file relUrl="Scripts/jquery.unobtrusive-ajax.min.js" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="bin/System.Web.Mvc.xml" publishTime="01/04/2011 15:29:22" />
+    <file relUrl="bin/System.Web.Mvc.xml" publishTime="02/09/2011 11:26:24" />
     <file relUrl="bin/System.Web.Helpers.xml" publishTime="12/19/2010 23:59:38" />
-    <file relUrl="Content/images/onebit_17.png" publishTime="03/08/2011 17:23:05" />
-    <file relUrl="bin/AutoEscola.Repository.pdb" publishTime="05/21/2011 15:36:55" />
-    <file relUrl="bin/AutoEscola.Models.dll" publishTime="05/21/2011 15:36:53" />
+    <file relUrl="Content/images/bg_top_home.jpg" publishTime="09/04/2011 12:50:50" />
+    <file relUrl="Content/botoes.css" publishTime="09/12/2011 22:04:26" />
+    <file relUrl="Views/Mensagem/Show.cshtml" publishTime="08/31/2011 08:11:41" />
+    <file relUrl="bin/Ninject.dll" publishTime="09/08/2011 12:35:59" />
+    <file relUrl="bin/AutoEscola.Repository.pdb" publishTime="09/12/2011 23:43:35" />
+    <file relUrl="bin/AutoEscola.Models.dll" publishTime="09/12/2011 23:43:34" />
     <file relUrl="Views/Shared/DefaultScripts.cshtml" publishTime="03/08/2011 13:58:39" />
-    <file relUrl="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Content/images/53.png" publishTime="03/08/2011 22:07:45" />
-    <file relUrl="Content/images/00448493_3.jpg" publishTime="03/09/2011 21:35:06" />
-    <file relUrl="bin/Microsoft.Web.Infrastructure.dll" publishTime="01/05/2011 15:45:38" />
-    <file relUrl="bin/AutoEscola.Repository.dll" publishTime="05/21/2011 15:36:55" />
-    <file relUrl="Content/images/56.png" publishTime="03/08/2011 22:07:45" />
-    <file relUrl="Content/images/MP910221051[1].JPG" publishTime="03/08/2011 16:40:47" />
-    <file relUrl="bin/AutoEscola.dll" publishTime="05/21/2011 15:42:27" />
-    <file relUrl="Views/Aluno/Index.cshtml" publishTime="03/08/2011 17:29:25" />
-    <file relUrl="Global.asax" publishTime="02/09/2011 12:58:18" />
-    <file relUrl="Content/themes/base/images/ui-icons_222222_256x240.png" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Views/Shared/_HomeLayout.cshtml" publishTime="03/14/2011 20:00:59" />
-    <file relUrl="Scripts/kwicks-1.5.1.pack.js" publishTime="03/08/2011 10:53:07" />
-    <file relUrl="bin/Microsoft.Web.Infrastructure.xml" publishTime="12/20/2010 10:52:36" />
-    <file relUrl="Views/_ViewPessoa.cshtml" publishTime="03/26/2011 16:07:11" />
-    <file relUrl="bin/System.Web.WebPages.Razor.dll" publishTime="01/05/2011 15:45:38" />
-    <file relUrl="Content/themes/base/images/ui-icons_888888_256x240.png" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="bin/AutoEscola.pdb" publishTime="05/21/2011 15:42:27" />
-    <file relUrl="Views/Shared/Error.cshtml" publishTime="02/09/2011 12:58:18" />
-    <file relUrl="Content/themes/base/images/ui-icons_454545_256x240.png" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="bin/System.Web.WebPages.Razor.xml" publishTime="12/20/2010 10:52:36" />
-    <file relUrl="Scripts/jquery.validate.min.js" publishTime="03/05/2011 19:45:36" />
-    <file relUrl="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Views/Empresa/Create.cshtml" publishTime="04/09/2011 15:04:02" />
-    <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Content/formulario.css" publishTime="05/21/2011 13:44:24" />
-    <file relUrl="Content/Table.css" publishTime="05/21/2011 13:16:18" />
-    <file relUrl="bin/System.Web.Razor.dll" publishTime="01/05/2011 15:45:38" />
-    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="05/21/2011 12:43:57" />
-    <file relUrl="Views/Empresa/Details.cshtml" publishTime="03/05/2011 07:21:02" />
-    <file relUrl="Scripts/jquery-ui.min.js" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Content/Site.css" publishTime="03/14/2011 20:29:08" />
-    <file relUrl="bin/AutoEscola.Models.pdb" publishTime="05/21/2011 15:36:53" />
-    <file relUrl="Scripts/MicrosoftMvcValidation.js" publishTime="02/09/2011 12:58:18" />
-    <file relUrl="bin/EntityFramework.dll" publishTime="01/26/2011 20:10:18" />
-    <file relUrl="Content/Home.css" publishTime="03/14/2011 20:00:02" />
-    <file relUrl="Content/themes/base/jquery-ui.css" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Views/Usuario/Create.cshtml" publishTime="05/21/2011 15:27:13" />
-    <file relUrl="Views/_ViewStart.cshtml" publishTime="02/09/2011 12:58:18" />
-    <file relUrl="Content/images/onebit_15.png" publishTime="03/08/2011 17:23:05" />
     <file relUrl="Scripts/jquery.validate.unobtrusive.min.js" publishTime="02/09/2011 12:58:17" />
+    <file relUrl="bin/System.Web.Helpers.dll" publishTime="01/05/2011 15:45:38" />
+    <file relUrl="bin/Microsoft.Web.Infrastructure.dll" publishTime="01/05/2011 15:45:38" />
+    <file relUrl="bin/AutoEscola.Repository.dll" publishTime="09/12/2011 23:43:35" />
+    <file relUrl="Content/info-box.css" publishTime="09/12/2011 22:25:09" />
+    <file relUrl="Content/images/btn_prev.gif" publishTime="09/04/2011 10:10:09" />
+    <file relUrl="EFCodeFirstReadMe.txt" publishTime="08/24/2011 21:49:26" />
+    <file relUrl="Content/images/blocks.png" publishTime="08/27/2011 21:49:11" />
+    <file relUrl="Content/page-header.css" publishTime="08/28/2011 23:25:49" />
+    <file relUrl="Scripts/kwicks-1.5.1.pack.js" publishTime="03/08/2011 10:53:07" />
+    <file relUrl="Areas/Admin/Views/Administrador/CadastrarEmpresa.cshtml" publishTime="09/10/2011 17:16:51" />
+    <file relUrl="bin/System.Web.WebPages.Razor.dll" publishTime="01/05/2011 15:45:38" />
+    <file relUrl="Areas/Alunos/Views/HomeAlunos/Index.cshtml" publishTime="09/12/2011 22:43:43" />
+    <file relUrl="Areas/Alunos/Views/Usuario/Create.cshtml" publishTime="09/10/2011 14:10:23" />
+    <file relUrl="bin/AutoEscola.pdb" publishTime="09/13/2011 08:46:38" />
+    <file relUrl="bin/Microsoft.Web.Infrastructure.xml" publishTime="12/20/2010 10:52:36" />
+    <file relUrl="InstallationDummyFile.txt" publishTime="09/08/2011 12:36:50" />
+    <file relUrl="Scripts/easySlider1.7.js" publishTime="09/04/2011 10:03:32" />
+    <file relUrl="Views/Shared/Error.cshtml" publishTime="08/31/2011 13:21:10" />
+    <file relUrl="Content/images/logo-marca-auto-escola-simples.png" publishTime="09/12/2011 23:31:10" />
+    <file relUrl="bin/System.Web.WebPages.Razor.xml" publishTime="12/20/2010 10:52:36" />
+    <file relUrl="Areas/Alunos/Views/Web.config" publishTime="08/19/2011 13:45:46" />
+    <file relUrl="bin/AutoEscola.dll" publishTime="09/13/2011 08:46:38" />
+    <file relUrl="Content/images/MP910221051[2].png" publishTime="08/25/2011 22:53:17" />
+    <file relUrl="Views/Conta/Index.cshtml" publishTime="09/10/2011 14:09:05" />
+    <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="02/09/2011 12:58:17" />
+    <file relUrl="Content/formulario.css" publishTime="08/31/2011 13:53:35" />
+    <file relUrl="Content/Table.css" publishTime="08/27/2011 22:33:30" />
+    <file relUrl="bin/WebActivator.dll" publishTime="09/08/2011 12:35:59" />
+    <file relUrl="bin/System.Web.Razor.dll" publishTime="01/05/2011 15:45:38" />
+    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="08/31/2011 12:49:05" />
+    <file relUrl="Scripts/jquery-ui.min.js" publishTime="02/09/2011 12:58:17" />
+    <file relUrl="Views/Conta/Confirmar.cshtml" publishTime="09/10/2011 14:08:14" />
+    <file relUrl="Content/Site.css" publishTime="09/12/2011 22:16:29" />
+    <file relUrl="bin/AutoEscola.Models.pdb" publishTime="09/12/2011 23:43:34" />
+    <file relUrl="Scripts/MicrosoftMvcValidation.js" publishTime="02/09/2011 12:58:18" />
+    <file relUrl="Views/_ViewStart.cshtml" publishTime="02/09/2011 12:58:18" />
+    <file relUrl="bin/EntityFramework.dll" publishTime="08/24/2011 21:49:25" />
+    <file relUrl="Areas/Admin/Views/Web.config" publishTime="09/07/2011 16:52:42" />
+    <file relUrl="Views/Email/VerificationEmail.html.cshtml" publishTime="09/10/2011 13:49:36" />
+    <file relUrl="Content/screen.css" publishTime="09/12/2011 22:47:55" />
     <file relUrl="Scripts/jquery.unobtrusive-ajax.js" publishTime="02/09/2011 12:58:17" />
     <file relUrl="Scripts/MicrosoftAjax.debug.js" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Views/Shared/_Autenticacao.cshtml" publishTime="05/21/2011 13:04:21" />
-    <file relUrl="Views/Empresa/Index.cshtml" publishTime="03/05/2011 19:45:36" />
-    <file relUrl="bin/System.Web.WebPages.xml" publishTime="12/19/2010 23:59:38" />
+    <file relUrl="Views/Shared/_Autenticacao.cshtml" publishTime="08/19/2011 18:42:02" />
+    <file relUrl="bin/Ninject.pdb" publishTime="09/08/2011 12:35:59" />
+    <file relUrl="Areas/Alunos/Views/Ocorrencias/Detalhes.cshtml" publishTime="09/04/2011 08:37:18" />
     <file relUrl="Scripts/MicrosoftMvcAjax.debug.js" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Views/Aluno/Create.cshtml" publishTime="03/26/2011 17:36:20" />
-    <file relUrl="Views/Acesso/Conectar.cshtml" publishTime="05/21/2011 11:51:28" />
-    <file relUrl="Content/images/00448493_2.jpg" publishTime="03/09/2011 21:35:18" />
-    <file relUrl="Scripts/jquery.validate.js" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="02/09/2011 12:58:17" />
-    <file relUrl="Views/Home/Index.cshtml" publishTime="03/14/2011 20:09:35" />
-    <file relUrl="bin/System.Web.Helpers.dll" publishTime="01/05/2011 15:45:38" />
-    <file relUrl="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="02/09/2011 12:58:17" />
     <file relUrl="bin/System.Web.WebPages.Deployment.dll" publishTime="01/05/2011 15:45:38" />
+    <file relUrl="Scripts/jquery-1.4.4-vsdoc.js" publishTime="02/09/2011 12:58:17" />
+    <file relUrl="Scripts/jquery.validate.js" publishTime="02/09/2011 12:58:17" />
+    <file relUrl="Areas/Alunos/Views/Ocorrencias/_ListaOcorrencias.cshtml" publishTime="08/20/2011 10:22:59" />
+    <file relUrl="Views/Home/Index.cshtml" publishTime="09/12/2011 22:41:33" />
+    <file relUrl="Scripts/jquery.validate.min.js" publishTime="03/05/2011 19:45:36" />
+    <file relUrl="bin/Ninject.Web.Mvc.xml" publishTime="09/08/2011 12:35:59" />
+    <file relUrl="bin/ActionMailer.Net.Mvc.dll" publishTime="09/10/2011 10:22:34" />
   </publishProfile>
 </publishData>

@@ -1,36 +1,17 @@
-﻿.bord-left-blue
-{
-    border-left-color: #0066FF;
-}
-
-.bord-left-blue b
-{
-    color: #0066FF;
-}
-
-.bord-left-orange
-{
-    border-left-color: #FF9900;
-}
-
-.bord-left-orange b
-{
-    color: #FF9900;
-}
-
-.box
+﻿.box
 {
     padding-left: 10px;
     margin-right: 10px;
     float: left;
     padding-bottom: 10px;
     font-size: 11pt;
+    color: #000000;
 }
 
 .info
 {
     border-left-style: dotted;
-    border-left-width: 2px;
+    border-left-width: 1px;
     border-left-color: #999999;
 }
 

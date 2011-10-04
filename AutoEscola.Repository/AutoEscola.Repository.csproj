@@ -48,12 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlunoRepository.cs" />
-    <Compile Include="EmpresaRepository.cs" />
-    <Compile Include="OcorrenciaRepository.cs" />
-    <Compile Include="PessoaRepository.cs" />
+    <Compile Include="RepositorioAluno.cs" />
+    <Compile Include="RepositorioEmpresa.cs" />
+    <Compile Include="RepositorioOcorrencia.cs" />
+    <Compile Include="RepositorioPessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsuarioRepository.cs" />
+    <Compile Include="RepositorioUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AutoEscola.Models\AutoEscola.Models.csproj">

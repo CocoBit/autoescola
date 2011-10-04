@@ -4,16 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AutoEscola.Models;
-using AutoEscola.Models.Repositories;
+using AutoEscola.Models.Repositorios;
 
 namespace AutoEscola.Areas.Alunos.Controllers
 {
     [Authorize(Roles = "role_alunos")]
     public class OcorrenciasController : Controller
     {
-        IAlunoRepository alunoRepository;
+        IRepositorioAluno alunoRepository;
 
-        public OcorrenciasController(IAlunoRepository alunoRepository)
+        public OcorrenciasController(IRepositorioAluno alunoRepository)
         {
             this.alunoRepository = alunoRepository;
         }

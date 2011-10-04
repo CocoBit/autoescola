@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="menu logo-marca-site">
+</div>
+<div class="content">
+    <div class="box info" style="margin-top: 50px">
+        <h1>
+            Obrigado por se cadastrar no Auto Escola Simples!</h1>
+        <h2>
+            Um mensagem de confirmação foi enviada para sua caixa de email.<br />
+            Para ativar seu cadastro você precisa acessar seu correio eletrônico,<br />
+            ler atentamente essa mensagem e acessar o link de ativação contido nela.</h2>
+        <br />
+        <br />
+        <div>
+            @Html.ActionLink("Área do aluno", "Index", "HomeAlunos", new { area = "Alunos" }, new { @class = "button orange" })
+        </div>
+    </div>
+</div>

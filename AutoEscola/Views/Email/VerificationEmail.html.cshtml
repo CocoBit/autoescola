@@ -1,0 +1,10 @@
+﻿@using ActionMailer.Net
+@model AutoEscola.Models.Usuario
+@{
+    Layout = null;
+}
+Bem-vindo ao Auto Escola Simples, @Model.Pessoa.Nome
+Precisamos que você confirme sua conta de email. Clique neste link para obter esta
+verificação!
+@Url.Action("Index", "Conta", new { chave = @Model.CodigoAtivacao }, "http")
+Obrigado! 

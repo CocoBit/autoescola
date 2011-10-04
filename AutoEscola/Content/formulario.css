@@ -55,7 +55,12 @@ input[type="password"]
 -----------------------------------------------------------*/
 .field-validation-error
 {
-    color: #ff0000;
+    background-position: left center;
+    color: #CC0000;
+    border-radius: .5em;
+    padding: 5px 5px 5px 20px;
+    background-image: url('images/system_error_alt_02.png');
+    background-repeat: no-repeat;
 }
 
 .field-validation-valid

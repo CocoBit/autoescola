@@ -1,0 +1,67 @@
+﻿@model AutoEscola.Models.Usuario
+
+@{
+    ViewBag.Title = "CadastrarEmpresa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <div class="content">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PessoaId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PessoaId)
+            @Html.ValidationMessageFor(model => model.PessoaId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Login)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Login)
+            @Html.ValidationMessageFor(model => model.Login)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Senha)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Senha)
+            @Html.ValidationMessageFor(model => model.Senha)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SenhaConfirmacao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SenhaConfirmacao)
+            @Html.ValidationMessageFor(model => model.SenhaConfirmacao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CodigoAtivacao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CodigoAtivacao)
+            @Html.ValidationMessageFor(model => model.CodigoAtivacao)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

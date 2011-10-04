@@ -9,9 +9,9 @@ namespace AutoEscola.App_Start
     using Ninject.Web.Mvc;
     using AutoEscola.Models;
     using AutoEscola.Repository;
-    using AutoEscola.Models.Repositories;
-    using AutoEscola.Models.Sevices.Interfaces;
-    using AutoEscola.Models.Sevices;
+    using AutoEscola.Models.Repositorios;
+    using AutoEscola.Models.Servicos.Interfaces;
+    using AutoEscola.Models.Servicos;
     using AutoEscola.Contexts.Models;
 
     public static class NinjectMVC3 
@@ -54,9 +54,13 @@ namespace AutoEscola.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IUsuarioRepository>().To<UsuarioRepository>().WithConstructorArgument("context", context);
-            kernel.Bind<IPessoaRepository>().To<PessoaRepository>().WithConstructorArgument("context", context);
-            kernel.Bind<IAlunoRepository>().To<AlunoRepository>().WithConstructorArgument("context", context);
+            kernel.Bind<IRepositorioUsuario>().To<RepositorioUsuario>().WithConstructorArgument("context", context);
+            kernel.Bind<IRepositorioPessoa>().To<RepositorioPessoa>().WithConstructorArgument("context", context);
+            kernel.Bind<IRepositorioAluno>().To<RepositorioAluno>().WithConstructorArgument("context", context);
+            kernel.Bind<IRepositorioEmpresa>().To<RepositorioEmpresa>().WithConstructorArgument("context", context);
+            
+            kernel.Bind<IServicosUsuarioAluno>().To<ServicosUsuarioAluno>();
+            kernel.Bind<IServicosUsuarioAdmin>().To<ServicosUsuarioAdmin>();
         }        
     }
 }

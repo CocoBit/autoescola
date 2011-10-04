@@ -54,19 +54,23 @@
     <Compile Include="Contexts\AutoEscolaContext.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Endereco.cs" />
-    <Compile Include="Repositories\IAlunoRepository.cs" />
-    <Compile Include="Repositories\IEmpresaRepository.cs" />
-    <Compile Include="Repositories\IOcorrenciaRepositoy.cs" />
-    <Compile Include="Repositories\IPessoaRepository.cs" />
-    <Compile Include="Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Repositorios\IRepositorioAluno.cs" />
+    <Compile Include="Repositorios\IRepositorioEmpresa.cs" />
+    <Compile Include="Repositorios\IRepositorioOcorrencia.cs" />
+    <Compile Include="Repositorios\IRepositorioPessoa.cs" />
+    <Compile Include="Repositorios\IRepositorioUsuario.cs" />
     <Compile Include="Ocorrencia.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos\ServicosUsuario.cs" />
     <Compile Include="Sessao.cs" />
-    <Compile Include="Sevices\Interfaces\IServicosUsuario.cs" />
-    <Compile Include="Sevices\ServicosUsuarioAluno.cs" />
-    <Compile Include="Sevices\Interfaces\IValidadorServico.cs" />
-    <Compile Include="Sevices\ValidadorServicos.cs" />
+    <Compile Include="Servicos\Interfaces\IServicosUsuario.cs" />
+    <Compile Include="Servicos\Interfaces\IServicosUsuarioAluno.cs" />
+    <Compile Include="Servicos\Interfaces\IServicosUsuarioAdmin.cs" />
+    <Compile Include="Servicos\ServicosUsuarioAdmin.cs" />
+    <Compile Include="Servicos\ServicosUsuarioAluno.cs" />
+    <Compile Include="Servicos\Interfaces\IServicosValidacao.cs" />
+    <Compile Include="Servicos\ServicosValidacao.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup />

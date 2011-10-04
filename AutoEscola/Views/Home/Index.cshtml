@@ -1,7 +1,6 @@
 ﻿@section css{
     <link href="@Url.Content("~/Content/screen.css")" rel="stylesheet" type="text/css" />
 }
-
 @section scripts{
     <script src="@Url.Content("~/Scripts/easySlider1.7.js")" type="text/javascript"></script>
     <script type="text/javascript">
@@ -10,7 +9,7 @@
                 auto: true,
                 continuous: true,
                 controlsShow: false,
-                pause: 5000
+                pause: 4000
             });
         });	
 	</script>
@@ -24,7 +23,7 @@
                 <br />
                 simples.</h1>
             <h2>
-                Ataque a complexidade dos procesos de gestão
+                Ataque a complexidade dos processos de gestão
                 <br />
                 de sua auto escola garantindo bons resultados
                 <br />
@@ -34,37 +33,50 @@
     </div>
 </div>
 <div class="content">
-    <div class="box info" style="width: 400px; height:250px">
+    <div class="box info" style="width: 400px; height: 250px">
         <h2>
-            Para seus alunos</h2>
-        <b>Promova um elo inteligente entre você e seus alunos</b>, oferecendo um acesso
-        simples e fácil, em uma área específica na qual eles econtrarão um histórico conciso
-        e de fácil entendimento das ocorrências geradas a partir dos processos entre o Departamento
-        de Trânsito e o seu Centro de Formação de Condutores. 
+            Você precisa de um sistema para CFC</h2>
+        O sistema Auto Escola Simples tem como objetivo permitir um controle fácil de todos
+        os processos de uma Auto Escola (CFC). Participe de nossa enquete e nos ajude a
+        aperfeiçoar esta ferramenta.
         <br />
-        <br />@Html.ActionLink("Conheça a área do aluno", "Index", "Alunos/HomeAlunos", null, new { @class = "button green" })
+        <br />
+        <a class="button green" href="https://docs.google.com/spreadsheet/viewform?formkey=dGRTbUFpa0Vmd0VmV2pyYW45MUJ5VkE6MQ">
+            Participe de nossa enquete</a>
     </div>
-    <div class="box info" style="width: 500px; height:250px">
+    <div class="box info" style="width: 500px; height: 250px">
         <div id="slider-content">
             <div id="slider">
                 <ul>
-                    <li><a href="https://docs.google.com/spreadsheet/viewform?formkey=dGRTbUFpa0Vmd0VmV2pyYW45MUJ5VkE6MQ">
+                    <li><a href="#">
                         <div class="text-slider" style="float: left">
-                            <h2>Evite custos excessivos em ligações</h2>
+                            <h2>
+                                Evite custos excessivos em ligações</h2>
                             Crie um elo inteligente entre você e seu aluno e evite custos desnecessários.
                             <br />
                             <br />
                         </div>
                         <img src="../../Content/images/control-img1.jpg" alt="Css Template Preview" />
                     </a></li>
-                    <li><a href="https://docs.google.com/spreadsheet/viewform?formkey=dGRTbUFpa0Vmd0VmV2pyYW45MUJ5VkE6MQ">
+                    <li><a href="#">
                         <div class="text-slider" style="float: left; margin-right: 5px">
-                            <h2>Agendamento simples e seguro</h2>
+                            <h2>
+                                Agendamento simples e seguro</h2>
                             Planeje os agendamentos das aulas práticas dos alunos de forma rápida e sem transtorno...
                             <br />
                             <br />
                         </div>
                         <img src="../../Content/images/bg_top_home.jpg" alt="Css Template Preview" />
+                    </a></li>
+                    <li><a href=@Url.Action("Index", "HomeAlunos", new { area = "Alunos" })>
+                        <div class="text-slider" style="float: left; margin-right: 5px">
+                            <h2>
+                            Ofereça o melhor para seus alunos</h2>
+                            Um acesso simples e fácil para o acompanhamento das ocorrências geradas
+                            a partir do seu Centro de Formação de Condutores.
+                            <br />
+                        </div>
+                        <img src="../../Content/images/aluno.jpg" alt="Css Template Preview" />
                     </a></li>
                 </ul>
             </div>

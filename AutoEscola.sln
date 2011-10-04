@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEscola.Models", "AutoEs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEscola.Repository", "AutoEscola.Repository\AutoEscola.Repository.csproj", "{2403015E-FF0E-46A7-8AB0-90569BFAF500}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "AutoEscola.Modelagem", "AutoEscola.Modelagem\AutoEscola.Modelagem.modelproj", "{5165786B-47F4-4D2A-B0B3-2A6F8565CFC4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +25,6 @@ Global
 		{2403015E-FF0E-46A7-8AB0-90569BFAF500}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2403015E-FF0E-46A7-8AB0-90569BFAF500}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2403015E-FF0E-46A7-8AB0-90569BFAF500}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5165786B-47F4-4D2A-B0B3-2A6F8565CFC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5165786B-47F4-4D2A-B0B3-2A6F8565CFC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5165786B-47F4-4D2A-B0B3-2A6F8565CFC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5165786B-47F4-4D2A-B0B3-2A6F8565CFC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
