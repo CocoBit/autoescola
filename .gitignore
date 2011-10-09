@@ -1,5 +1,6 @@
 *.suo
 *.dll
+!packages/*
 AutoEscola/obj/
 AutoEscola/bin/AutoEscola.dll
 AutoEscola/bin/AutoEscola.pdb
