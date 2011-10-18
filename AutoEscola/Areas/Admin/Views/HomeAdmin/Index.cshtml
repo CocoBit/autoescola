@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Partial("~/Views/Shared/_Menu.cshtml")
+<div class="page-header header-green">
+    <div class="page-header-content image-top-home-admin">
+        <div class="content">
+            <h1>
+                Gestão eficiente e
+                <br />
+                simples.</h1>
+            <h2>
+                Acompanhe os processos de sua habilitação
+                <br />
+                em seu Centro de Formação de Condutores
+                <br />
+                com o <b class="mark">Auto escola simples</b>
+            </h2>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="box info" style="width: 550px">
+        <h2>Área do gestor</h2>
+        Aqui, você poderá gerenciar os processos do seu Centro de Formação de Condutores. Crie
+        agora mesmo sua conta e acesse nosso sistema . Nesta área você pode <b>cadastrar alunos, 
+        instrutores, realizar os agendamentos de aulas práticas e muito mais. Além disso, gere 
+        para seus alunos um histórico conciso e de fácil entendimento</b> das ocorrências geradas 
+        a partir de processos entre o Departamento de Trânsito e seu Centro de Formação de Condutores.
+    </div>
+    <div class="box info" style="width: 50px">
+    </div>
+    <div class="box info bord-left-Maroon">
+        @Html.Partial("~/Views/Shared/_Login.cshtml")
+    </div>
+</div>

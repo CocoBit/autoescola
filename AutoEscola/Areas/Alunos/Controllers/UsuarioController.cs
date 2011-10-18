@@ -22,6 +22,7 @@ namespace AutoEscola.Areas.Alunos.Controllers
 
         public ActionResult Create()
         {
+
             var usuario = new Usuario();
             usuario.Pessoa = new Pessoa();
             return View(usuario);
@@ -61,11 +62,12 @@ namespace AutoEscola.Areas.Alunos.Controllers
             if (ServicosUsuarioAluno.Logar(usuario, senha))
                 return RedirectToAction("Detalhes", "Ocorrencias");
             else
-                return RedirectToAction("Error");
+                return RedirectToAction("ErrorLogin");
         }
 
-        public ActionResult Error()
+        public ActionResult ErrorLogin()
         {
+            ViewBag.Login = "aluno";
             foreach (string mensagem in ServicosUsuarioAluno.Erros())
                 ModelState.AddModelError("", mensagem);
 

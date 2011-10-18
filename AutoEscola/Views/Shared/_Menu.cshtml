@@ -1,9 +1,42 @@
 ﻿<div class="menu">
     <div class="inner-menu">
         <ul>
-            <li>@Html.ActionLink("Página Inicial", "Index", "Home", new { area = "" }, new { @class = "button green" })</li>
-            <li>@Html.ActionLink("Área do aluno", "Index", "HomeAlunos", new { area = "Alunos" }, new { @class = "button green" })</li>
-            <li>@Html.ActionLink("Área do gestor", "Index", "Home", null, new { @class = "button green" })</li>
+            <li>
+                @{
+                    if (ViewBag.Login == "index")
+                    {
+                        @Html.ActionLink("Página Inicial", "Index", "Home", new { area = "" }, new { @class = "button orange" }) 
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Página Inicial", "Index", "Home", new { area = "" }, new { @class = "button gray" }) 
+                    }
+                }
+            </li>
+            <li>
+                @{
+                    if (ViewBag.Login == "aluno")
+                    {
+                        @Html.ActionLink("Área do aluno", "Index", "HomeAlunos", new { area = "Alunos" }, new { @class = "button blue" })
+                    }
+                    else
+                    { 
+                        @Html.ActionLink("Área do aluno", "Index", "HomeAlunos", new { area = "Alunos" }, new { @class = "button gray" })
+                    }
+                }
+            </li>
+            <li>
+                @{
+                    if (ViewBag.Login == "admin")
+                    {
+                        @Html.ActionLink("Área do gestor", "Index", "HomeAdmin", new { area = "Admin" }, new { @class = "button green" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Área do gestor", "Index", "HomeAdmin", new { area = "Admin" }, new { @class = "button gray" })
+                    }
+                    }
+            </li>
         </ul>
     </div>
 </div>

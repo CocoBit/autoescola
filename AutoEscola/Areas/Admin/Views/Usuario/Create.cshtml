@@ -1,11 +1,11 @@
 ﻿@model AutoEscola.Models.Usuario
 @{
-    ViewBag.Title = "Criar conta de usuário";
+    ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 @using (Html.BeginForm())
 {
-
     if (ViewBag.Message != null)
     {
     <h4>@ViewBag.Message</h4>
@@ -24,27 +24,25 @@
                 disponíveis para você no Auto Escola Simples
             </h2>
         </hgroup>
-    </header>
+    </header>    
     
     <div class="content">
         <section class="box">
             @Html.ValidationSummary(true)
             <div class="editor-label">
-                @Html.LabelFor(model => model.Pessoa.CPF)
+                @Html.LabelFor(model => model.Pessoa.Empresa.CNPJ)
             </div>
             <div class="editor-field">
-                @Html.EditorFor(model => model.Pessoa.CPF)
-                @Html.ValidationMessageFor(model => model.Pessoa.CPF)
+                @Html.EditorFor(model => model.Pessoa.Empresa.CNPJ)
+                @Html.ValidationMessageFor(model => model.Pessoa.Empresa.CNPJ)
             </div>
-
-            <div class="editor-label"> 
+            <div class="editor-label">
                 @Html.LabelFor(model => model.Login)
             </div>
             <div class="editor-field">
                 @Html.EditorFor(model => model.Login)
                 @Html.ValidationMessageFor(model => model.Login)
             </div>
-
             <div class="editor-label">
                 @Html.LabelFor(model => model.Email)
             </div>
@@ -52,7 +50,6 @@
                 @Html.EditorFor(model => model.Email)
                 @Html.ValidationMessageFor(model => model.Email)
             </div>
-
             <div class="editor-label">
                 @Html.LabelFor(model => model.Senha)
             </div>
@@ -60,7 +57,6 @@
                 @Html.EditorFor(model => model.Senha)
                 @Html.ValidationMessageFor(model => model.Senha)
             </div>
-
             <div class="editor-label">
                 @Html.LabelFor(model => model.SenhaConfirmacao)
             </div>
@@ -68,28 +64,12 @@
                 @Html.EditorFor(model => model.SenhaConfirmacao)
                 @Html.ValidationMessageFor(model => model.SenhaConfirmacao)
             </div>
-            <br />
             <p>
-                <input class="button blue" type="submit" value="Criar sua conta agora" />
+                <input class="button green" type="submit" value="Criar sua conta agora" />
             </p>
         </section>
-    <div class="box info" style="width: 400px">
-        <h2>
-            Área do aluno</h2>
-        Aqui, você encontra um elo com seu Centro de Formação de Condutores. Ative
-        agora mesmo sua conta, acesse a área do aluno e <b>acompanhe todos os processos referentes
-        a sua habilitação</b>. Nesta área lhe será apresentado um <b>histórico conciso e de
-        fácil entendimento</b> das ocorrências geradas a partir de processos entre
-        o Departamento de Trânsito e o Centro de Formação de Condutores.
-        <h2>
-            Como acessar?</h2>
-        Para acessar sua conta e acompanhar os processos referentes a sua habilitação, <b>você
-        precisa estar cadastrado em um Centro de Formação de Condutores 
-        </b>. Este por sua vez, deve enviar os dados de ocorrências do
-        processo de sua habilitação ao Auto Escola Simples. A partir daí, você poderá cadastrar-se no site e acessar
-        uma área específica na qual se econtra informações como data do provão, resultados
-        de aprovação, agendamentos de aulas práticas etc.
-    </div>
-
     </div>
 }
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

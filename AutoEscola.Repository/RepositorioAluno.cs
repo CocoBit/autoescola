@@ -20,8 +20,8 @@ namespace AutoEscola.Repository
 
         public Aluno ProcurarPorIdPessoa(int id)
         {
-            var aluno = _context.Alunos.Where(a => a.Pessoa.Id == id);
-            return aluno.Count() > 0 ? aluno.Single() : null;
+            var alunos = _context.Alunos.Where(a => a.Pessoa.Id == id);
+            return alunos.Count() == 0? null : alunos.First();
         }
     }
 }

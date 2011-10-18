@@ -102,6 +102,7 @@
     <Compile Include="App_Start\NinjectMVC3.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdministradorController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsuarioController.cs" />
     <Compile Include="Areas\Alunos\AlunosAreaRegistration.cs" />
     <Compile Include="Controllers\ContaController.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\admin2.png" />
     <Content Include="Content\images\aluno.jpg" />
     <Content Include="Content\images\btn_next.gif" />
     <Content Include="Content\images\btn_prev.gif" />
@@ -218,7 +220,7 @@
     <Content Include="Views\Mensagem\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Alunos\Views\Usuario\Error.cshtml" />
+    <Content Include="Areas\Alunos\Views\Usuario\ErrorLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Conta\Index.cshtml" />
@@ -234,6 +236,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Administrador\CadastrarEmpresa.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Usuario\ErroLogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Usuario\Create.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

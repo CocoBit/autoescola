@@ -30,6 +30,8 @@ namespace AutoEscola
 
         }
 
+        public static int IDGeral;
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

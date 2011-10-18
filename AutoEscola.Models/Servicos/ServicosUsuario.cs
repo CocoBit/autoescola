@@ -30,6 +30,7 @@ namespace AutoEscola.Models.Servicos
 
         protected bool LogarUsuario(string login, string senha, string perfil)
         {
+            ApagarErros();
             if (!UsuarioRepository.Validar(login, senha, perfil))
             {
                 AdicionarErro("Usuário / e-mail e senhas inválidos.");

@@ -1,21 +1,21 @@
 ﻿.menu
 {
-    background-position: left center;
-    width: auto;
-    height: 100px;
-    background-color: #FFFFFF;
-    padding: 10px;
-    background-repeat: repeat-x;
+	background-position: left center;
+	width: auto;
+	height: 100px;
+	background-color: #FFFFFF;
+	padding: 10px;
+	background-repeat: no-repeat;
 }
 
 .inner-menu
 {
-    background-position: left center;
-    height: 100px;
-    width: 1024px;
-    margin: 0px auto;
-    background-image: url('images/logo-marca-auto-escola-simples.png');
-    background-repeat: no-repeat;
+	background-position: left center;
+	height: 100px;
+	width: 1024px;
+	margin: 0px auto;
+	background-image: url('images/logo-marca-auto-escola-simples.png');
+	background-repeat: no-repeat;
 }
 
 .menu ul

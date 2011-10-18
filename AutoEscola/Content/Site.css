@@ -76,8 +76,6 @@ body.chrome, body.safari
     text-shadow: rgba(0,0,0,0.1) 0px 0px 1px;
 }
 
-
-
 .logo-marca-site
 {
     background-image: url('images/logo-marca-auto-escola-simples.png');
@@ -99,7 +97,7 @@ body.chrome, body.safari
     color: #FFFFFF;
     font-family: Georgia, 'Times New Roman' , Times;
     font-style: oblique;    
-    text-shadow: 2px 2px 2px #000
+    text-shadow: 1px 1px 1px #000
 }
 
 .erro-page

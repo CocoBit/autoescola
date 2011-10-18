@@ -7,7 +7,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEscola.Models", "AutoEs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEscola.Repository", "AutoEscola.Repository\AutoEscola.Repository.csproj", "{2403015E-FF0E-46A7-8AB0-90569BFAF500}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEscola.Test", "AutoEscola.Test\AutoEscola.Test.csproj", "{7DF210B6-3EAD-4630-B6EB-98568FE249AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{33575FF9-12EC-42F5-8D32-DFEE07FAB982}"
+	ProjectSection(SolutionItems) = preProject
+		AutoEscola.vsmdi = AutoEscola.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = AutoEscola.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -25,6 +37,10 @@ Global
 		{2403015E-FF0E-46A7-8AB0-90569BFAF500}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2403015E-FF0E-46A7-8AB0-90569BFAF500}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2403015E-FF0E-46A7-8AB0-90569BFAF500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF210B6-3EAD-4630-B6EB-98568FE249AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF210B6-3EAD-4630-B6EB-98568FE249AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF210B6-3EAD-4630-B6EB-98568FE249AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF210B6-3EAD-4630-B6EB-98568FE249AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -39,6 +39,8 @@ namespace AutoEscola.Models.Servicos
                 AdicionarErro(string.Format("O proprietário do CPF '{0}' já possui um usuário associado", pessoa.CPF));
 
             VerificarSeEmailJaEstaCadastrado(usuario.Email);
+
+            usuario.Pessoa = pessoa;
         }
 
         public void CriarContaDeUsuarioAluno(Usuario usuario)

@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link href="@Url.Content("~/Content/formulario.css")" rel="stylesheet" type="text/css" />
+}
+<div class="content">
+    <div class="menu logo-marca-site">
+    </div>
+    <div class="box info bord-left-Maroon erro-page">
+        <h1>
+            Autenticação de
+            <br />
+            usuário/e-mail e senha.</h1>
+        @Html.Partial("~/Views/Shared/_Login.cshtml")
+    </div>
+</div>

@@ -4,16 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace AutoEscola.Areas.Alunos.Controllers
+namespace AutoEscola.Areas.Admin.Controllers
 {
-    public class HomeAlunosController : Controller
+    public class HomeAdminController : Controller
     {
         //
-        // GET: /Alunos/HomeAlunos/
+        // GET: /Admin/HomeAdmin/
 
         public ActionResult Index()
         {
-            ViewBag.Login = "aluno";
+            ViewBag.Login = "admin";
             return View();
         }
 

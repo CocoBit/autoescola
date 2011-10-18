@@ -14,6 +14,7 @@ namespace AutoEscola.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Auto Escola Simples, o melhor sistema para Auto Escola (CFC) do Brasil";
+            ViewBag.Login = "index";
             return View();
         }
     }

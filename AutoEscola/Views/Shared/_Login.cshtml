@@ -1,8 +1,7 @@
 ﻿@using (Html.BeginForm("logar", "Usuario", FormMethod.Post, null))
 {
     @Html.ValidationSummary(true, "Erro ao tentar logar")
-    <h2>
-        Login</h2>
+    <h2>Login</h2>
     <div>
         <label class="form_label">
             Usuário ( informe login ou email )</label>
@@ -14,8 +13,21 @@
         <div class="form_edit_text">
             @Html.Password("senha")
         </div>
-        <input class="button blue" type="submit" value="Acessar" />
-        <span>Ou</span>
-        @Html.ActionLink("Criar conta agora", "Create", "Usuario", null, new { @class = "button blue" })
+
+        @{
+            if (ViewBag.Login == "aluno")
+            {
+                <input class="button blue" type="submit" value="Acessar" />
+                <span>Ou</span>
+                @Html.ActionLink("Criar conta agora", "Create", "Usuario", null, new { @class = "button blue" })
+            }
+
+            if (ViewBag.Login == "admin")
+            {
+                <input class="button green" type="submit" value="Acessar" />
+                <span>Ou</span>
+                @Html.ActionLink("Criar conta agora", "Create", "Usuario", null, new { @class = "button green" })
+            }
+        }
     </div>
 }
